@@ -38,14 +38,23 @@ MT-TTA/
 This project is maintained for a GPU workflow.
 
 ```bash
-python -m venv .venv-gpu
-source .venv-gpu/bin/activate
+conda create -n MT-TTA python=3.11 -y
+conda activate MT-TTA
+
+export PYTHONNOUSERSITE=1
 
 pip install --index-url https://download.pytorch.org/whl/cu118 \
   torch==2.7.1+cu118 torchvision==0.22.1+cu118
 
 pip install -r requirements.txt
 pip install --no-deps git+https://github.com/openai/CLIP.git
+```
+
+After the environment is created once, you can re-enter it with:
+
+```bash
+conda activate MT-TTA
+export PYTHONNOUSERSITE=1
 ```
 
 ## What Is Tracked
