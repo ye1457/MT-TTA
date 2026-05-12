@@ -1,0 +1,10 @@
+.cache/
+.venv/
+.venv-gpu/
+results/
+scripts/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+CLIP/.git.repo-backup/
