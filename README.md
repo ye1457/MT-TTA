@@ -19,7 +19,7 @@ This GitHub repository is intentionally kept clean and lightweight:
 
 - Core source code is tracked with Git.
 - Large experiment outputs are excluded.
-- Local launcher scripts are excluded.
+- Evaluation and launcher scripts are tracked.
 - GPU environment files are excluded.
 
 ## Repository Layout
@@ -27,6 +27,8 @@ This GitHub repository is intentionally kept clean and lightweight:
 ```text
 MT-TTA/
 |-- CLIP/                 # Local copy of the CLIP reference implementation
+|-- docs/                 # Experiment notes and backup configs
+|-- scripts/              # Evaluation and launcher scripts
 |-- src/clip_officehome/  # Core project code
 |-- requirements.txt      # Python dependencies
 |-- README.md             # Project overview
@@ -62,6 +64,8 @@ export PYTHONNOUSERSITE=1
 The following content is included in Git:
 
 - `src/clip_officehome/`
+- `scripts/`
+- `docs/`
 - `CLIP/`
 - `requirements.txt`
 - `README.md`
@@ -70,7 +74,6 @@ The following content is included in Git:
 The following content is intentionally not pushed to GitHub:
 
 - `results/`
-- `scripts/`
 - `.venv-gpu/`
 - `.cache/`
 
@@ -79,3 +82,14 @@ The following content is intentionally not pushed to GitHub:
 - The repository name has been aligned to `MT-TTA`.
 - The GitHub remote is configured as `git@github.com:ye1457/MT-TTA.git`.
 - This repo is currently structured for code management first, experiment artifacts second.
+
+## Current Stable Backup
+
+The current backed-up experiment line is the stable `Route 1` configuration:
+
+- best stable average top-1 accuracy: `86.1152%`
+- fixed seed: `0`
+- visual MoE enabled on `Art`, `Clipart`, and `Product`
+- visual MoE disabled on `Real_World`
+
+See [docs/route1_realworld_off_backup.md](docs/route1_realworld_off_backup.md) for the exact configuration.

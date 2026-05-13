@@ -2,7 +2,6 @@
 .venv/
 .venv-gpu/
 results/
-scripts/
 __pycache__/
 *.py[cod]
 *.egg-info/
