@@ -85,11 +85,12 @@ The following content is intentionally not pushed to GitHub:
 
 ## Current Stable Backup
 
-The current backed-up experiment line is the stable `Route 1` configuration:
+The current backed-up experiment line is the stable `shadow-text Real_World` configuration:
 
-- best stable average top-1 accuracy: `86.1152%`
+- best stable average top-1 accuracy: `86.4882%`
 - fixed seed: `0`
 - visual MoE enabled on `Art`, `Clipart`, and `Product`
-- visual MoE disabled on `Real_World`
+- `Real_World` evaluated from a shadow text-only continual session
+- validated across GPUs `2/3/4/6/7` with identical reproduced results
 
-See [docs/route1_realworld_off_backup.md](docs/route1_realworld_off_backup.md) for the exact configuration.
+See [docs/shadow_text_realworld_backup.md](docs/shadow_text_realworld_backup.md) for the exact configuration.
