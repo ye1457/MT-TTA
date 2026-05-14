@@ -58,6 +58,31 @@ from clip_officehome.constants import (
 from clip_officehome.officehome import build_all_domain_specs, get_domain_spec_by_target
 
 
+def parse_domain_float_overrides(
+    raw_items: tuple[str, ...] | list[str],
+    *,
+    allowed_domains: tuple[str, ...],
+    option_name: str,
+) -> dict[str, float]:
+    overrides: dict[str, float] = {}
+    for raw_item in raw_items:
+        if "=" not in raw_item:
+            raise ValueError(f"{option_name} entries must look like DOMAIN=VALUE, got {raw_item!r}.")
+        domain_name, raw_value = raw_item.split("=", 1)
+        if domain_name not in allowed_domains:
+            raise ValueError(
+                f"{option_name} domain must be one of {allowed_domains}, got {domain_name!r}."
+            )
+        try:
+            parsed_value = float(raw_value)
+        except ValueError as exc:
+            raise ValueError(
+                f"{option_name} value must be a float, got {raw_value!r}."
+            ) from exc
+        overrides[domain_name] = parsed_value
+    return overrides
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Mixture-of-experts prompt-based test-time adaptation for OfficeHome."
@@ -117,6 +142,24 @@ def parse_args() -> argparse.Namespace:
         nargs="*",
         default=(),
         choices=STANDARD_DOMAINS,
+    )
+    parser.add_argument(
+        "--shadow-text-domains",
+        nargs="*",
+        default=(),
+        choices=STANDARD_DOMAINS,
+    )
+    parser.add_argument(
+        "--disable-update-domains",
+        nargs="*",
+        default=(),
+        choices=STANDARD_DOMAINS,
+    )
+    parser.add_argument(
+        "--domain-confidence-threshold-overrides",
+        nargs="*",
+        default=(),
+        metavar="DOMAIN=VALUE",
     )
     parser.add_argument(
         "--teacher-supervision",
@@ -196,6 +239,11 @@ def main() -> int:
     teacher_device = device if args.teacher_device == "auto" else resolve_device(args.teacher_device)
     output_path = build_output_path(args.output)
     teacher_supervision = resolve_teacher_supervision(args)
+    domain_confidence_threshold_overrides = parse_domain_float_overrides(
+        args.domain_confidence_threshold_overrides,
+        allowed_domains=STANDARD_DOMAINS,
+        option_name="--domain-confidence-threshold-overrides",
+    )
 
     if args.mode == "all":
         domain_specs = build_all_domain_specs(args.split_root, args.raw_root)
@@ -228,12 +276,44 @@ def main() -> int:
         num_visual_private_experts=args.num_visual_private_experts,
         visual_router_source=args.visual_router_source,
         disable_visual_domains=args.disable_visual_domains,
+        disable_update_domains=args.disable_update_domains,
+        domain_confidence_threshold_overrides=domain_confidence_threshold_overrides,
         teacher_model=teacher_model,
         teacher_preprocess=teacher_preprocess,
         teacher_device=teacher_device,
         teacher_template=args.teacher_template,
         teacher_temperature=args.teacher_temperature,
     )
+    shadow_text_domains = frozenset(args.shadow_text_domains)
+    shadow_text_session = None
+    if shadow_text_domains:
+        shadow_text_session = PersistentMoEPromptTTASession(
+            model=model,
+            preprocess=preprocess,
+            reference_domain_spec=domain_specs[0],
+            num_workers=args.num_workers,
+            device=device,
+            num_context=args.num_context,
+            prompt_init=args.prompt_init,
+            num_shared_experts=args.num_shared_experts,
+            num_private_experts=args.num_private_experts,
+            expert_init_std=args.expert_init_std,
+            seed=args.seed,
+            num_visual_prompts=0,
+            visual_prompt_init_std=args.visual_prompt_init_std,
+            visual_prompt_scale_init=args.visual_prompt_scale_init,
+            num_visual_shared_experts=0,
+            num_visual_private_experts=0,
+            visual_router_source=args.visual_router_source,
+            disable_visual_domains=(),
+            disable_update_domains=args.disable_update_domains,
+            domain_confidence_threshold_overrides=domain_confidence_threshold_overrides,
+            teacher_model=teacher_model,
+            teacher_preprocess=teacher_preprocess,
+            teacher_device=teacher_device,
+            teacher_template=args.teacher_template,
+            teacher_temperature=args.teacher_temperature,
+        )
 
     results = []
     for domain_spec in domain_specs:
@@ -242,7 +322,7 @@ def main() -> int:
             tta_lr=args.tta_lr,
             clipart_tta_lr=args.clipart_tta_lr,
         )
-        result = session.evaluate_domain(
+        shared_kwargs = dict(
             domain_spec=domain_spec,
             tta_lr=effective_tta_lr,
             pseudo_topk=args.pseudo_topk,
@@ -263,7 +343,18 @@ def main() -> int:
             teacher_confidence_threshold=args.teacher_confidence_threshold,
             distill_kl_weight=args.distill_kl_weight,
         )
-        results.append(result.to_dict())
+        if shadow_text_session is not None and domain_spec.target_domain not in shadow_text_domains:
+            shadow_text_session.evaluate_domain(**shared_kwargs)
+
+        if shadow_text_session is not None and domain_spec.target_domain in shadow_text_domains:
+            result = shadow_text_session.evaluate_domain(**shared_kwargs)
+            result_dict = result.to_dict()
+            result_dict["result_source"] = "shadow_text_session"
+        else:
+            result = session.evaluate_domain(**shared_kwargs)
+            result_dict = result.to_dict()
+            result_dict["result_source"] = "primary_session"
+        results.append(result_dict)
         print(
             f"[Done] {result.target_domain}: "
             f"top-1 accuracy = {result.top1_accuracy * 100:.2f}% "
@@ -319,6 +410,9 @@ def main() -> int:
             "visual_router_temperature": args.visual_router_temperature,
             "visual_router_source": args.visual_router_source,
             "disable_visual_domains": list(args.disable_visual_domains),
+            "shadow_text_domains": list(args.shadow_text_domains),
+            "disable_update_domains": list(args.disable_update_domains),
+            "domain_confidence_threshold_overrides": domain_confidence_threshold_overrides,
             "teacher_supervision": teacher_supervision,
             "teacher_model_name": args.teacher_model_name if teacher_supervision != "off" else None,
             "teacher_device": teacher_device if teacher_supervision != "off" else None,

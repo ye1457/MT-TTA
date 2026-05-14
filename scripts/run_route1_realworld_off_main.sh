@@ -8,6 +8,8 @@ CONDA_ENV_NAME="${CONDA_ENV_NAME:-MT-TTA}"
 GPU_ID="${1:-0}"
 TAG="${2:-main}"
 SEED="${3:-0}"
+shift $(( $# >= 3 ? 3 : $# ))
+EXTRA_ARGS=("$@")
 
 OUTPUT_JSON="${RESULTS_DIR}/route1_realworld_off_${TAG}.json"
 LOG_FILE="${RESULTS_DIR}/route1_realworld_off_${TAG}.log"
@@ -32,4 +34,5 @@ conda run --no-capture-output -n "${CONDA_ENV_NAME}" python scripts/eval_officeh
   --visual-shared-mix-weight 0.44 \
   --visual-router-source current_text_moe \
   --disable-visual-domains Real_World \
+  "${EXTRA_ARGS[@]}" \
   |& tee "${LOG_FILE}"

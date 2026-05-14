@@ -193,6 +193,8 @@ class MoETTADomainEvalResult:
     visual_routing_mode: str
     visual_router_source: str
     visual_domain_enabled: bool
+    domain_updates_enabled: bool
+    effective_confidence_threshold: float
     visual_topk_private_experts: int
     most_selected_visual_private_expert_ids: list[int]
     visual_private_expert_selection_counts: list[int]
@@ -467,6 +469,8 @@ class PersistentMoEPromptTTASession:
         num_visual_private_experts: int = 0,
         visual_router_source: str = DEFAULT_MOE_VISUAL_ROUTER_SOURCE,
         disable_visual_domains: Sequence[str] | None = None,
+        disable_update_domains: Sequence[str] | None = None,
+        domain_confidence_threshold_overrides: dict[str, float] | None = None,
         teacher_model=None,
         teacher_preprocess=None,
         teacher_device: str | None = None,
@@ -512,6 +516,8 @@ class PersistentMoEPromptTTASession:
         self.visual_enabled = (num_visual_shared_experts + num_visual_private_experts) > 0
         self.visual_router_source = visual_router_source if self.visual_enabled else "off"
         self.disable_visual_domains = frozenset(disable_visual_domains or ())
+        self.disable_update_domains = frozenset(disable_update_domains or ())
+        self.domain_confidence_threshold_overrides = dict(domain_confidence_threshold_overrides or {})
 
         seed_everything(seed)
         freeze_clip_parameters(model)
@@ -828,6 +834,11 @@ class PersistentMoEPromptTTASession:
         domain_visual_enabled = (
             self.visual_enabled and domain_spec.target_domain not in self.disable_visual_domains
         )
+        domain_updates_enabled = domain_spec.target_domain not in self.disable_update_domains
+        effective_confidence_threshold = self.domain_confidence_threshold_overrides.get(
+            domain_spec.target_domain,
+            confidence_threshold,
+        )
         routed_private_experts = self._route_private_experts_for_task(
             domain_spec=domain_spec,
             topk_private_experts=topk_private_experts,
@@ -980,13 +991,20 @@ class PersistentMoEPromptTTASession:
                         else False
                     )
                 else:
-                    is_selected = confidence >= confidence_threshold if confidence_threshold < 1.0 else False
+                    is_selected = (
+                        confidence >= effective_confidence_threshold
+                        if effective_confidence_threshold < 1.0
+                        else False
+                    )
                 if is_selected:
                     num_selected_samples += labels.size(0)
                     selected_confidence_sum += confidence
                     if teacher_supervision in {"aux_pseudolabel", "distill"}:
                         num_teacher_selected_samples += labels.size(0)
                         selected_teacher_confidence_sum += teacher_confidence
+
+                    if not domain_updates_enabled:
+                        continue
 
                     for step_index in range(update_steps):
                         if step_index == 0:
@@ -1074,11 +1092,18 @@ class PersistentMoEPromptTTASession:
                 correct += (predictions == labels).sum().item()
                 confidence_sum += confidence
 
-                is_selected = confidence >= confidence_threshold if confidence_threshold < 1.0 else False
+                is_selected = (
+                    confidence >= effective_confidence_threshold
+                    if effective_confidence_threshold < 1.0
+                    else False
+                )
                 if is_selected:
                     num_selected_samples += labels.size(0)
                     selected_confidence_sum += confidence
                     soft_targets = build_topk_soft_targets(probabilities, pseudo_topk=pseudo_topk)
+
+                    if not domain_updates_enabled:
+                        continue
 
                     for step_index in range(update_steps):
                         if step_index == 0:
@@ -1218,6 +1243,8 @@ class PersistentMoEPromptTTASession:
             visual_routing_mode="sample_wise" if domain_visual_enabled else "off",
             visual_router_source=self.visual_router_source if domain_visual_enabled else "off",
             visual_domain_enabled=domain_visual_enabled,
+            domain_updates_enabled=domain_updates_enabled,
+            effective_confidence_threshold=effective_confidence_threshold,
             visual_topk_private_experts=(
                 min(visual_topk_private_experts, len(self.visual_private_bank))
                 if domain_visual_enabled and len(self.visual_private_bank) > 0
@@ -1269,6 +1296,8 @@ def evaluate_domain_with_moe_prompt_tta(
     num_visual_private_experts: int = 0,
     visual_router_source: str = DEFAULT_MOE_VISUAL_ROUTER_SOURCE,
     disable_visual_domains: Sequence[str] | None = None,
+    disable_update_domains: Sequence[str] | None = None,
+    domain_confidence_threshold_overrides: dict[str, float] | None = None,
     visual_topk_private_experts: int = 1,
     visual_shared_mix_weight: float = 0.5,
     visual_router_temperature: float = 1.0,
@@ -1302,6 +1331,8 @@ def evaluate_domain_with_moe_prompt_tta(
         num_visual_private_experts=num_visual_private_experts,
         visual_router_source=visual_router_source,
         disable_visual_domains=disable_visual_domains,
+        disable_update_domains=disable_update_domains,
+        domain_confidence_threshold_overrides=domain_confidence_threshold_overrides,
         teacher_model=teacher_model,
         teacher_preprocess=teacher_preprocess,
         teacher_device=teacher_device,
