@@ -1,5 +1,7 @@
 # Evaluation protocol
 
+[Home](../README.md) · [Runnable reproduction guide](REPRODUCIBILITY.md) · [Reference results](RESULTS.md)
+
 PACS and OfficeHome share evaluation rules with explicit method differences.
 
 ## Stream and state
@@ -35,7 +37,7 @@ Primary metric: equal-weight mean of four domain Top-1 accuracies. Also report p
 
 The evaluator records effective settings, generated input order, source/model/input hashes, pre-update student traces, optimizer creation and prompt-state boundaries. Existing output directories are rejected. Real labels support scoring/audit, not adaptation losses, route scores or gates; class-based input ordering is separately declared above.
 
-After a successful run, `summary.json` contains the per-domain results and reported macro accuracy; `completion.json` certifies `PASS` with bound artifact hashes. `config.json`, `metadata.json`, `input_manifest.json` and the prediction/update traces record the effective run. Keep the complete output directory if you need to independently recount that run later.
+After a successful run, `summary.json` contains the per-domain results and reported macro accuracy; `completion.json` certifies `PASS` with bound artifact hashes. `config.json`, `metadata.json`, `input_manifest.json` and `*.predictions.jsonl` record the effective run. Prediction rows include cumulative pre-update step counts; these evaluators do not create a separate `updates.jsonl`. Keep the complete output directory if you need to independently recount that run later.
 
 The evaluator has no midstream prompt/optimizer checkpoint restoration. If interrupted, restart from the beginning in a new output directory. Do not edit runtime source files while an evaluation is running. CUDA/platform or dependency changes may affect finite-precision results; use the reference environment, official weights and original filenames when comparing against the reference.
 

@@ -1,0 +1,150 @@
+{
+  "schema": "mt_tta_reference_inputs_v1",
+  "verified_on": "2026-10-29",
+  "scope": "Current full-data input byte/order preflight references. No GPU inference was performed; these digests are not evidence of reproducing historical accuracy.",
+  "comparison": "Compare counts, configuration and ordered input digests from the same checkout and original release filenames. The data-root path is deliberately omitted.",
+  "benchmarks": {
+    "pacs": {
+      "num_images": 9991,
+      "num_classes": 7,
+      "config_sha256": "9255484af49cfeb058f6aba8fe16e6fa49ce5460f962564de25ad7b99867ad3d",
+      "order": "class_name_then_full_file_path_sorted",
+      "image_bytes_hashed": true,
+      "domains": [
+        {
+          "domain": "art_painting",
+          "num_images": 2048,
+          "num_classes": 7,
+          "ordered_index_sha256": "028c2d69dc198fe8569ed52f52ada73ea9c58648800f9efc93e8d67c5f1bcec3",
+          "ordered_content_sha256": "09327c02a955195b0f6818ac70a41d9291a83cf77ac770ce67d75ad32741f910"
+        },
+        {
+          "domain": "cartoon",
+          "num_images": 2344,
+          "num_classes": 7,
+          "ordered_index_sha256": "5cf64c91d231b3f09922dc47fc9f51cff12dfd1b0a15d0ddac20c6725986ac1e",
+          "ordered_content_sha256": "bc8804d9ada9185c3537c8b6b175fc9d1c8932366bb6c1eb94136ad6db30f732"
+        },
+        {
+          "domain": "photo",
+          "num_images": 1670,
+          "num_classes": 7,
+          "ordered_index_sha256": "ba3921ed2831c317826d5184a6fd09546ab204a7327cfe3746b0cd7c7fc610db",
+          "ordered_content_sha256": "76919c51d8f9a28f9cf22591fd24b5bf3870bdf4d6f427a369b9bc96ef2bd558"
+        },
+        {
+          "domain": "sketch",
+          "num_images": 3929,
+          "num_classes": 7,
+          "ordered_index_sha256": "ea3efba111cb54f667aea21a4ebe1f671cc21c05b4899e76b6badaf10ff35d8a",
+          "ordered_content_sha256": "2bb1aaf169b3d3ec038a5f1a6d6ac231ae86fce3f08f117ab0893e96a0531840"
+        }
+      ]
+    },
+    "officehome": {
+      "num_images": 15588,
+      "num_classes": 65,
+      "config_sha256": "7218dd01b5d769ca0ca879df2ccb4059e23144e59ff218221a82d6a37210ad21",
+      "order": "class_name_then_full_file_path_sorted",
+      "image_bytes_hashed": true,
+      "domains": [
+        {
+          "domain": "Art",
+          "num_images": 2427,
+          "num_classes": 65,
+          "ordered_index_sha256": "2bb26c52eb6aa439fcb57add17d587011264104f15ce442332c1a60771f6fb35",
+          "ordered_content_sha256": "a5f6103ccb7fdc2c1b4ada72f6e0739eef51daf292fe1ad9b6e73474899430cd"
+        },
+        {
+          "domain": "Clipart",
+          "num_images": 4365,
+          "num_classes": 65,
+          "ordered_index_sha256": "8641b1d3b3c634e6d8fe51467f685cd351a8e6bc62f3d059652f93052f7ec1be",
+          "ordered_content_sha256": "e1bbd092d9b212a7c77dd0893e9e9ce0f24690f4f67686393f5b6c84a2502044"
+        },
+        {
+          "domain": "Product",
+          "num_images": 4439,
+          "num_classes": 65,
+          "ordered_index_sha256": "fda4d785561660f122c40e2e38bc200b194f63d54588eced94ac2587d321f3f2",
+          "ordered_content_sha256": "503494bd54be375a84bd7d1765d5b75f4f5cefe3898ad9c940573c86dd6b9fdf"
+        },
+        {
+          "domain": "Real_World",
+          "num_images": 4357,
+          "num_classes": 65,
+          "ordered_index_sha256": "1a7e67b7599515e6f4eaa30a33e5409f52dd524f83a1796132063b8fa3822767",
+          "ordered_content_sha256": "a7bac389044fa1164878f590955184756d812fb079cb3a23a7237e57c7fca87e"
+        }
+      ]
+    },
+    "imagenet_a": {
+      "num_images": 7500,
+      "num_classes": 200,
+      "config_sha256": "af0539b26a3541644d39b131048cbcdb07ccf8158561e5c44c81d177cd4f51ec",
+      "order": "TPT_prompt_name_then_WNID_then_relative_file_path_sorted",
+      "image_bytes_hashed": true,
+      "class_metadata_sha256": "4f8e2b5c4fdcb12ac2494e322018c75809627c69f638dc2e8584a526972be00d",
+      "ordered_index_sha256": "bdb94edaa267b05d4dc6ee7c3db7beb59fb4caaa2ffef13ec336bb1e46f8af06",
+      "ordered_content_sha256": "56249507d9d4d72476bb23cb9fec933d7805c5e8d929f55880c50af52e67e058"
+    },
+    "imagenet_v2": {
+      "num_images": 10000,
+      "num_classes": 1000,
+      "config_sha256": "9113f1c020a29d7af8751c2443ef72c20562242d5ae30a72d7e388573da4d45a",
+      "order": "TPT_prompt_name_then_WNID_then_relative_file_path_sorted",
+      "image_bytes_hashed": true,
+      "class_metadata_sha256": "4f8e2b5c4fdcb12ac2494e322018c75809627c69f638dc2e8584a526972be00d",
+      "ordered_index_sha256": "bdfe91f55718b101663acdd0e349a34a275eae7fe68922c34c618e3833ae7880",
+      "ordered_content_sha256": "42417198f7dfdcffb45f6310327c2cc82954b3887b59f7ffd68a25cbd8be9abc"
+    },
+    "imagenet_r": {
+      "num_images": 30000,
+      "num_classes": 200,
+      "config_sha256": "dfdd156d0dc9ad4fe692b163f476537de4395151095caaf71c77b844d5bf0aaf",
+      "order": "TPT_prompt_name_then_WNID_then_relative_file_path_sorted",
+      "image_bytes_hashed": true,
+      "class_metadata_sha256": "4f8e2b5c4fdcb12ac2494e322018c75809627c69f638dc2e8584a526972be00d",
+      "ordered_index_sha256": "b8782045d5d81fce2ca08f95c4359e309e1ce1211401eb43ac01c25173e8da2a",
+      "ordered_content_sha256": "00dee87c5922d0f953a882805c1e3fd55c659f1c217ee3008d01af9f556aae2e"
+    },
+    "imagenet_sketch": {
+      "num_images": 50889,
+      "num_classes": 1000,
+      "config_sha256": "bf0eb4203f44dc08986682bb08aa7be3d21262fbfc56cc346e33a688b384b449",
+      "order": "TPT_prompt_name_then_WNID_then_relative_file_path_sorted",
+      "image_bytes_hashed": true,
+      "class_metadata_sha256": "4f8e2b5c4fdcb12ac2494e322018c75809627c69f638dc2e8584a526972be00d",
+      "ordered_index_sha256": "a486c03ed105cff6b485bf990b422d18ed51d710f075c3e6d749a71a335cc662",
+      "ordered_content_sha256": "9698e252eb7a371c4b51e029968d3736db1379dc582d1688d440a2443c316923"
+    },
+    "MT-Sketch4-20K": {
+      "num_images": 20000,
+      "task_image_counts": {
+        "domainnet_sketch": 5000,
+        "imagenet_sketch": 5000,
+        "tuberlin": 5000,
+        "sketchy": 5000
+      },
+      "task_class_counts": {
+        "domainnet_sketch": 345,
+        "imagenet_sketch": 1000,
+        "tuberlin": 250,
+        "sketchy": 125
+      },
+      "config_sha256": "e44eda7b3bbb380cafa1dcddc42be27e4e29090580ba691770ac303293170c72",
+      "order": "balanced_round_robin",
+      "image_bytes_hashed": true,
+      "verification": "All five frozen definition-file digests and all 20,000 image bytes verified after reconstruction from separately acquired source files; membership, classes and round-robin order checked. No model inference.",
+      "frozen_artifacts": {
+        "manifest.jsonl": "89f07bf643e621ecaef70010d51d2044d0750213aac19782324b27a615343570",
+        "metadata/classes.json": "b0be1d01dc78230ea56a51836c19443a2a3fbd681fd63b65c182124f9b96b19e",
+        "metadata/protocol.json": "a1e2793193f4b4b20844d318e25c65643d1f93fde45e0fc3bd8af4878be0c124",
+        "streams.json": "a2b020b296ff32afa622e24b780ca794838cb5ebb3fc55f1bbfdae38a7693d71",
+        "benchmark.py": "ae80c683c941bb24fd256f24566c8960eba5f8beea056262014db3ec26bbaade"
+      },
+      "ordered_index_sha256": "65998cc89f30bb57b9a752f2d6334b7efccbdeb32a9316b025aab395c96ee90f",
+      "ordered_content_sha256": "11cd40478c47d36f9ebb89635bcf1495e8757d2838db0f24434f567199cc5510"
+    }
+  }
+}

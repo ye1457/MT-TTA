@@ -1,90 +1,151 @@
-# MT-TTA
+<h1 align="center">MT-TTA</h1>
 
-Continual CLIP test-time adaptation with shared and private text/visual prompt experts. The source tree supports PACS, OfficeHome, the four ImageNet natural-shift benchmarks, and the task-known MT-Sketch4-20K stream. Historical experiments and local research archives are not runtime dependencies.
+<p align="center"><strong>Continual CLIP adaptation with shared and private prompt experts</strong></p>
+<p align="center">Text + visual prompts · Unlabeled test streams · Student-only predictions</p>
 
-Version **0.1.1** is the development baseline. Continue development in this source tree; installed packages and exported source archives are snapshots. Local `.venv/`, `models/`, `data/`, `outputs/` and `reports/`, if present, are development assets excluded from distributions.
+<p align="center">
+  <a href="https://github.com/ye1457/MT-TTA/actions/workflows/tests.yml"><img src="https://github.com/ye1457/MT-TTA/actions/workflows/tests.yml/badge.svg" alt="CPU tests and packaging"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-14b8a6" alt="License: MIT"></a>
+  <a href="docs/REPRODUCIBILITY.md"><img src="https://img.shields.io/badge/reference-Python%203.11-2563eb" alt="Reference environment: Python 3.11"></a>
+</p>
 
-The student is frozen OpenAI CLIP ViT-B/16. A frozen ViT-L/14 teacher supplies an auxiliary hard-pseudo-label loss. The enabled objective is student hard-pseudo-label CE plus **0.08 × teacher hard-pseudo-label CE**, both applied to student outputs. **Reported predictions are student-only; teacher output fusion and calibration are excluded.**
+<p align="center">
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#method-and-protocol">Method</a> ·
+  <a href="#reference-results">Results</a> ·
+  <a href="docs/REPRODUCIBILITY.md">Reproducibility</a> ·
+  <a href="#documentation">Documentation</a>
+</p>
 
-## Installation
+![MT-TTA stream: preview to choose a text route; score each image with the student; then adapt prompts and carry state to the next image. Teacher outputs supply a loss target only.](docs/assets/stream.svg)
 
-Use Python >=3.10. Reference runs used Python 3.11, torch 2.7.1+cu118 and torchvision 0.22.1+cu118. Start from a source checkout:
+MT-TTA adapts text and visual prompt experts while keeping the OpenAI CLIP **ViT-B/16 student** and **ViT-L/14 teacher** backbones frozen. Predictions come from the student **before updating on the current image**. The teacher supplies an auxiliary pseudo-label loss; its outputs are never fused into reported predictions.
+
+## Quick start
+
+### 1. Install
+
+The reference environment uses **Python 3.11**, **PyTorch 2.7.1** and **torchvision 0.22.1**, with CUDA 11.8 builds. Formal evaluation requires a CUDA GPU with enough free memory for both backbones and adaptation. CPU-only installation and verification are covered in the [reproducibility guide](docs/REPRODUCIBILITY.md).
 
 ```bash
-git clone https://github.com/ye1457/MT-TTA.git
+git clone --branch v0.1.2 https://github.com/ye1457/MT-TTA.git
 cd MT-TTA
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-```
-
-Install a compatible torch/torchvision pair for your CUDA environment. The reference CUDA 11.8 builds can be installed with:
-
-```bash
 python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu118
 python -m pip install -r requirements-runtime.txt
 python -m pip install -e .
 ```
 
-`requirements-runtime.txt` records the reference Python 3.11 dependency versions. Its NumPy pin requires Python 3.11; on Python 3.10 omit the requirements-file command and use the package dependency ranges from `pip install -e .`. Python 3.10 dependency compatibility is declared, but this repository's installation and numerical checks were run on Python 3.11.
+The OpenAI `clip` implementation and tokenizer are bundled. This quick start pins [v0.1.2](https://github.com/ye1457/MT-TTA/tree/v0.1.2); record `git rev-parse HEAD` with your run. Identical values across different GPUs and software versions are not guaranteed.
 
-The vendored OpenAI `clip` module and tokenizer are included; do not install the unrelated PyPI package named `clip`. Formal evaluation requires CUDA. Dry-run validation does not load models. Weights and datasets are obtained separately and are not packaged.
+### 2. Prepare data and weights
 
-## Evaluation
+Follow [data sources, folder layouts and weight downloads](DATA_DEPENDENCIES.md). PACS and OfficeHome require their **complete releases**, with original class folders and filenames. Put the official `ViT-B-16.pt` and `ViT-L-14.pt` files in `models/`; their SHA256 digests are verified before inference. Datasets and weights are obtained separately.
 
-Data roots use `domain/class/image` folders. No historical split/order JSON or experiment report is needed.
+### 3. Validate, then evaluate
+
+For PACS, point to the directory containing `art_painting`, `cartoon`, `photo` and `sketch`:
 
 ```bash
-mt-tta-evaluate --benchmark pacs --data-root /path/to/PACS --dry-run
-mt-tta-evaluate --benchmark officehome --data-root /path/to/OfficeHome --dry-run
-mt-tta-evaluate --benchmark pacs --data-root /path/to/PACS --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/pacs_seed0
-mt-tta-evaluate --benchmark officehome --data-root /path/to/OfficeHome --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/officehome_seed0
+PACS_ROOT=/path/to/PACS
+
+# Check layout, counts and ordered image-byte hashes without loading models.
+mt-tta-evaluate --benchmark pacs --data-root "$PACS_ROOT" --dry-run --hash-images
+
+# Run the complete seed0 stream on GPU 0.
+mt-tta-evaluate --benchmark pacs --data-root "$PACS_ROOT" \
+  --model-cache models --gpu 0 --output-dir outputs/pacs_seed0
 ```
 
-The equivalent source-checkout command is `python scripts/evaluate.py`. Existing output directories and incorrect full-data counts are rejected. Cache the official model files before formal evaluation; the evaluator checks their digests and does not silently download weights. The default cache is `~/.cache/clip`; retained local weights can be used with `--model-cache models`. See [data preparation](DATA_DEPENDENCIES.md) and [evaluation details](docs/EVALUATION.md).
+Compare the reported ordered input hashes with the [frozen input references](docs/reference_inputs.json). Use a **new output directory** for every run; runs cannot resume midway. A dry run validates data, not numerical benchmark performance.
 
-Use a GPU with enough available memory for both backbones and adaptation; memory requirements vary by benchmark and class count. `--gpu` is one physical CUDA GPU index. CUDA is unnecessary for `--dry-run` and the CPU unit tests. A successful formal run creates `summary.json` and `completion.json` with status `PASS`; see [output records and restart behavior](docs/EVALUATION.md#metrics-and-records). There is no midstream resume support.
+| Evaluation | Full images | Run instructions |
+| :--- | ---: | :--- |
+| PACS / OfficeHome | 9,991 / 15,588 | [Shared protocol and commands](docs/REPRODUCIBILITY.md) |
+| ImageNet-A / V2 / R / Sketch | 7,500 / 10,000 / 30,000 / 50,889 | [Independent runs and zero-shot controls](docs/IMAGENET_OOD.md) |
+| MT-Sketch4-20K | 20,000 | [Frozen membership and assembly](benchmarks/mt_sketch4/README.md) · [evaluation](docs/MT_SKETCH4_EVALUATION.md) |
 
-| Setting | PACS | OfficeHome |
-| --- | --- | --- |
-| Full images / classes | 9,991 / 7 | 15,588 / 65 |
-| Domain order | art_painting → cartoon → photo → sketch | Art → Clipart → Product → Real_World |
-| Fixed text route | First64, mean probability margin, Top-2 | First64, mean maximum class probability, Top-2 |
-| Student confidence gate | 0.95 | 0.815 |
-| Learning rate | 7.5e-6 | 7.5e-6; Clipart 2e-6 |
-| Reported branch | Primary in every domain | Primary first three; text shadow Real_World |
-| Audited reference macro Top-1 | 98.997603% | 86.488202% |
+The custom benchmark includes frozen membership metadata and an assembly tool. Its images must be acquired separately under the four source datasets' terms; the exact subset is defined by that metadata, not by a fresh random sample.
 
-Both use seed0, all images sorted by class-directory/path, batch1 and scoring before the current image update. Prompts persist across domains; optimizers restart. Unlabeled previews perform no updates and are included once in formal scoring. This is a known-domain protocol with preview lookahead, not strict no-lookahead online evaluation.
+### 4. Read the result
 
-PACS was selected on this same full stream from 24 configurations. A separate seed0 repeat matched all predictions, probability/logit values and domain-boundary prompt states. Completed reference results and their evaluation conditions are documented in [RESULTS.md](docs/RESULTS.md); reorganizing this source tree does not constitute another full benchmark run.
+```bash
+python -m json.tool outputs/pacs_seed0/summary.json
+python -m json.tool outputs/pacs_seed0/completion.json
+```
 
-## Layout and checks
+The PACS/OfficeHome summary reports per-domain scores and `macro_top1_percent`; successful completion requires `status: "PASS"`. The completion record binds output artifacts with hashes. [Output fields and validation scope](docs/REPRODUCIBILITY.md) explain what each check establishes.
+
+## Method and protocol
+
+The enabled objective has two terms, both applied to student outputs:
+
+$$\mathcal{L}=\operatorname{CE}(p_s,\hat y_s)+0.08\,\operatorname{CE}(p_s,\hat y_t).$$
+
+The pseudo-labels come from the pre-update student and frozen teacher. A confidence gate selects images for **three AdamW steps**. Shared and private experts provide text and visual prompts; backbone weights remain frozen.
+
+| Protocol choice | PACS / OfficeHome | ImageNet natural shifts | MT-Sketch4-20K |
+| :--- | :--- | :--- | :--- |
+| Scoring | Seed0, batch1, before update | Same | Same |
+| State | Carry prompts across domains; reset optimizers per domain | Initialize independently for each benchmark | Carry prompts and optimizer state across task switches |
+| Text routing | First 64 images of each domain | First 64 images of each benchmark | First 64 images per task, all before adaptation |
+| Reported branch | PACS: primary; OfficeHome: primary first three domains, text-only shadow for Real_World | Primary | Primary |
+
+Previews are unlabeled, perform no updates, and are later scored once in the formal stream. They are an explicit lookahead budget. PACS/OfficeHome use class-directory/path order; ImageNet uses pinned prompt-name/WNID/path order; the custom benchmark alternates four known tasks. This is source-free adaptation on target streams, with no three-source-domain supervised training.
+
+See [exact PACS/OfficeHome settings](docs/EVALUATION.md), including PACS margin routing versus OfficeHome confidence routing, gates, Clipart learning rate and the independent OfficeHome shadow branch. Entropy, anchor and KL penalties are disabled in the reported configurations.
+
+## Reference results
+
+Historical full-stream **Top-1 accuracy (%)**, rounded to three decimals:
+
+| Evaluation | PACS | OfficeHome | MT-Sketch4-20K |
+| :--- | ---: | ---: | ---: |
+| MT-TTA | **98.998** | **86.488** | **60.215** |
+
+| Evaluation | ImageNet-A | ImageNet-V2 | ImageNet-R | ImageNet-Sketch | Equal mean |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Frozen CLIP B/16 | 47.880 | 60.630 | 73.793 | 45.961 | 57.066 |
+| MT-TTA | **53.187** | **60.830** | **84.377** | **49.258** | **61.913** |
+
+PACS/OfficeHome scores average the four domains equally; MT-Sketch4 averages its four native classification tasks. PACS was selected from 24 configurations on the same full stream. These are previously completed measurements, **not new benchmark runs from this documentation update**. Historical raw outputs were deleted at the owner's request. [Full results and provenance](docs/RESULTS.md) include per-task scores, controls and protocol differences.
+
+## Documentation
+
+| Start here | What it covers |
+| :--- | :--- |
+| [Reproducibility guide](docs/REPRODUCIBILITY.md) | Environment, commands, result checks and verified scope |
+| [Data and weights](DATA_DEPENDENCIES.md) | Official sources, directory structure, download and hash checks |
+| [PACS / OfficeHome protocol](docs/EVALUATION.md) | Ordering, routing, losses, state and shadow branch |
+| [ImageNet natural shifts](docs/IMAGENET_OOD.md) | A/V2/R/Sketch, zero-shot controls and four-benchmark reporting |
+| [MT-Sketch4 dataset](docs/MT_SKETCH4_DATASET.md) · [evaluation](docs/MT_SKETCH4_EVALUATION.md) | Frozen subset design and native class spaces |
+| [Reference results](docs/RESULTS.md) | Completed measurements and their provenance |
+
+<details>
+<summary><strong>Repository layout and developer checks</strong></summary>
 
 ```text
-src/clip_officehome/  Core prompts, routing, data adapters and evaluator
-CLIP/                OpenAI CLIP implementation, tokenizer and license
-src/clip_officehome/configs/  PACS/OfficeHome settings and ImageNet class metadata
-scripts/             Evaluation, zero-shot controls and result validation
-tests/               Configuration, routing and evaluation-contract checks
-docs/                Protocols, frozen dataset description and reference results
+src/clip_officehome/          Prompt experts, routing, adapters and evaluators
+src/clip_officehome/configs/  Fixed configurations and ImageNet class metadata
+CLIP/                        Vendored OpenAI CLIP and tokenizer
+scripts/                     Data assembly, evaluation and result validation
+benchmarks/                  Frozen benchmark membership metadata
+tests/                      Protocol, routing and session tests
+docs/                        Reproduction guides, protocols and reference results
 ```
 
-The `clip_officehome` namespace is retained for compatibility across the supported adapters. Text-only and visual-only classes that share helpers with the main method remain in the core modules.
-
-The ImageNet natural-shift adapter evaluates full-set **A/V2/R/Sketch** in independent sessions through `scripts/evaluate_imagenet.py` or `mt-tta-evaluate-imagenet`. See [the fixed protocol and commands](docs/IMAGENET_OOD.md). It reuses the student-only pre-update method with confidence gate 0.815 and learning rate 7.5e-6.
-
-The frozen **MT-Sketch4-20K** adapter uses one continual stream with four known tasks and different native class spaces. Prompts and AdamW state persist while tasks alternate image by image. It uses 64 unlabeled previews per task and batch1 student-only pre-update scoring. The completed seed0 reference scored **60.215%**, versus **57.825%** for frozen CLIP B/16. The adapter is included, but the exact frozen membership, construction pipeline and prepared data bundle are not distributed in this code release. The following commands require that separate bundle; downloading the four original datasets alone is insufficient. See the [dataset description](docs/MT_SKETCH4_DATASET.md), [evaluation protocol](docs/MT_SKETCH4_EVALUATION.md), and [reference results](docs/RESULTS.md).
-
-```bash
-python scripts/evaluate_mtsketch.py --data-root /path/to/MT-Sketch4-20K --dry-run
-python scripts/evaluate_mtsketch.py --data-root /path/to/MT-Sketch4-20K --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/mtsketch_seed0
-```
+The `clip_officehome` package name is retained across all supported benchmarks. Local data, weights, environments and generated outputs are ignored by Git.
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-## Licensing
+[GitHub Actions](https://github.com/ye1457/MT-TTA/actions/workflows/tests.yml) checks CPU tests, source entrypoints, package builds and installation outside the source tree. These software checks do not replace a full GPU benchmark run.
 
-The project is distributed under the [MIT license](LICENSE). OpenAI CLIP's notice is retained in [CLIP/LICENSE](CLIP/LICENSE), and the TPT class metadata notice is retained in [licenses/TPT_LICENSE](licenses/TPT_LICENSE). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for their scope. Datasets and weights have separate terms.
+</details>
+
+## License
+
+MT-TTA is released under [MIT](LICENSE). The [OpenAI CLIP](CLIP/LICENSE) and [TPT metadata](licenses/TPT_LICENSE) notices are retained; see [third-party notices](THIRD_PARTY_NOTICES.md). Datasets and pretrained weights retain their own terms.

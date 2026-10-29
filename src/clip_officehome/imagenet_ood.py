@@ -137,8 +137,12 @@ def main(argv=None):
     parser.add_argument("--gpu", default="0")
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--hash-images", action="store_true", help="With --dry-run, also hash every image and report ordered content digests")
     args = parser.parse_args(argv)
-    config, specs, records, inventory = prepare_imagenet_data(args.benchmark, args.data_root, not args.dry_run)
+    if args.hash_images and not args.dry_run:
+        parser.error("--hash-images is only valid with --dry-run; formal evaluation already hashes images")
+    config, specs, records, inventory = prepare_imagenet_data(args.benchmark, args.data_root,
+                                                          not args.dry_run or args.hash_images)
     if args.dry_run:
         result = {"status": "DRY_RUN_PASS_NO_MODEL", "config": config, "data": inventory}
     else:

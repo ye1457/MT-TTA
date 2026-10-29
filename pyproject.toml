@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mt-tta"
-version = "0.1.1"
+version = "0.1.2"
 description = "Continual CLIP prompt adaptation with shared and private text/visual experts"
 readme = "README.md"
 requires-python = ">=3.10"

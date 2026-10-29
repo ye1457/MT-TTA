@@ -3,7 +3,9 @@ include CLIP/LICENSE
 include licenses/TPT_LICENSE
 recursive-include CLIP/clip *.py *.gz
 recursive-include src/clip_officehome/configs *.json
-recursive-include docs *.md
+recursive-include docs *.md *.json
+recursive-include docs/assets *.svg
+recursive-include benchmarks/mt_sketch4 *.md *.gz *.sha256
 recursive-include scripts *.py
 recursive-include tests *.py *.json
 prune models

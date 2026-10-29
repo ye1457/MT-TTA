@@ -1,5 +1,7 @@
 # ImageNet natural-shift evaluation
 
+[Home](../README.md) · [Reproducibility guide](REPRODUCIBILITY.md) · [Reference results](RESULTS.md)
+
 This adapter evaluates each original benchmark in a fresh seed0 session. All four natural-shift datasets are supported:
 
 | Benchmark argument | Images | Classes |
@@ -12,12 +14,14 @@ This adapter evaluates each original benchmark in a fresh seed0 session. All fou
 V2 uses the matched-frequency release, with ten images per class. The mixed [MT-Sketch4-20K](MT_SKETCH4_DATASET.md) dataset is a separate benchmark and is not used here.
 
 ```bash
-python scripts/evaluate_imagenet.py --benchmark imagenet_v2 --data-root /path/to/imagenetv2-matched-frequency-format-val --dry-run
+python scripts/evaluate_imagenet.py --benchmark imagenet_v2 --data-root /path/to/imagenetv2-matched-frequency-format-val --dry-run --hash-images
 python scripts/evaluate_imagenet.py --benchmark imagenet_a --data-root /path/to/imagenet-a --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/imagenet_a_seed0
 python scripts/evaluate_imagenet.py --benchmark imagenet_v2 --data-root /path/to/imagenetv2-matched-frequency-format-val --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/imagenet_v2_seed0
 python scripts/evaluate_imagenet.py --benchmark imagenet_r --data-root /path/to/imagenet-r --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/imagenet_r_seed0
 python scripts/evaluate_imagenet.py --benchmark imagenet_sketch --data-root /path/to/imagenet-sketch --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/imagenet_sketch_seed0
 ```
+
+The preflight loads no model. `--hash-images` reads image bytes in addition to the ordinary layout/count/order checks; compare its ordered hashes with [the input references](reference_inputs.json). Omit that flag for a faster layout-only check. Neither check is a numerical accuracy rerun.
 
 The method transfers the OfficeHome **primary** branch parameters: CLIP-B/16
 student, frozen CLIP-L/14 auxiliary hard pseudo-label teacher (CE weight 0.08),
@@ -55,7 +59,7 @@ For example, run the A control with:
 python scripts/evaluate_imagenet_zeroshot.py --benchmark imagenet_a --data-root /path/to/imagenet-a --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/imagenet_a_zeroshot_seed0
 ```
 
-Repeat with the other benchmark arguments and their own data/output directories. After all eight method/control runs finish, `scripts/summarize_imagenet_ood.py` recounts their predictions and validates the shared protocol. Create a JSON manifest using **absolute paths** to those new output directories:
+Repeat with the other benchmark arguments and their own data/output directories. Each method/control pair must point to the **same data-root path**, because their recorded input manifests are compared exactly. After all eight method/control runs finish, `scripts/summarize_imagenet_ood.py` recounts their predictions and validates the shared protocol. Create a JSON manifest using **absolute paths** to those new output directories:
 
 ```json
 {

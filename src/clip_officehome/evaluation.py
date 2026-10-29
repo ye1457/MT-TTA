@@ -360,10 +360,13 @@ def main(argv=None):
     parser.add_argument("--gpu", default="0", help="One physical CUDA GPU index")
     parser.add_argument("--output-dir", type=Path, help="New result directory, required for model evaluation")
     parser.add_argument("--dry-run", action="store_true", help="Validate full membership, classes and order without models, GPU or output writes")
+    parser.add_argument("--hash-images", action="store_true", help="With --dry-run, also hash every image and report ordered content digests")
     args = parser.parse_args(argv)
+    if args.hash_images and not args.dry_run:
+        parser.error("--hash-images is only valid with --dry-run; formal evaluation already hashes images")
     config = load_config(args.benchmark, args.config)
     if args.dry_run:
-        _, _, inventory = prepare_data(config, args.data_root, hash_images=False)
+        _, _, inventory = prepare_data(config, args.data_root, hash_images=args.hash_images)
         result = {"status": "DRY_RUN_PASS_NO_MODEL", "config_sha256": canonical_hash(config), "config": config, "data": inventory}
     else:
         require(args.output_dir is not None, "--output-dir is required for a model evaluation")

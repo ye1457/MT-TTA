@@ -87,6 +87,14 @@ python scripts/evaluate_mtsketch.py --data-root /path/to/MT-Sketch4-20K --model-
 python scripts/evaluate_mtsketch_zeroshot.py --data-root /path/to/MT-Sketch4-20K --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/mtsketch_zeroshot_seed0
 ```
 
-每次运行使用新输出目录。dry-run不加载模型；正式推理需要CUDA。代码发布包不包含图片和权重，也尚未提供冻结20K数据包的公开下载入口；原始来源下载不能直接替代已固定的清单。准备要求见[DATA_DEPENDENCIES.md](../DATA_DEPENDENCIES.md)。
+每次运行使用新输出目录。dry-run不加载模型；正式推理需要CUDA。仓库提供[冻结成员元数据和组装工具](../benchmarks/mt_sketch4/README.md)，从单独获取的四组原始图片恢复固定20K清单，并逐图校验SHA256；不重新抽样或重新编码图像。图片和权重单独获取，准备要求见[DATA_DEPENDENCIES.md](../DATA_DEPENDENCIES.md)。
+
+方法和对照全部完成后，使用同一源码版本生成核验报告：
+
+```bash
+python scripts/summarize_mtsketch.py --tta-output outputs/mtsketch_seed0 --control-output outputs/mtsketch_zeroshot_seed0 --data-root /path/to/MT-Sketch4-20K --output-dir reports/mtsketch_seed0
+```
+
+输出为 `mtsketch_seed0_results.json` 和 `mtsketch_seed0_results_zh.md`。方法、对照与汇总必须使用同一数据根目录，汇总完成前保留原始数据/权重路径及源码版本；该汇总器会再次校验这些资源。使用新的报告目录以避免替换已有报告。正式评测的 `summary.json` 主要指标字段为 `macro_accuracy_percent`，`completion.json` 必须为 `PASS`；本适配器还单独记录 `updates.jsonl`。
 
 正式入口记录配置、源码/模型/输入哈希、逐图更新前预测、提示连续性、预览路由和持久优化器状态，并检查每图正式计分一次、每个入选图更新3步。历史运行使用其各自冻结的源码快照复核；当前代码目录整理不代表重新运行完整实验。已完成实测的可移植摘要见[RESULTS.md](RESULTS.md)。

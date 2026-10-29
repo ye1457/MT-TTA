@@ -2,7 +2,7 @@
 
 **Version: `1.0-review`.** This benchmark combines 20,000 sketch images from four existing datasets into four known classification tasks. Each source contributes 5,000 images and retains its native class space. Sketch/line drawing is their common visual domain; the sources retain distinct acquisition styles and distributions.
 
-Images are obtained separately under the source datasets' terms. The project's MIT license does not cover these images. This code release does not include a public download of the prepared frozen bundle.
+Images are obtained separately under the source datasets' terms. The project's MIT license does not cover these images. The repository provides [the frozen membership metadata and assembly tool](../benchmarks/mt_sketch4/README.md) so users can reconstruct the exact evaluation bundle from separately acquired source files. Images and the original exploratory sampling pipeline are not distributed.
 
 ## Sources and membership
 
@@ -44,8 +44,6 @@ MT-Sketch4-20K/
   metadata/
     classes.json
     protocol.json
-    source_index.json
-    sources/
   images/
     domainnet_sketch/
     imagenet_sketch/
@@ -53,7 +51,7 @@ MT-Sketch4-20K/
     sketchy/
 ```
 
-The bundle also retains per-class counts, checksums and audit records. Original source downloads alone do not reproduce its membership or satisfy the frozen checks. The adapter pins the required artifact digests in `src/clip_officehome/multitask_sketch.py`. Reference manifest SHA256:
+The locally curated bundle also retains per-class counts, checksums and review records. Those extra curation artifacts are not runtime dependencies and are not all distributed. The public assembly tool restores the five frozen metadata files and exactly the selected image tree, without re-running selection. The adapter pins the required artifact digests in `src/clip_officehome/multitask_sketch.py`. Reference manifest SHA256:
 
 ```text
 89f07bf643e621ecaef70010d51d2044d0750213aac19782324b27a615343570
@@ -74,4 +72,4 @@ python scripts/evaluate_mtsketch.py --data-root /path/to/MT-Sketch4-20K --dry-ru
 | TU-Berlin | [Original project](https://cybertron.cg.tu-berlin.de/eitz/projects/classifysketch/); [fixed mirror revision](https://huggingface.co/datasets/sdiaeyu6n/tu-berlin/tree/e7c6c0dedcf2aa4ca060878893bca8d77ef699f4) | Mirror matches LFS SHA256; 20,000 native class/image IDs match the research group's SVG archive. No original PNG-package checksum is claimed. |
 | Sketchy | [Author project](https://patsorn.me/projects/sketchy/); [fixed mirror revision](https://huggingface.co/datasets/DrRORAL/sketchy-dataset/tree/dcbdf00ab09409b4244d9fe717e652274b3fe648) | Mirror matches LFS SHA256; 7,063 PNG entries match the author 7z directory by length and CRC32. |
 
-Exact source URLs, revisions, hashes and qualifications remain in the bundle's `metadata/source_index.json` and per-source metadata. This repository supplies the description and adapter; image distribution remains separate.
+The [assembly guide](../benchmarks/mt_sketch4/README.md) records public source revisions and the accepted extraction layouts. The frozen manifest retains each selected image's source identity and checksum. Local acquisition logs and review galleries remain separate; image distribution remains subject to each source's terms.

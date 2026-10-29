@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="242" viewBox="0 0 1120 242" role="img" aria-labelledby="title desc">
+  <title id="title">MT-TTA continual adaptation stream</title>
+  <desc id="desc">Unlabeled previews select a text route. For each image, the student scores before adaptation. A confidence gate selects three prompt updates using student and teacher pseudo-label losses. Prompt state carries to the next image. The teacher contributes only a loss target.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#162d3b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#64748b"/>
+    </marker>
+    <marker id="teal-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#5eead4"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="242" rx="18" fill="url(#bg)"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="34" y="34" font-size="12" font-weight="600" letter-spacing="2" fill="#5eead4">THE EVALUATION STREAM</text>
+    <text x="1086" y="34" text-anchor="end" font-size="13" fill="#cbd5e1">Frozen backbones · Trainable prompts</text>
+
+    <rect x="34" y="58" width="210" height="94" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="52" y="83" font-size="11" font-weight="600" letter-spacing="1" fill="#94a3b8">UNLABELED PREVIEW</text>
+    <text x="52" y="112" font-size="19" font-weight="600" fill="#f8fafc">Choose experts</text>
+    <text x="52" y="137" font-size="13" fill="#cbd5e1">64 images · No updates</text>
+    <path d="M246 105H276" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="286" y="58" width="260" height="94" rx="10" fill="#123b3d" stroke="#5eead4"/>
+    <text x="304" y="83" font-size="11" font-weight="600" letter-spacing="1" fill="#5eead4">01 / SCORE</text>
+    <text x="304" y="112" font-size="19" font-weight="600" fill="#f8fafc">Student prediction</text>
+    <text x="304" y="137" font-size="13" fill="#ccfbf1">Report before adapting this image</text>
+    <path d="M548 105H578" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="588" y="58" width="260" height="94" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="606" y="83" font-size="11" font-weight="600" letter-spacing="1" fill="#94a3b8">02 / ADAPT IF CONFIDENT</text>
+    <text x="606" y="112" font-size="19" font-weight="600" fill="#f8fafc">Update prompts</text>
+    <text x="606" y="137" font-size="13" fill="#cbd5e1">3 steps per selected image</text>
+    <path d="M850 105H880" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="890" y="58" width="196" height="94" rx="10" fill="#1e293b" stroke="#475569"/>
+    <text x="908" y="83" font-size="11" font-weight="600" letter-spacing="1" fill="#94a3b8">03 / CONTINUE</text>
+    <text x="908" y="112" font-size="19" font-weight="600" fill="#f8fafc">Carry state</text>
+    <text x="908" y="137" font-size="13" fill="#cbd5e1">Next image</text>
+
+    <path d="M989 154V179H416V156" fill="none" stroke="#5eead4" stroke-width="1.5" marker-end="url(#teal-arrow)"/>
+    <text x="34" y="216" font-size="13" fill="#cbd5e1">ViT-B/16 student · ViT-L/14 auxiliary teacher</text>
+    <text x="1086" y="216" text-anchor="end" font-size="13" fill="#5eead4">Teacher targets affect the loss only</text>
+  </g>
+</svg>
