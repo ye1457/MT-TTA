@@ -1,9 +1,38 @@
-.cache/
+# Local environments, dependencies and model/data assets
 .venv/
-.venv-gpu/
+venv/
+models/
+data/
+.cache/
+.pip-cache/
+.wheelhouse/
+.tmp/
+*.pt
+*.pth
+*.ckpt
+
+# Generated evaluation output and historical artifacts
+# Match both local directories and compatibility symlinks.
+/outputs
 results/
+experiments/
+/reports
+*.log
+
+# Python build/test artifacts
 __pycache__/
 *.py[cod]
 *.egg-info/
-.ipynb_checkpoints/
-CLIP/.git.repo-backup/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/

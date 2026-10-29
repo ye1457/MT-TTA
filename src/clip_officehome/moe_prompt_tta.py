@@ -715,6 +715,7 @@ class PersistentMoEPromptTTASession:
             routed_visual_experts=routed_visual_experts,
             visual_shared_mix_weight=visual_shared_mix_weight,
             use_visual=use_visual,
+            text_features=text_features,
         )
         return logits, base_tokens, routed_visual_experts
 
@@ -727,8 +728,13 @@ class PersistentMoEPromptTTASession:
         routed_visual_experts: RoutedPrivateVisualExperts,
         visual_shared_mix_weight: float,
         use_visual: bool,
+        text_features: torch.Tensor | None = None,
     ) -> torch.Tensor:
-        text_features = self._build_text_features(routed_private_experts, shared_mix_weight)
+        # At the pre-update forward, routing and scoring use the same current
+        # prompt parameters. Reuse that differentiable encoding; later update
+        # rounds omit it and rebuild features from the updated parameters.
+        if text_features is None:
+            text_features = self._build_text_features(routed_private_experts, shared_mix_weight)
         if not use_visual:
             if cached_image_features is None:
                 raise ValueError("cached_image_features is required when visual prompts are disabled.")
@@ -932,6 +938,11 @@ class PersistentMoEPromptTTASession:
         progress = tqdm(dataloader, desc=f"MoE TTA {domain_spec.target_domain}", leave=False)
         if teacher_active:
             for student_images, teacher_images, labels in progress:
+                # A skipped sample never calls backward. Drop its graph before
+                # the next forward's right-hand side allocates new activations.
+                logits = probabilities = cached_student_state = None
+                step_logits = self_ce_loss = teacher_ce_loss = anchor_loss = loss = None
+                entropy_loss = kl_loss = None
                 student_images = student_images.to(self.device, non_blocking=self.use_cuda)
                 labels = labels.to(self.device, non_blocking=self.use_cuda)
                 teacher_images = teacher_images.to(
@@ -1061,6 +1072,8 @@ class PersistentMoEPromptTTASession:
                     num_skipped_samples += labels.size(0)
         else:
             for images, labels in progress:
+                logits = probabilities = cached_student_state = None
+                step_logits = self_ce_loss = entropy_loss = anchor_loss = loss = None
                 images = images.to(self.device, non_blocking=self.use_cuda)
                 labels = labels.to(self.device, non_blocking=self.use_cuda)
 

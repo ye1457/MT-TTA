@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mt-tta"
+version = "0.1.1"
+description = "Continual CLIP prompt adaptation with shared and private text/visual experts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "CLIP/LICENSE", "licenses/TPT_LICENSE", "THIRD_PARTY_NOTICES.md"]
+dependencies = [
+  "torch>=2.1",
+  "torchvision>=0.16",
+  "ftfy>=6.1",
+  "numpy>=1.24",
+  "pillow>=9",
+  "regex",
+  "tqdm>=4.64",
+]
+
+[project.urls]
+Repository = "https://github.com/ye1457/MT-TTA"
+Issues = "https://github.com/ye1457/MT-TTA/issues"
+
+[project.scripts]
+mt-tta-evaluate = "clip_officehome.evaluation:main"
+mt-tta-evaluate-imagenet = "clip_officehome.imagenet_ood:main"
+
+[tool.setuptools]
+packages = ["clip_officehome", "clip_officehome.configs", "clip"]
+package-dir = {clip_officehome = "src/clip_officehome", clip = "CLIP/clip"}
+include-package-data = true
+
+[tool.setuptools.package-data]
+clip = ["bpe_simple_vocab_16e6.txt.gz"]
+"clip_officehome.configs" = ["*.json"]
+
+[tool.setuptools.data-files]
+"share/mt-tta/third_party" = ["CLIP/LICENSE", "licenses/TPT_LICENSE", "THIRD_PARTY_NOTICES.md"]

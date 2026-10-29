@@ -4,10 +4,10 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-DEFAULT_SPLIT_ROOT = Path("/data/dataset/yeshengjie/Officehome")
-DEFAULT_RAW_ROOT = Path("/data/dataset/xukunlun/CIL/OfficeHome")
+DEFAULT_SPLIT_ROOT = Path("data/OfficeHome_splits")
+DEFAULT_RAW_ROOT = Path("data/OfficeHome")
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "results"
-DEFAULT_CLIP_CACHE_DIR = PROJECT_ROOT / ".cache" / "clip"
+DEFAULT_CLIP_CACHE_DIR = Path.home() / ".cache" / "clip"
 
 DEFAULT_MODEL_NAME = "ViT-B/16"
 DEFAULT_TEMPLATE = "a photo of a {class}"

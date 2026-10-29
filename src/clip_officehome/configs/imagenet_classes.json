@@ -1,0 +1,7437 @@
+{
+  "version": 1,
+  "source_repository": "https://github.com/azshue/TPT",
+  "source_revision": "63ecbace79694205d7884e63fdc3137a200f0b0e",
+  "source_files": {
+    "tpt_imagnet_prompts.py": {
+      "url": "https://raw.githubusercontent.com/azshue/TPT/63ecbace79694205d7884e63fdc3137a200f0b0e/data/imagnet_prompts.py",
+      "sha256": "1cfcccb1c2249ed021775bc0a51dd38a1b685239c2e99ec8694f89c2ae9b4d32"
+    },
+    "tpt_imagenet_variants.py": {
+      "url": "https://raw.githubusercontent.com/azshue/TPT/63ecbace79694205d7884e63fdc3137a200f0b0e/data/imagenet_variants.py",
+      "sha256": "d3c69e876f6d385800ea84aafd2ce9042de8b5dfe961518633a1e76f73fa027c"
+    }
+  },
+  "class_name_policy": "Original pinned TPT human prompt names, preserving 1000 entries including source duplicate names; not WNIDs and not comma-separated ImageNet synonyms. Only current project prompt template is to be used, not imported TPT multi-template lists.",
+  "duplicate_prompt_names": {
+    "missile": [
+      657,
+      744
+    ],
+    "sunglasses": [
+      836,
+      837
+    ]
+  },
+  "classes": [
+    {
+      "imagenet_index": 0,
+      "wnid": "n01440764",
+      "class_name": "tench"
+    },
+    {
+      "imagenet_index": 1,
+      "wnid": "n01443537",
+      "class_name": "goldfish"
+    },
+    {
+      "imagenet_index": 2,
+      "wnid": "n01484850",
+      "class_name": "great white shark"
+    },
+    {
+      "imagenet_index": 3,
+      "wnid": "n01491361",
+      "class_name": "tiger shark"
+    },
+    {
+      "imagenet_index": 4,
+      "wnid": "n01494475",
+      "class_name": "hammerhead shark"
+    },
+    {
+      "imagenet_index": 5,
+      "wnid": "n01496331",
+      "class_name": "electric ray"
+    },
+    {
+      "imagenet_index": 6,
+      "wnid": "n01498041",
+      "class_name": "stingray"
+    },
+    {
+      "imagenet_index": 7,
+      "wnid": "n01514668",
+      "class_name": "rooster"
+    },
+    {
+      "imagenet_index": 8,
+      "wnid": "n01514859",
+      "class_name": "hen"
+    },
+    {
+      "imagenet_index": 9,
+      "wnid": "n01518878",
+      "class_name": "ostrich"
+    },
+    {
+      "imagenet_index": 10,
+      "wnid": "n01530575",
+      "class_name": "brambling"
+    },
+    {
+      "imagenet_index": 11,
+      "wnid": "n01531178",
+      "class_name": "goldfinch"
+    },
+    {
+      "imagenet_index": 12,
+      "wnid": "n01532829",
+      "class_name": "house finch"
+    },
+    {
+      "imagenet_index": 13,
+      "wnid": "n01534433",
+      "class_name": "junco"
+    },
+    {
+      "imagenet_index": 14,
+      "wnid": "n01537544",
+      "class_name": "indigo bunting"
+    },
+    {
+      "imagenet_index": 15,
+      "wnid": "n01558993",
+      "class_name": "American robin"
+    },
+    {
+      "imagenet_index": 16,
+      "wnid": "n01560419",
+      "class_name": "bulbul"
+    },
+    {
+      "imagenet_index": 17,
+      "wnid": "n01580077",
+      "class_name": "jay"
+    },
+    {
+      "imagenet_index": 18,
+      "wnid": "n01582220",
+      "class_name": "magpie"
+    },
+    {
+      "imagenet_index": 19,
+      "wnid": "n01592084",
+      "class_name": "chickadee"
+    },
+    {
+      "imagenet_index": 20,
+      "wnid": "n01601694",
+      "class_name": "American dipper"
+    },
+    {
+      "imagenet_index": 21,
+      "wnid": "n01608432",
+      "class_name": "kite (bird of prey)"
+    },
+    {
+      "imagenet_index": 22,
+      "wnid": "n01614925",
+      "class_name": "bald eagle"
+    },
+    {
+      "imagenet_index": 23,
+      "wnid": "n01616318",
+      "class_name": "vulture"
+    },
+    {
+      "imagenet_index": 24,
+      "wnid": "n01622779",
+      "class_name": "great grey owl"
+    },
+    {
+      "imagenet_index": 25,
+      "wnid": "n01629819",
+      "class_name": "fire salamander"
+    },
+    {
+      "imagenet_index": 26,
+      "wnid": "n01630670",
+      "class_name": "smooth newt"
+    },
+    {
+      "imagenet_index": 27,
+      "wnid": "n01631663",
+      "class_name": "newt"
+    },
+    {
+      "imagenet_index": 28,
+      "wnid": "n01632458",
+      "class_name": "spotted salamander"
+    },
+    {
+      "imagenet_index": 29,
+      "wnid": "n01632777",
+      "class_name": "axolotl"
+    },
+    {
+      "imagenet_index": 30,
+      "wnid": "n01641577",
+      "class_name": "American bullfrog"
+    },
+    {
+      "imagenet_index": 31,
+      "wnid": "n01644373",
+      "class_name": "tree frog"
+    },
+    {
+      "imagenet_index": 32,
+      "wnid": "n01644900",
+      "class_name": "tailed frog"
+    },
+    {
+      "imagenet_index": 33,
+      "wnid": "n01664065",
+      "class_name": "loggerhead sea turtle"
+    },
+    {
+      "imagenet_index": 34,
+      "wnid": "n01665541",
+      "class_name": "leatherback sea turtle"
+    },
+    {
+      "imagenet_index": 35,
+      "wnid": "n01667114",
+      "class_name": "mud turtle"
+    },
+    {
+      "imagenet_index": 36,
+      "wnid": "n01667778",
+      "class_name": "terrapin"
+    },
+    {
+      "imagenet_index": 37,
+      "wnid": "n01669191",
+      "class_name": "box turtle"
+    },
+    {
+      "imagenet_index": 38,
+      "wnid": "n01675722",
+      "class_name": "banded gecko"
+    },
+    {
+      "imagenet_index": 39,
+      "wnid": "n01677366",
+      "class_name": "green iguana"
+    },
+    {
+      "imagenet_index": 40,
+      "wnid": "n01682714",
+      "class_name": "Carolina anole"
+    },
+    {
+      "imagenet_index": 41,
+      "wnid": "n01685808",
+      "class_name": "desert grassland whiptail lizard"
+    },
+    {
+      "imagenet_index": 42,
+      "wnid": "n01687978",
+      "class_name": "agama"
+    },
+    {
+      "imagenet_index": 43,
+      "wnid": "n01688243",
+      "class_name": "frilled-necked lizard"
+    },
+    {
+      "imagenet_index": 44,
+      "wnid": "n01689811",
+      "class_name": "alligator lizard"
+    },
+    {
+      "imagenet_index": 45,
+      "wnid": "n01692333",
+      "class_name": "Gila monster"
+    },
+    {
+      "imagenet_index": 46,
+      "wnid": "n01693334",
+      "class_name": "European green lizard"
+    },
+    {
+      "imagenet_index": 47,
+      "wnid": "n01694178",
+      "class_name": "chameleon"
+    },
+    {
+      "imagenet_index": 48,
+      "wnid": "n01695060",
+      "class_name": "Komodo dragon"
+    },
+    {
+      "imagenet_index": 49,
+      "wnid": "n01697457",
+      "class_name": "Nile crocodile"
+    },
+    {
+      "imagenet_index": 50,
+      "wnid": "n01698640",
+      "class_name": "American alligator"
+    },
+    {
+      "imagenet_index": 51,
+      "wnid": "n01704323",
+      "class_name": "triceratops"
+    },
+    {
+      "imagenet_index": 52,
+      "wnid": "n01728572",
+      "class_name": "worm snake"
+    },
+    {
+      "imagenet_index": 53,
+      "wnid": "n01728920",
+      "class_name": "ring-necked snake"
+    },
+    {
+      "imagenet_index": 54,
+      "wnid": "n01729322",
+      "class_name": "eastern hog-nosed snake"
+    },
+    {
+      "imagenet_index": 55,
+      "wnid": "n01729977",
+      "class_name": "smooth green snake"
+    },
+    {
+      "imagenet_index": 56,
+      "wnid": "n01734418",
+      "class_name": "kingsnake"
+    },
+    {
+      "imagenet_index": 57,
+      "wnid": "n01735189",
+      "class_name": "garter snake"
+    },
+    {
+      "imagenet_index": 58,
+      "wnid": "n01737021",
+      "class_name": "water snake"
+    },
+    {
+      "imagenet_index": 59,
+      "wnid": "n01739381",
+      "class_name": "vine snake"
+    },
+    {
+      "imagenet_index": 60,
+      "wnid": "n01740131",
+      "class_name": "night snake"
+    },
+    {
+      "imagenet_index": 61,
+      "wnid": "n01742172",
+      "class_name": "boa constrictor"
+    },
+    {
+      "imagenet_index": 62,
+      "wnid": "n01744401",
+      "class_name": "African rock python"
+    },
+    {
+      "imagenet_index": 63,
+      "wnid": "n01748264",
+      "class_name": "Indian cobra"
+    },
+    {
+      "imagenet_index": 64,
+      "wnid": "n01749939",
+      "class_name": "green mamba"
+    },
+    {
+      "imagenet_index": 65,
+      "wnid": "n01751748",
+      "class_name": "sea snake"
+    },
+    {
+      "imagenet_index": 66,
+      "wnid": "n01753488",
+      "class_name": "Saharan horned viper"
+    },
+    {
+      "imagenet_index": 67,
+      "wnid": "n01755581",
+      "class_name": "eastern diamondback rattlesnake"
+    },
+    {
+      "imagenet_index": 68,
+      "wnid": "n01756291",
+      "class_name": "sidewinder rattlesnake"
+    },
+    {
+      "imagenet_index": 69,
+      "wnid": "n01768244",
+      "class_name": "trilobite"
+    },
+    {
+      "imagenet_index": 70,
+      "wnid": "n01770081",
+      "class_name": "harvestman"
+    },
+    {
+      "imagenet_index": 71,
+      "wnid": "n01770393",
+      "class_name": "scorpion"
+    },
+    {
+      "imagenet_index": 72,
+      "wnid": "n01773157",
+      "class_name": "yellow garden spider"
+    },
+    {
+      "imagenet_index": 73,
+      "wnid": "n01773549",
+      "class_name": "barn spider"
+    },
+    {
+      "imagenet_index": 74,
+      "wnid": "n01773797",
+      "class_name": "European garden spider"
+    },
+    {
+      "imagenet_index": 75,
+      "wnid": "n01774384",
+      "class_name": "southern black widow"
+    },
+    {
+      "imagenet_index": 76,
+      "wnid": "n01774750",
+      "class_name": "tarantula"
+    },
+    {
+      "imagenet_index": 77,
+      "wnid": "n01775062",
+      "class_name": "wolf spider"
+    },
+    {
+      "imagenet_index": 78,
+      "wnid": "n01776313",
+      "class_name": "tick"
+    },
+    {
+      "imagenet_index": 79,
+      "wnid": "n01784675",
+      "class_name": "centipede"
+    },
+    {
+      "imagenet_index": 80,
+      "wnid": "n01795545",
+      "class_name": "black grouse"
+    },
+    {
+      "imagenet_index": 81,
+      "wnid": "n01796340",
+      "class_name": "ptarmigan"
+    },
+    {
+      "imagenet_index": 82,
+      "wnid": "n01797886",
+      "class_name": "ruffed grouse"
+    },
+    {
+      "imagenet_index": 83,
+      "wnid": "n01798484",
+      "class_name": "prairie grouse"
+    },
+    {
+      "imagenet_index": 84,
+      "wnid": "n01806143",
+      "class_name": "peafowl"
+    },
+    {
+      "imagenet_index": 85,
+      "wnid": "n01806567",
+      "class_name": "quail"
+    },
+    {
+      "imagenet_index": 86,
+      "wnid": "n01807496",
+      "class_name": "partridge"
+    },
+    {
+      "imagenet_index": 87,
+      "wnid": "n01817953",
+      "class_name": "african grey parrot"
+    },
+    {
+      "imagenet_index": 88,
+      "wnid": "n01818515",
+      "class_name": "macaw"
+    },
+    {
+      "imagenet_index": 89,
+      "wnid": "n01819313",
+      "class_name": "sulphur-crested cockatoo"
+    },
+    {
+      "imagenet_index": 90,
+      "wnid": "n01820546",
+      "class_name": "lorikeet"
+    },
+    {
+      "imagenet_index": 91,
+      "wnid": "n01824575",
+      "class_name": "coucal"
+    },
+    {
+      "imagenet_index": 92,
+      "wnid": "n01828970",
+      "class_name": "bee eater"
+    },
+    {
+      "imagenet_index": 93,
+      "wnid": "n01829413",
+      "class_name": "hornbill"
+    },
+    {
+      "imagenet_index": 94,
+      "wnid": "n01833805",
+      "class_name": "hummingbird"
+    },
+    {
+      "imagenet_index": 95,
+      "wnid": "n01843065",
+      "class_name": "jacamar"
+    },
+    {
+      "imagenet_index": 96,
+      "wnid": "n01843383",
+      "class_name": "toucan"
+    },
+    {
+      "imagenet_index": 97,
+      "wnid": "n01847000",
+      "class_name": "duck"
+    },
+    {
+      "imagenet_index": 98,
+      "wnid": "n01855032",
+      "class_name": "red-breasted merganser"
+    },
+    {
+      "imagenet_index": 99,
+      "wnid": "n01855672",
+      "class_name": "goose"
+    },
+    {
+      "imagenet_index": 100,
+      "wnid": "n01860187",
+      "class_name": "black swan"
+    },
+    {
+      "imagenet_index": 101,
+      "wnid": "n01871265",
+      "class_name": "tusker"
+    },
+    {
+      "imagenet_index": 102,
+      "wnid": "n01872401",
+      "class_name": "echidna"
+    },
+    {
+      "imagenet_index": 103,
+      "wnid": "n01873310",
+      "class_name": "platypus"
+    },
+    {
+      "imagenet_index": 104,
+      "wnid": "n01877812",
+      "class_name": "wallaby"
+    },
+    {
+      "imagenet_index": 105,
+      "wnid": "n01882714",
+      "class_name": "koala"
+    },
+    {
+      "imagenet_index": 106,
+      "wnid": "n01883070",
+      "class_name": "wombat"
+    },
+    {
+      "imagenet_index": 107,
+      "wnid": "n01910747",
+      "class_name": "jellyfish"
+    },
+    {
+      "imagenet_index": 108,
+      "wnid": "n01914609",
+      "class_name": "sea anemone"
+    },
+    {
+      "imagenet_index": 109,
+      "wnid": "n01917289",
+      "class_name": "brain coral"
+    },
+    {
+      "imagenet_index": 110,
+      "wnid": "n01924916",
+      "class_name": "flatworm"
+    },
+    {
+      "imagenet_index": 111,
+      "wnid": "n01930112",
+      "class_name": "nematode"
+    },
+    {
+      "imagenet_index": 112,
+      "wnid": "n01943899",
+      "class_name": "conch"
+    },
+    {
+      "imagenet_index": 113,
+      "wnid": "n01944390",
+      "class_name": "snail"
+    },
+    {
+      "imagenet_index": 114,
+      "wnid": "n01945685",
+      "class_name": "slug"
+    },
+    {
+      "imagenet_index": 115,
+      "wnid": "n01950731",
+      "class_name": "sea slug"
+    },
+    {
+      "imagenet_index": 116,
+      "wnid": "n01955084",
+      "class_name": "chiton"
+    },
+    {
+      "imagenet_index": 117,
+      "wnid": "n01968897",
+      "class_name": "chambered nautilus"
+    },
+    {
+      "imagenet_index": 118,
+      "wnid": "n01978287",
+      "class_name": "Dungeness crab"
+    },
+    {
+      "imagenet_index": 119,
+      "wnid": "n01978455",
+      "class_name": "rock crab"
+    },
+    {
+      "imagenet_index": 120,
+      "wnid": "n01980166",
+      "class_name": "fiddler crab"
+    },
+    {
+      "imagenet_index": 121,
+      "wnid": "n01981276",
+      "class_name": "red king crab"
+    },
+    {
+      "imagenet_index": 122,
+      "wnid": "n01983481",
+      "class_name": "American lobster"
+    },
+    {
+      "imagenet_index": 123,
+      "wnid": "n01984695",
+      "class_name": "spiny lobster"
+    },
+    {
+      "imagenet_index": 124,
+      "wnid": "n01985128",
+      "class_name": "crayfish"
+    },
+    {
+      "imagenet_index": 125,
+      "wnid": "n01986214",
+      "class_name": "hermit crab"
+    },
+    {
+      "imagenet_index": 126,
+      "wnid": "n01990800",
+      "class_name": "isopod"
+    },
+    {
+      "imagenet_index": 127,
+      "wnid": "n02002556",
+      "class_name": "white stork"
+    },
+    {
+      "imagenet_index": 128,
+      "wnid": "n02002724",
+      "class_name": "black stork"
+    },
+    {
+      "imagenet_index": 129,
+      "wnid": "n02006656",
+      "class_name": "spoonbill"
+    },
+    {
+      "imagenet_index": 130,
+      "wnid": "n02007558",
+      "class_name": "flamingo"
+    },
+    {
+      "imagenet_index": 131,
+      "wnid": "n02009229",
+      "class_name": "little blue heron"
+    },
+    {
+      "imagenet_index": 132,
+      "wnid": "n02009912",
+      "class_name": "great egret"
+    },
+    {
+      "imagenet_index": 133,
+      "wnid": "n02011460",
+      "class_name": "bittern bird"
+    },
+    {
+      "imagenet_index": 134,
+      "wnid": "n02012849",
+      "class_name": "crane bird"
+    },
+    {
+      "imagenet_index": 135,
+      "wnid": "n02013706",
+      "class_name": "limpkin"
+    },
+    {
+      "imagenet_index": 136,
+      "wnid": "n02017213",
+      "class_name": "common gallinule"
+    },
+    {
+      "imagenet_index": 137,
+      "wnid": "n02018207",
+      "class_name": "American coot"
+    },
+    {
+      "imagenet_index": 138,
+      "wnid": "n02018795",
+      "class_name": "bustard"
+    },
+    {
+      "imagenet_index": 139,
+      "wnid": "n02025239",
+      "class_name": "ruddy turnstone"
+    },
+    {
+      "imagenet_index": 140,
+      "wnid": "n02027492",
+      "class_name": "dunlin"
+    },
+    {
+      "imagenet_index": 141,
+      "wnid": "n02028035",
+      "class_name": "common redshank"
+    },
+    {
+      "imagenet_index": 142,
+      "wnid": "n02033041",
+      "class_name": "dowitcher"
+    },
+    {
+      "imagenet_index": 143,
+      "wnid": "n02037110",
+      "class_name": "oystercatcher"
+    },
+    {
+      "imagenet_index": 144,
+      "wnid": "n02051845",
+      "class_name": "pelican"
+    },
+    {
+      "imagenet_index": 145,
+      "wnid": "n02056570",
+      "class_name": "king penguin"
+    },
+    {
+      "imagenet_index": 146,
+      "wnid": "n02058221",
+      "class_name": "albatross"
+    },
+    {
+      "imagenet_index": 147,
+      "wnid": "n02066245",
+      "class_name": "grey whale"
+    },
+    {
+      "imagenet_index": 148,
+      "wnid": "n02071294",
+      "class_name": "killer whale"
+    },
+    {
+      "imagenet_index": 149,
+      "wnid": "n02074367",
+      "class_name": "dugong"
+    },
+    {
+      "imagenet_index": 150,
+      "wnid": "n02077923",
+      "class_name": "sea lion"
+    },
+    {
+      "imagenet_index": 151,
+      "wnid": "n02085620",
+      "class_name": "Chihuahua"
+    },
+    {
+      "imagenet_index": 152,
+      "wnid": "n02085782",
+      "class_name": "Japanese Chin"
+    },
+    {
+      "imagenet_index": 153,
+      "wnid": "n02085936",
+      "class_name": "Maltese"
+    },
+    {
+      "imagenet_index": 154,
+      "wnid": "n02086079",
+      "class_name": "Pekingese"
+    },
+    {
+      "imagenet_index": 155,
+      "wnid": "n02086240",
+      "class_name": "Shih Tzu"
+    },
+    {
+      "imagenet_index": 156,
+      "wnid": "n02086646",
+      "class_name": "King Charles Spaniel"
+    },
+    {
+      "imagenet_index": 157,
+      "wnid": "n02086910",
+      "class_name": "Papillon"
+    },
+    {
+      "imagenet_index": 158,
+      "wnid": "n02087046",
+      "class_name": "toy terrier"
+    },
+    {
+      "imagenet_index": 159,
+      "wnid": "n02087394",
+      "class_name": "Rhodesian Ridgeback"
+    },
+    {
+      "imagenet_index": 160,
+      "wnid": "n02088094",
+      "class_name": "Afghan Hound"
+    },
+    {
+      "imagenet_index": 161,
+      "wnid": "n02088238",
+      "class_name": "Basset Hound"
+    },
+    {
+      "imagenet_index": 162,
+      "wnid": "n02088364",
+      "class_name": "Beagle"
+    },
+    {
+      "imagenet_index": 163,
+      "wnid": "n02088466",
+      "class_name": "Bloodhound"
+    },
+    {
+      "imagenet_index": 164,
+      "wnid": "n02088632",
+      "class_name": "Bluetick Coonhound"
+    },
+    {
+      "imagenet_index": 165,
+      "wnid": "n02089078",
+      "class_name": "Black and Tan Coonhound"
+    },
+    {
+      "imagenet_index": 166,
+      "wnid": "n02089867",
+      "class_name": "Treeing Walker Coonhound"
+    },
+    {
+      "imagenet_index": 167,
+      "wnid": "n02089973",
+      "class_name": "English foxhound"
+    },
+    {
+      "imagenet_index": 168,
+      "wnid": "n02090379",
+      "class_name": "Redbone Coonhound"
+    },
+    {
+      "imagenet_index": 169,
+      "wnid": "n02090622",
+      "class_name": "borzoi"
+    },
+    {
+      "imagenet_index": 170,
+      "wnid": "n02090721",
+      "class_name": "Irish Wolfhound"
+    },
+    {
+      "imagenet_index": 171,
+      "wnid": "n02091032",
+      "class_name": "Italian Greyhound"
+    },
+    {
+      "imagenet_index": 172,
+      "wnid": "n02091134",
+      "class_name": "Whippet"
+    },
+    {
+      "imagenet_index": 173,
+      "wnid": "n02091244",
+      "class_name": "Ibizan Hound"
+    },
+    {
+      "imagenet_index": 174,
+      "wnid": "n02091467",
+      "class_name": "Norwegian Elkhound"
+    },
+    {
+      "imagenet_index": 175,
+      "wnid": "n02091635",
+      "class_name": "Otterhound"
+    },
+    {
+      "imagenet_index": 176,
+      "wnid": "n02091831",
+      "class_name": "Saluki"
+    },
+    {
+      "imagenet_index": 177,
+      "wnid": "n02092002",
+      "class_name": "Scottish Deerhound"
+    },
+    {
+      "imagenet_index": 178,
+      "wnid": "n02092339",
+      "class_name": "Weimaraner"
+    },
+    {
+      "imagenet_index": 179,
+      "wnid": "n02093256",
+      "class_name": "Staffordshire Bull Terrier"
+    },
+    {
+      "imagenet_index": 180,
+      "wnid": "n02093428",
+      "class_name": "American Staffordshire Terrier"
+    },
+    {
+      "imagenet_index": 181,
+      "wnid": "n02093647",
+      "class_name": "Bedlington Terrier"
+    },
+    {
+      "imagenet_index": 182,
+      "wnid": "n02093754",
+      "class_name": "Border Terrier"
+    },
+    {
+      "imagenet_index": 183,
+      "wnid": "n02093859",
+      "class_name": "Kerry Blue Terrier"
+    },
+    {
+      "imagenet_index": 184,
+      "wnid": "n02093991",
+      "class_name": "Irish Terrier"
+    },
+    {
+      "imagenet_index": 185,
+      "wnid": "n02094114",
+      "class_name": "Norfolk Terrier"
+    },
+    {
+      "imagenet_index": 186,
+      "wnid": "n02094258",
+      "class_name": "Norwich Terrier"
+    },
+    {
+      "imagenet_index": 187,
+      "wnid": "n02094433",
+      "class_name": "Yorkshire Terrier"
+    },
+    {
+      "imagenet_index": 188,
+      "wnid": "n02095314",
+      "class_name": "Wire Fox Terrier"
+    },
+    {
+      "imagenet_index": 189,
+      "wnid": "n02095570",
+      "class_name": "Lakeland Terrier"
+    },
+    {
+      "imagenet_index": 190,
+      "wnid": "n02095889",
+      "class_name": "Sealyham Terrier"
+    },
+    {
+      "imagenet_index": 191,
+      "wnid": "n02096051",
+      "class_name": "Airedale Terrier"
+    },
+    {
+      "imagenet_index": 192,
+      "wnid": "n02096177",
+      "class_name": "Cairn Terrier"
+    },
+    {
+      "imagenet_index": 193,
+      "wnid": "n02096294",
+      "class_name": "Australian Terrier"
+    },
+    {
+      "imagenet_index": 194,
+      "wnid": "n02096437",
+      "class_name": "Dandie Dinmont Terrier"
+    },
+    {
+      "imagenet_index": 195,
+      "wnid": "n02096585",
+      "class_name": "Boston Terrier"
+    },
+    {
+      "imagenet_index": 196,
+      "wnid": "n02097047",
+      "class_name": "Miniature Schnauzer"
+    },
+    {
+      "imagenet_index": 197,
+      "wnid": "n02097130",
+      "class_name": "Giant Schnauzer"
+    },
+    {
+      "imagenet_index": 198,
+      "wnid": "n02097209",
+      "class_name": "Standard Schnauzer"
+    },
+    {
+      "imagenet_index": 199,
+      "wnid": "n02097298",
+      "class_name": "Scottish Terrier"
+    },
+    {
+      "imagenet_index": 200,
+      "wnid": "n02097474",
+      "class_name": "Tibetan Terrier"
+    },
+    {
+      "imagenet_index": 201,
+      "wnid": "n02097658",
+      "class_name": "Australian Silky Terrier"
+    },
+    {
+      "imagenet_index": 202,
+      "wnid": "n02098105",
+      "class_name": "Soft-coated Wheaten Terrier"
+    },
+    {
+      "imagenet_index": 203,
+      "wnid": "n02098286",
+      "class_name": "West Highland White Terrier"
+    },
+    {
+      "imagenet_index": 204,
+      "wnid": "n02098413",
+      "class_name": "Lhasa Apso"
+    },
+    {
+      "imagenet_index": 205,
+      "wnid": "n02099267",
+      "class_name": "Flat-Coated Retriever"
+    },
+    {
+      "imagenet_index": 206,
+      "wnid": "n02099429",
+      "class_name": "Curly-coated Retriever"
+    },
+    {
+      "imagenet_index": 207,
+      "wnid": "n02099601",
+      "class_name": "Golden Retriever"
+    },
+    {
+      "imagenet_index": 208,
+      "wnid": "n02099712",
+      "class_name": "Labrador Retriever"
+    },
+    {
+      "imagenet_index": 209,
+      "wnid": "n02099849",
+      "class_name": "Chesapeake Bay Retriever"
+    },
+    {
+      "imagenet_index": 210,
+      "wnid": "n02100236",
+      "class_name": "German Shorthaired Pointer"
+    },
+    {
+      "imagenet_index": 211,
+      "wnid": "n02100583",
+      "class_name": "Vizsla"
+    },
+    {
+      "imagenet_index": 212,
+      "wnid": "n02100735",
+      "class_name": "English Setter"
+    },
+    {
+      "imagenet_index": 213,
+      "wnid": "n02100877",
+      "class_name": "Irish Setter"
+    },
+    {
+      "imagenet_index": 214,
+      "wnid": "n02101006",
+      "class_name": "Gordon Setter"
+    },
+    {
+      "imagenet_index": 215,
+      "wnid": "n02101388",
+      "class_name": "Brittany dog"
+    },
+    {
+      "imagenet_index": 216,
+      "wnid": "n02101556",
+      "class_name": "Clumber Spaniel"
+    },
+    {
+      "imagenet_index": 217,
+      "wnid": "n02102040",
+      "class_name": "English Springer Spaniel"
+    },
+    {
+      "imagenet_index": 218,
+      "wnid": "n02102177",
+      "class_name": "Welsh Springer Spaniel"
+    },
+    {
+      "imagenet_index": 219,
+      "wnid": "n02102318",
+      "class_name": "Cocker Spaniel"
+    },
+    {
+      "imagenet_index": 220,
+      "wnid": "n02102480",
+      "class_name": "Sussex Spaniel"
+    },
+    {
+      "imagenet_index": 221,
+      "wnid": "n02102973",
+      "class_name": "Irish Water Spaniel"
+    },
+    {
+      "imagenet_index": 222,
+      "wnid": "n02104029",
+      "class_name": "Kuvasz"
+    },
+    {
+      "imagenet_index": 223,
+      "wnid": "n02104365",
+      "class_name": "Schipperke"
+    },
+    {
+      "imagenet_index": 224,
+      "wnid": "n02105056",
+      "class_name": "Groenendael dog"
+    },
+    {
+      "imagenet_index": 225,
+      "wnid": "n02105162",
+      "class_name": "Malinois"
+    },
+    {
+      "imagenet_index": 226,
+      "wnid": "n02105251",
+      "class_name": "Briard"
+    },
+    {
+      "imagenet_index": 227,
+      "wnid": "n02105412",
+      "class_name": "Australian Kelpie"
+    },
+    {
+      "imagenet_index": 228,
+      "wnid": "n02105505",
+      "class_name": "Komondor"
+    },
+    {
+      "imagenet_index": 229,
+      "wnid": "n02105641",
+      "class_name": "Old English Sheepdog"
+    },
+    {
+      "imagenet_index": 230,
+      "wnid": "n02105855",
+      "class_name": "Shetland Sheepdog"
+    },
+    {
+      "imagenet_index": 231,
+      "wnid": "n02106030",
+      "class_name": "collie"
+    },
+    {
+      "imagenet_index": 232,
+      "wnid": "n02106166",
+      "class_name": "Border Collie"
+    },
+    {
+      "imagenet_index": 233,
+      "wnid": "n02106382",
+      "class_name": "Bouvier des Flandres dog"
+    },
+    {
+      "imagenet_index": 234,
+      "wnid": "n02106550",
+      "class_name": "Rottweiler"
+    },
+    {
+      "imagenet_index": 235,
+      "wnid": "n02106662",
+      "class_name": "German Shepherd Dog"
+    },
+    {
+      "imagenet_index": 236,
+      "wnid": "n02107142",
+      "class_name": "Dobermann"
+    },
+    {
+      "imagenet_index": 237,
+      "wnid": "n02107312",
+      "class_name": "Miniature Pinscher"
+    },
+    {
+      "imagenet_index": 238,
+      "wnid": "n02107574",
+      "class_name": "Greater Swiss Mountain Dog"
+    },
+    {
+      "imagenet_index": 239,
+      "wnid": "n02107683",
+      "class_name": "Bernese Mountain Dog"
+    },
+    {
+      "imagenet_index": 240,
+      "wnid": "n02107908",
+      "class_name": "Appenzeller Sennenhund"
+    },
+    {
+      "imagenet_index": 241,
+      "wnid": "n02108000",
+      "class_name": "Entlebucher Sennenhund"
+    },
+    {
+      "imagenet_index": 242,
+      "wnid": "n02108089",
+      "class_name": "Boxer"
+    },
+    {
+      "imagenet_index": 243,
+      "wnid": "n02108422",
+      "class_name": "Bullmastiff"
+    },
+    {
+      "imagenet_index": 244,
+      "wnid": "n02108551",
+      "class_name": "Tibetan Mastiff"
+    },
+    {
+      "imagenet_index": 245,
+      "wnid": "n02108915",
+      "class_name": "French Bulldog"
+    },
+    {
+      "imagenet_index": 246,
+      "wnid": "n02109047",
+      "class_name": "Great Dane"
+    },
+    {
+      "imagenet_index": 247,
+      "wnid": "n02109525",
+      "class_name": "St. Bernard"
+    },
+    {
+      "imagenet_index": 248,
+      "wnid": "n02109961",
+      "class_name": "husky"
+    },
+    {
+      "imagenet_index": 249,
+      "wnid": "n02110063",
+      "class_name": "Alaskan Malamute"
+    },
+    {
+      "imagenet_index": 250,
+      "wnid": "n02110185",
+      "class_name": "Siberian Husky"
+    },
+    {
+      "imagenet_index": 251,
+      "wnid": "n02110341",
+      "class_name": "Dalmatian"
+    },
+    {
+      "imagenet_index": 252,
+      "wnid": "n02110627",
+      "class_name": "Affenpinscher"
+    },
+    {
+      "imagenet_index": 253,
+      "wnid": "n02110806",
+      "class_name": "Basenji"
+    },
+    {
+      "imagenet_index": 254,
+      "wnid": "n02110958",
+      "class_name": "pug"
+    },
+    {
+      "imagenet_index": 255,
+      "wnid": "n02111129",
+      "class_name": "Leonberger"
+    },
+    {
+      "imagenet_index": 256,
+      "wnid": "n02111277",
+      "class_name": "Newfoundland dog"
+    },
+    {
+      "imagenet_index": 257,
+      "wnid": "n02111500",
+      "class_name": "Great Pyrenees dog"
+    },
+    {
+      "imagenet_index": 258,
+      "wnid": "n02111889",
+      "class_name": "Samoyed"
+    },
+    {
+      "imagenet_index": 259,
+      "wnid": "n02112018",
+      "class_name": "Pomeranian"
+    },
+    {
+      "imagenet_index": 260,
+      "wnid": "n02112137",
+      "class_name": "Chow Chow"
+    },
+    {
+      "imagenet_index": 261,
+      "wnid": "n02112350",
+      "class_name": "Keeshond"
+    },
+    {
+      "imagenet_index": 262,
+      "wnid": "n02112706",
+      "class_name": "brussels griffon"
+    },
+    {
+      "imagenet_index": 263,
+      "wnid": "n02113023",
+      "class_name": "Pembroke Welsh Corgi"
+    },
+    {
+      "imagenet_index": 264,
+      "wnid": "n02113186",
+      "class_name": "Cardigan Welsh Corgi"
+    },
+    {
+      "imagenet_index": 265,
+      "wnid": "n02113624",
+      "class_name": "Toy Poodle"
+    },
+    {
+      "imagenet_index": 266,
+      "wnid": "n02113712",
+      "class_name": "Miniature Poodle"
+    },
+    {
+      "imagenet_index": 267,
+      "wnid": "n02113799",
+      "class_name": "Standard Poodle"
+    },
+    {
+      "imagenet_index": 268,
+      "wnid": "n02113978",
+      "class_name": "Mexican hairless dog (xoloitzcuintli)"
+    },
+    {
+      "imagenet_index": 269,
+      "wnid": "n02114367",
+      "class_name": "grey wolf"
+    },
+    {
+      "imagenet_index": 270,
+      "wnid": "n02114548",
+      "class_name": "Alaskan tundra wolf"
+    },
+    {
+      "imagenet_index": 271,
+      "wnid": "n02114712",
+      "class_name": "red wolf or maned wolf"
+    },
+    {
+      "imagenet_index": 272,
+      "wnid": "n02114855",
+      "class_name": "coyote"
+    },
+    {
+      "imagenet_index": 273,
+      "wnid": "n02115641",
+      "class_name": "dingo"
+    },
+    {
+      "imagenet_index": 274,
+      "wnid": "n02115913",
+      "class_name": "dhole"
+    },
+    {
+      "imagenet_index": 275,
+      "wnid": "n02116738",
+      "class_name": "African wild dog"
+    },
+    {
+      "imagenet_index": 276,
+      "wnid": "n02117135",
+      "class_name": "hyena"
+    },
+    {
+      "imagenet_index": 277,
+      "wnid": "n02119022",
+      "class_name": "red fox"
+    },
+    {
+      "imagenet_index": 278,
+      "wnid": "n02119789",
+      "class_name": "kit fox"
+    },
+    {
+      "imagenet_index": 279,
+      "wnid": "n02120079",
+      "class_name": "Arctic fox"
+    },
+    {
+      "imagenet_index": 280,
+      "wnid": "n02120505",
+      "class_name": "grey fox"
+    },
+    {
+      "imagenet_index": 281,
+      "wnid": "n02123045",
+      "class_name": "tabby cat"
+    },
+    {
+      "imagenet_index": 282,
+      "wnid": "n02123159",
+      "class_name": "tiger cat"
+    },
+    {
+      "imagenet_index": 283,
+      "wnid": "n02123394",
+      "class_name": "Persian cat"
+    },
+    {
+      "imagenet_index": 284,
+      "wnid": "n02123597",
+      "class_name": "Siamese cat"
+    },
+    {
+      "imagenet_index": 285,
+      "wnid": "n02124075",
+      "class_name": "Egyptian Mau"
+    },
+    {
+      "imagenet_index": 286,
+      "wnid": "n02125311",
+      "class_name": "cougar"
+    },
+    {
+      "imagenet_index": 287,
+      "wnid": "n02127052",
+      "class_name": "lynx"
+    },
+    {
+      "imagenet_index": 288,
+      "wnid": "n02128385",
+      "class_name": "leopard"
+    },
+    {
+      "imagenet_index": 289,
+      "wnid": "n02128757",
+      "class_name": "snow leopard"
+    },
+    {
+      "imagenet_index": 290,
+      "wnid": "n02128925",
+      "class_name": "jaguar"
+    },
+    {
+      "imagenet_index": 291,
+      "wnid": "n02129165",
+      "class_name": "lion"
+    },
+    {
+      "imagenet_index": 292,
+      "wnid": "n02129604",
+      "class_name": "tiger"
+    },
+    {
+      "imagenet_index": 293,
+      "wnid": "n02130308",
+      "class_name": "cheetah"
+    },
+    {
+      "imagenet_index": 294,
+      "wnid": "n02132136",
+      "class_name": "brown bear"
+    },
+    {
+      "imagenet_index": 295,
+      "wnid": "n02133161",
+      "class_name": "American black bear"
+    },
+    {
+      "imagenet_index": 296,
+      "wnid": "n02134084",
+      "class_name": "polar bear"
+    },
+    {
+      "imagenet_index": 297,
+      "wnid": "n02134418",
+      "class_name": "sloth bear"
+    },
+    {
+      "imagenet_index": 298,
+      "wnid": "n02137549",
+      "class_name": "mongoose"
+    },
+    {
+      "imagenet_index": 299,
+      "wnid": "n02138441",
+      "class_name": "meerkat"
+    },
+    {
+      "imagenet_index": 300,
+      "wnid": "n02165105",
+      "class_name": "tiger beetle"
+    },
+    {
+      "imagenet_index": 301,
+      "wnid": "n02165456",
+      "class_name": "ladybug"
+    },
+    {
+      "imagenet_index": 302,
+      "wnid": "n02167151",
+      "class_name": "ground beetle"
+    },
+    {
+      "imagenet_index": 303,
+      "wnid": "n02168699",
+      "class_name": "longhorn beetle"
+    },
+    {
+      "imagenet_index": 304,
+      "wnid": "n02169497",
+      "class_name": "leaf beetle"
+    },
+    {
+      "imagenet_index": 305,
+      "wnid": "n02172182",
+      "class_name": "dung beetle"
+    },
+    {
+      "imagenet_index": 306,
+      "wnid": "n02174001",
+      "class_name": "rhinoceros beetle"
+    },
+    {
+      "imagenet_index": 307,
+      "wnid": "n02177972",
+      "class_name": "weevil"
+    },
+    {
+      "imagenet_index": 308,
+      "wnid": "n02190166",
+      "class_name": "fly"
+    },
+    {
+      "imagenet_index": 309,
+      "wnid": "n02206856",
+      "class_name": "bee"
+    },
+    {
+      "imagenet_index": 310,
+      "wnid": "n02219486",
+      "class_name": "ant"
+    },
+    {
+      "imagenet_index": 311,
+      "wnid": "n02226429",
+      "class_name": "grasshopper"
+    },
+    {
+      "imagenet_index": 312,
+      "wnid": "n02229544",
+      "class_name": "cricket insect"
+    },
+    {
+      "imagenet_index": 313,
+      "wnid": "n02231487",
+      "class_name": "stick insect"
+    },
+    {
+      "imagenet_index": 314,
+      "wnid": "n02233338",
+      "class_name": "cockroach"
+    },
+    {
+      "imagenet_index": 315,
+      "wnid": "n02236044",
+      "class_name": "praying mantis"
+    },
+    {
+      "imagenet_index": 316,
+      "wnid": "n02256656",
+      "class_name": "cicada"
+    },
+    {
+      "imagenet_index": 317,
+      "wnid": "n02259212",
+      "class_name": "leafhopper"
+    },
+    {
+      "imagenet_index": 318,
+      "wnid": "n02264363",
+      "class_name": "lacewing"
+    },
+    {
+      "imagenet_index": 319,
+      "wnid": "n02268443",
+      "class_name": "dragonfly"
+    },
+    {
+      "imagenet_index": 320,
+      "wnid": "n02268853",
+      "class_name": "damselfly"
+    },
+    {
+      "imagenet_index": 321,
+      "wnid": "n02276258",
+      "class_name": "red admiral butterfly"
+    },
+    {
+      "imagenet_index": 322,
+      "wnid": "n02277742",
+      "class_name": "ringlet butterfly"
+    },
+    {
+      "imagenet_index": 323,
+      "wnid": "n02279972",
+      "class_name": "monarch butterfly"
+    },
+    {
+      "imagenet_index": 324,
+      "wnid": "n02280649",
+      "class_name": "small white butterfly"
+    },
+    {
+      "imagenet_index": 325,
+      "wnid": "n02281406",
+      "class_name": "sulphur butterfly"
+    },
+    {
+      "imagenet_index": 326,
+      "wnid": "n02281787",
+      "class_name": "gossamer-winged butterfly"
+    },
+    {
+      "imagenet_index": 327,
+      "wnid": "n02317335",
+      "class_name": "starfish"
+    },
+    {
+      "imagenet_index": 328,
+      "wnid": "n02319095",
+      "class_name": "sea urchin"
+    },
+    {
+      "imagenet_index": 329,
+      "wnid": "n02321529",
+      "class_name": "sea cucumber"
+    },
+    {
+      "imagenet_index": 330,
+      "wnid": "n02325366",
+      "class_name": "cottontail rabbit"
+    },
+    {
+      "imagenet_index": 331,
+      "wnid": "n02326432",
+      "class_name": "hare"
+    },
+    {
+      "imagenet_index": 332,
+      "wnid": "n02328150",
+      "class_name": "Angora rabbit"
+    },
+    {
+      "imagenet_index": 333,
+      "wnid": "n02342885",
+      "class_name": "hamster"
+    },
+    {
+      "imagenet_index": 334,
+      "wnid": "n02346627",
+      "class_name": "porcupine"
+    },
+    {
+      "imagenet_index": 335,
+      "wnid": "n02356798",
+      "class_name": "fox squirrel"
+    },
+    {
+      "imagenet_index": 336,
+      "wnid": "n02361337",
+      "class_name": "marmot"
+    },
+    {
+      "imagenet_index": 337,
+      "wnid": "n02363005",
+      "class_name": "beaver"
+    },
+    {
+      "imagenet_index": 338,
+      "wnid": "n02364673",
+      "class_name": "guinea pig"
+    },
+    {
+      "imagenet_index": 339,
+      "wnid": "n02389026",
+      "class_name": "common sorrel horse"
+    },
+    {
+      "imagenet_index": 340,
+      "wnid": "n02391049",
+      "class_name": "zebra"
+    },
+    {
+      "imagenet_index": 341,
+      "wnid": "n02395406",
+      "class_name": "pig"
+    },
+    {
+      "imagenet_index": 342,
+      "wnid": "n02396427",
+      "class_name": "wild boar"
+    },
+    {
+      "imagenet_index": 343,
+      "wnid": "n02397096",
+      "class_name": "warthog"
+    },
+    {
+      "imagenet_index": 344,
+      "wnid": "n02398521",
+      "class_name": "hippopotamus"
+    },
+    {
+      "imagenet_index": 345,
+      "wnid": "n02403003",
+      "class_name": "ox"
+    },
+    {
+      "imagenet_index": 346,
+      "wnid": "n02408429",
+      "class_name": "water buffalo"
+    },
+    {
+      "imagenet_index": 347,
+      "wnid": "n02410509",
+      "class_name": "bison"
+    },
+    {
+      "imagenet_index": 348,
+      "wnid": "n02412080",
+      "class_name": "ram (adult male sheep)"
+    },
+    {
+      "imagenet_index": 349,
+      "wnid": "n02415577",
+      "class_name": "bighorn sheep"
+    },
+    {
+      "imagenet_index": 350,
+      "wnid": "n02417914",
+      "class_name": "Alpine ibex"
+    },
+    {
+      "imagenet_index": 351,
+      "wnid": "n02422106",
+      "class_name": "hartebeest"
+    },
+    {
+      "imagenet_index": 352,
+      "wnid": "n02422699",
+      "class_name": "impala (antelope)"
+    },
+    {
+      "imagenet_index": 353,
+      "wnid": "n02423022",
+      "class_name": "gazelle"
+    },
+    {
+      "imagenet_index": 354,
+      "wnid": "n02437312",
+      "class_name": "arabian camel"
+    },
+    {
+      "imagenet_index": 355,
+      "wnid": "n02437616",
+      "class_name": "llama"
+    },
+    {
+      "imagenet_index": 356,
+      "wnid": "n02441942",
+      "class_name": "weasel"
+    },
+    {
+      "imagenet_index": 357,
+      "wnid": "n02442845",
+      "class_name": "mink"
+    },
+    {
+      "imagenet_index": 358,
+      "wnid": "n02443114",
+      "class_name": "European polecat"
+    },
+    {
+      "imagenet_index": 359,
+      "wnid": "n02443484",
+      "class_name": "black-footed ferret"
+    },
+    {
+      "imagenet_index": 360,
+      "wnid": "n02444819",
+      "class_name": "otter"
+    },
+    {
+      "imagenet_index": 361,
+      "wnid": "n02445715",
+      "class_name": "skunk"
+    },
+    {
+      "imagenet_index": 362,
+      "wnid": "n02447366",
+      "class_name": "badger"
+    },
+    {
+      "imagenet_index": 363,
+      "wnid": "n02454379",
+      "class_name": "armadillo"
+    },
+    {
+      "imagenet_index": 364,
+      "wnid": "n02457408",
+      "class_name": "three-toed sloth"
+    },
+    {
+      "imagenet_index": 365,
+      "wnid": "n02480495",
+      "class_name": "orangutan"
+    },
+    {
+      "imagenet_index": 366,
+      "wnid": "n02480855",
+      "class_name": "gorilla"
+    },
+    {
+      "imagenet_index": 367,
+      "wnid": "n02481823",
+      "class_name": "chimpanzee"
+    },
+    {
+      "imagenet_index": 368,
+      "wnid": "n02483362",
+      "class_name": "gibbon"
+    },
+    {
+      "imagenet_index": 369,
+      "wnid": "n02483708",
+      "class_name": "siamang"
+    },
+    {
+      "imagenet_index": 370,
+      "wnid": "n02484975",
+      "class_name": "guenon"
+    },
+    {
+      "imagenet_index": 371,
+      "wnid": "n02486261",
+      "class_name": "patas monkey"
+    },
+    {
+      "imagenet_index": 372,
+      "wnid": "n02486410",
+      "class_name": "baboon"
+    },
+    {
+      "imagenet_index": 373,
+      "wnid": "n02487347",
+      "class_name": "macaque"
+    },
+    {
+      "imagenet_index": 374,
+      "wnid": "n02488291",
+      "class_name": "langur"
+    },
+    {
+      "imagenet_index": 375,
+      "wnid": "n02488702",
+      "class_name": "black-and-white colobus"
+    },
+    {
+      "imagenet_index": 376,
+      "wnid": "n02489166",
+      "class_name": "proboscis monkey"
+    },
+    {
+      "imagenet_index": 377,
+      "wnid": "n02490219",
+      "class_name": "marmoset"
+    },
+    {
+      "imagenet_index": 378,
+      "wnid": "n02492035",
+      "class_name": "white-headed capuchin"
+    },
+    {
+      "imagenet_index": 379,
+      "wnid": "n02492660",
+      "class_name": "howler monkey"
+    },
+    {
+      "imagenet_index": 380,
+      "wnid": "n02493509",
+      "class_name": "titi monkey"
+    },
+    {
+      "imagenet_index": 381,
+      "wnid": "n02493793",
+      "class_name": "Geoffroy's spider monkey"
+    },
+    {
+      "imagenet_index": 382,
+      "wnid": "n02494079",
+      "class_name": "common squirrel monkey"
+    },
+    {
+      "imagenet_index": 383,
+      "wnid": "n02497673",
+      "class_name": "ring-tailed lemur"
+    },
+    {
+      "imagenet_index": 384,
+      "wnid": "n02500267",
+      "class_name": "indri"
+    },
+    {
+      "imagenet_index": 385,
+      "wnid": "n02504013",
+      "class_name": "Asian elephant"
+    },
+    {
+      "imagenet_index": 386,
+      "wnid": "n02504458",
+      "class_name": "African bush elephant"
+    },
+    {
+      "imagenet_index": 387,
+      "wnid": "n02509815",
+      "class_name": "red panda"
+    },
+    {
+      "imagenet_index": 388,
+      "wnid": "n02510455",
+      "class_name": "giant panda"
+    },
+    {
+      "imagenet_index": 389,
+      "wnid": "n02514041",
+      "class_name": "snoek fish"
+    },
+    {
+      "imagenet_index": 390,
+      "wnid": "n02526121",
+      "class_name": "eel"
+    },
+    {
+      "imagenet_index": 391,
+      "wnid": "n02536864",
+      "class_name": "silver salmon"
+    },
+    {
+      "imagenet_index": 392,
+      "wnid": "n02606052",
+      "class_name": "rock beauty fish"
+    },
+    {
+      "imagenet_index": 393,
+      "wnid": "n02607072",
+      "class_name": "clownfish"
+    },
+    {
+      "imagenet_index": 394,
+      "wnid": "n02640242",
+      "class_name": "sturgeon"
+    },
+    {
+      "imagenet_index": 395,
+      "wnid": "n02641379",
+      "class_name": "gar fish"
+    },
+    {
+      "imagenet_index": 396,
+      "wnid": "n02643566",
+      "class_name": "lionfish"
+    },
+    {
+      "imagenet_index": 397,
+      "wnid": "n02655020",
+      "class_name": "pufferfish"
+    },
+    {
+      "imagenet_index": 398,
+      "wnid": "n02666196",
+      "class_name": "abacus"
+    },
+    {
+      "imagenet_index": 399,
+      "wnid": "n02667093",
+      "class_name": "abaya"
+    },
+    {
+      "imagenet_index": 400,
+      "wnid": "n02669723",
+      "class_name": "academic gown"
+    },
+    {
+      "imagenet_index": 401,
+      "wnid": "n02672831",
+      "class_name": "accordion"
+    },
+    {
+      "imagenet_index": 402,
+      "wnid": "n02676566",
+      "class_name": "acoustic guitar"
+    },
+    {
+      "imagenet_index": 403,
+      "wnid": "n02687172",
+      "class_name": "aircraft carrier"
+    },
+    {
+      "imagenet_index": 404,
+      "wnid": "n02690373",
+      "class_name": "airliner"
+    },
+    {
+      "imagenet_index": 405,
+      "wnid": "n02692877",
+      "class_name": "airship"
+    },
+    {
+      "imagenet_index": 406,
+      "wnid": "n02699494",
+      "class_name": "altar"
+    },
+    {
+      "imagenet_index": 407,
+      "wnid": "n02701002",
+      "class_name": "ambulance"
+    },
+    {
+      "imagenet_index": 408,
+      "wnid": "n02704792",
+      "class_name": "amphibious vehicle"
+    },
+    {
+      "imagenet_index": 409,
+      "wnid": "n02708093",
+      "class_name": "analog clock"
+    },
+    {
+      "imagenet_index": 410,
+      "wnid": "n02727426",
+      "class_name": "apiary"
+    },
+    {
+      "imagenet_index": 411,
+      "wnid": "n02730930",
+      "class_name": "apron"
+    },
+    {
+      "imagenet_index": 412,
+      "wnid": "n02747177",
+      "class_name": "trash can"
+    },
+    {
+      "imagenet_index": 413,
+      "wnid": "n02749479",
+      "class_name": "assault rifle"
+    },
+    {
+      "imagenet_index": 414,
+      "wnid": "n02769748",
+      "class_name": "backpack"
+    },
+    {
+      "imagenet_index": 415,
+      "wnid": "n02776631",
+      "class_name": "bakery"
+    },
+    {
+      "imagenet_index": 416,
+      "wnid": "n02777292",
+      "class_name": "balance beam"
+    },
+    {
+      "imagenet_index": 417,
+      "wnid": "n02782093",
+      "class_name": "balloon"
+    },
+    {
+      "imagenet_index": 418,
+      "wnid": "n02783161",
+      "class_name": "ballpoint pen"
+    },
+    {
+      "imagenet_index": 419,
+      "wnid": "n02786058",
+      "class_name": "Band-Aid"
+    },
+    {
+      "imagenet_index": 420,
+      "wnid": "n02787622",
+      "class_name": "banjo"
+    },
+    {
+      "imagenet_index": 421,
+      "wnid": "n02788148",
+      "class_name": "baluster / handrail"
+    },
+    {
+      "imagenet_index": 422,
+      "wnid": "n02790996",
+      "class_name": "barbell"
+    },
+    {
+      "imagenet_index": 423,
+      "wnid": "n02791124",
+      "class_name": "barber chair"
+    },
+    {
+      "imagenet_index": 424,
+      "wnid": "n02791270",
+      "class_name": "barbershop"
+    },
+    {
+      "imagenet_index": 425,
+      "wnid": "n02793495",
+      "class_name": "barn"
+    },
+    {
+      "imagenet_index": 426,
+      "wnid": "n02794156",
+      "class_name": "barometer"
+    },
+    {
+      "imagenet_index": 427,
+      "wnid": "n02795169",
+      "class_name": "barrel"
+    },
+    {
+      "imagenet_index": 428,
+      "wnid": "n02797295",
+      "class_name": "wheelbarrow"
+    },
+    {
+      "imagenet_index": 429,
+      "wnid": "n02799071",
+      "class_name": "baseball"
+    },
+    {
+      "imagenet_index": 430,
+      "wnid": "n02802426",
+      "class_name": "basketball"
+    },
+    {
+      "imagenet_index": 431,
+      "wnid": "n02804414",
+      "class_name": "bassinet"
+    },
+    {
+      "imagenet_index": 432,
+      "wnid": "n02804610",
+      "class_name": "bassoon"
+    },
+    {
+      "imagenet_index": 433,
+      "wnid": "n02807133",
+      "class_name": "swimming cap"
+    },
+    {
+      "imagenet_index": 434,
+      "wnid": "n02808304",
+      "class_name": "bath towel"
+    },
+    {
+      "imagenet_index": 435,
+      "wnid": "n02808440",
+      "class_name": "bathtub"
+    },
+    {
+      "imagenet_index": 436,
+      "wnid": "n02814533",
+      "class_name": "station wagon"
+    },
+    {
+      "imagenet_index": 437,
+      "wnid": "n02814860",
+      "class_name": "lighthouse"
+    },
+    {
+      "imagenet_index": 438,
+      "wnid": "n02815834",
+      "class_name": "beaker"
+    },
+    {
+      "imagenet_index": 439,
+      "wnid": "n02817516",
+      "class_name": "military hat (bearskin or shako)"
+    },
+    {
+      "imagenet_index": 440,
+      "wnid": "n02823428",
+      "class_name": "beer bottle"
+    },
+    {
+      "imagenet_index": 441,
+      "wnid": "n02823750",
+      "class_name": "beer glass"
+    },
+    {
+      "imagenet_index": 442,
+      "wnid": "n02825657",
+      "class_name": "bell tower"
+    },
+    {
+      "imagenet_index": 443,
+      "wnid": "n02834397",
+      "class_name": "baby bib"
+    },
+    {
+      "imagenet_index": 444,
+      "wnid": "n02835271",
+      "class_name": "tandem bicycle"
+    },
+    {
+      "imagenet_index": 445,
+      "wnid": "n02837789",
+      "class_name": "bikini"
+    },
+    {
+      "imagenet_index": 446,
+      "wnid": "n02840245",
+      "class_name": "ring binder"
+    },
+    {
+      "imagenet_index": 447,
+      "wnid": "n02841315",
+      "class_name": "binoculars"
+    },
+    {
+      "imagenet_index": 448,
+      "wnid": "n02843684",
+      "class_name": "birdhouse"
+    },
+    {
+      "imagenet_index": 449,
+      "wnid": "n02859443",
+      "class_name": "boathouse"
+    },
+    {
+      "imagenet_index": 450,
+      "wnid": "n02860847",
+      "class_name": "bobsleigh"
+    },
+    {
+      "imagenet_index": 451,
+      "wnid": "n02865351",
+      "class_name": "bolo tie"
+    },
+    {
+      "imagenet_index": 452,
+      "wnid": "n02869837",
+      "class_name": "poke bonnet"
+    },
+    {
+      "imagenet_index": 453,
+      "wnid": "n02870880",
+      "class_name": "bookcase"
+    },
+    {
+      "imagenet_index": 454,
+      "wnid": "n02871525",
+      "class_name": "bookstore"
+    },
+    {
+      "imagenet_index": 455,
+      "wnid": "n02877765",
+      "class_name": "bottle cap"
+    },
+    {
+      "imagenet_index": 456,
+      "wnid": "n02879718",
+      "class_name": "hunting bow"
+    },
+    {
+      "imagenet_index": 457,
+      "wnid": "n02883205",
+      "class_name": "bow tie"
+    },
+    {
+      "imagenet_index": 458,
+      "wnid": "n02892201",
+      "class_name": "brass memorial plaque"
+    },
+    {
+      "imagenet_index": 459,
+      "wnid": "n02892767",
+      "class_name": "bra"
+    },
+    {
+      "imagenet_index": 460,
+      "wnid": "n02894605",
+      "class_name": "breakwater"
+    },
+    {
+      "imagenet_index": 461,
+      "wnid": "n02895154",
+      "class_name": "breastplate"
+    },
+    {
+      "imagenet_index": 462,
+      "wnid": "n02906734",
+      "class_name": "broom"
+    },
+    {
+      "imagenet_index": 463,
+      "wnid": "n02909870",
+      "class_name": "bucket"
+    },
+    {
+      "imagenet_index": 464,
+      "wnid": "n02910353",
+      "class_name": "buckle"
+    },
+    {
+      "imagenet_index": 465,
+      "wnid": "n02916936",
+      "class_name": "bulletproof vest"
+    },
+    {
+      "imagenet_index": 466,
+      "wnid": "n02917067",
+      "class_name": "high-speed train"
+    },
+    {
+      "imagenet_index": 467,
+      "wnid": "n02927161",
+      "class_name": "butcher shop"
+    },
+    {
+      "imagenet_index": 468,
+      "wnid": "n02930766",
+      "class_name": "taxicab"
+    },
+    {
+      "imagenet_index": 469,
+      "wnid": "n02939185",
+      "class_name": "cauldron"
+    },
+    {
+      "imagenet_index": 470,
+      "wnid": "n02948072",
+      "class_name": "candle"
+    },
+    {
+      "imagenet_index": 471,
+      "wnid": "n02950826",
+      "class_name": "cannon"
+    },
+    {
+      "imagenet_index": 472,
+      "wnid": "n02951358",
+      "class_name": "canoe"
+    },
+    {
+      "imagenet_index": 473,
+      "wnid": "n02951585",
+      "class_name": "can opener"
+    },
+    {
+      "imagenet_index": 474,
+      "wnid": "n02963159",
+      "class_name": "cardigan"
+    },
+    {
+      "imagenet_index": 475,
+      "wnid": "n02965783",
+      "class_name": "car mirror"
+    },
+    {
+      "imagenet_index": 476,
+      "wnid": "n02966193",
+      "class_name": "carousel"
+    },
+    {
+      "imagenet_index": 477,
+      "wnid": "n02966687",
+      "class_name": "tool kit"
+    },
+    {
+      "imagenet_index": 478,
+      "wnid": "n02971356",
+      "class_name": "cardboard box / carton"
+    },
+    {
+      "imagenet_index": 479,
+      "wnid": "n02974003",
+      "class_name": "car wheel"
+    },
+    {
+      "imagenet_index": 480,
+      "wnid": "n02977058",
+      "class_name": "automated teller machine"
+    },
+    {
+      "imagenet_index": 481,
+      "wnid": "n02978881",
+      "class_name": "cassette"
+    },
+    {
+      "imagenet_index": 482,
+      "wnid": "n02979186",
+      "class_name": "cassette player"
+    },
+    {
+      "imagenet_index": 483,
+      "wnid": "n02980441",
+      "class_name": "castle"
+    },
+    {
+      "imagenet_index": 484,
+      "wnid": "n02981792",
+      "class_name": "catamaran"
+    },
+    {
+      "imagenet_index": 485,
+      "wnid": "n02988304",
+      "class_name": "CD player"
+    },
+    {
+      "imagenet_index": 486,
+      "wnid": "n02992211",
+      "class_name": "cello"
+    },
+    {
+      "imagenet_index": 487,
+      "wnid": "n02992529",
+      "class_name": "mobile phone"
+    },
+    {
+      "imagenet_index": 488,
+      "wnid": "n02999410",
+      "class_name": "chain"
+    },
+    {
+      "imagenet_index": 489,
+      "wnid": "n03000134",
+      "class_name": "chain-link fence"
+    },
+    {
+      "imagenet_index": 490,
+      "wnid": "n03000247",
+      "class_name": "chain mail"
+    },
+    {
+      "imagenet_index": 491,
+      "wnid": "n03000684",
+      "class_name": "chainsaw"
+    },
+    {
+      "imagenet_index": 492,
+      "wnid": "n03014705",
+      "class_name": "storage chest"
+    },
+    {
+      "imagenet_index": 493,
+      "wnid": "n03016953",
+      "class_name": "chiffonier"
+    },
+    {
+      "imagenet_index": 494,
+      "wnid": "n03017168",
+      "class_name": "bell or wind chime"
+    },
+    {
+      "imagenet_index": 495,
+      "wnid": "n03018349",
+      "class_name": "china cabinet"
+    },
+    {
+      "imagenet_index": 496,
+      "wnid": "n03026506",
+      "class_name": "Christmas stocking"
+    },
+    {
+      "imagenet_index": 497,
+      "wnid": "n03028079",
+      "class_name": "church"
+    },
+    {
+      "imagenet_index": 498,
+      "wnid": "n03032252",
+      "class_name": "movie theater"
+    },
+    {
+      "imagenet_index": 499,
+      "wnid": "n03041632",
+      "class_name": "cleaver"
+    },
+    {
+      "imagenet_index": 500,
+      "wnid": "n03042490",
+      "class_name": "cliff dwelling"
+    },
+    {
+      "imagenet_index": 501,
+      "wnid": "n03045698",
+      "class_name": "cloak"
+    },
+    {
+      "imagenet_index": 502,
+      "wnid": "n03047690",
+      "class_name": "clogs"
+    },
+    {
+      "imagenet_index": 503,
+      "wnid": "n03062245",
+      "class_name": "cocktail shaker"
+    },
+    {
+      "imagenet_index": 504,
+      "wnid": "n03063599",
+      "class_name": "coffee mug"
+    },
+    {
+      "imagenet_index": 505,
+      "wnid": "n03063689",
+      "class_name": "coffeemaker"
+    },
+    {
+      "imagenet_index": 506,
+      "wnid": "n03065424",
+      "class_name": "spiral or coil"
+    },
+    {
+      "imagenet_index": 507,
+      "wnid": "n03075370",
+      "class_name": "combination lock"
+    },
+    {
+      "imagenet_index": 508,
+      "wnid": "n03085013",
+      "class_name": "computer keyboard"
+    },
+    {
+      "imagenet_index": 509,
+      "wnid": "n03089624",
+      "class_name": "candy store"
+    },
+    {
+      "imagenet_index": 510,
+      "wnid": "n03095699",
+      "class_name": "container ship"
+    },
+    {
+      "imagenet_index": 511,
+      "wnid": "n03100240",
+      "class_name": "convertible"
+    },
+    {
+      "imagenet_index": 512,
+      "wnid": "n03109150",
+      "class_name": "corkscrew"
+    },
+    {
+      "imagenet_index": 513,
+      "wnid": "n03110669",
+      "class_name": "cornet"
+    },
+    {
+      "imagenet_index": 514,
+      "wnid": "n03124043",
+      "class_name": "cowboy boot"
+    },
+    {
+      "imagenet_index": 515,
+      "wnid": "n03124170",
+      "class_name": "cowboy hat"
+    },
+    {
+      "imagenet_index": 516,
+      "wnid": "n03125729",
+      "class_name": "cradle"
+    },
+    {
+      "imagenet_index": 517,
+      "wnid": "n03126707",
+      "class_name": "construction crane"
+    },
+    {
+      "imagenet_index": 518,
+      "wnid": "n03127747",
+      "class_name": "crash helmet"
+    },
+    {
+      "imagenet_index": 519,
+      "wnid": "n03127925",
+      "class_name": "crate"
+    },
+    {
+      "imagenet_index": 520,
+      "wnid": "n03131574",
+      "class_name": "infant bed"
+    },
+    {
+      "imagenet_index": 521,
+      "wnid": "n03133878",
+      "class_name": "Crock Pot"
+    },
+    {
+      "imagenet_index": 522,
+      "wnid": "n03134739",
+      "class_name": "croquet ball"
+    },
+    {
+      "imagenet_index": 523,
+      "wnid": "n03141823",
+      "class_name": "crutch"
+    },
+    {
+      "imagenet_index": 524,
+      "wnid": "n03146219",
+      "class_name": "cuirass"
+    },
+    {
+      "imagenet_index": 525,
+      "wnid": "n03160309",
+      "class_name": "dam"
+    },
+    {
+      "imagenet_index": 526,
+      "wnid": "n03179701",
+      "class_name": "desk"
+    },
+    {
+      "imagenet_index": 527,
+      "wnid": "n03180011",
+      "class_name": "desktop computer"
+    },
+    {
+      "imagenet_index": 528,
+      "wnid": "n03187595",
+      "class_name": "rotary dial telephone"
+    },
+    {
+      "imagenet_index": 529,
+      "wnid": "n03188531",
+      "class_name": "diaper"
+    },
+    {
+      "imagenet_index": 530,
+      "wnid": "n03196217",
+      "class_name": "digital clock"
+    },
+    {
+      "imagenet_index": 531,
+      "wnid": "n03197337",
+      "class_name": "digital watch"
+    },
+    {
+      "imagenet_index": 532,
+      "wnid": "n03201208",
+      "class_name": "dining table"
+    },
+    {
+      "imagenet_index": 533,
+      "wnid": "n03207743",
+      "class_name": "dishcloth"
+    },
+    {
+      "imagenet_index": 534,
+      "wnid": "n03207941",
+      "class_name": "dishwasher"
+    },
+    {
+      "imagenet_index": 535,
+      "wnid": "n03208938",
+      "class_name": "disc brake"
+    },
+    {
+      "imagenet_index": 536,
+      "wnid": "n03216828",
+      "class_name": "dock"
+    },
+    {
+      "imagenet_index": 537,
+      "wnid": "n03218198",
+      "class_name": "dog sled"
+    },
+    {
+      "imagenet_index": 538,
+      "wnid": "n03220513",
+      "class_name": "dome"
+    },
+    {
+      "imagenet_index": 539,
+      "wnid": "n03223299",
+      "class_name": "doormat"
+    },
+    {
+      "imagenet_index": 540,
+      "wnid": "n03240683",
+      "class_name": "drilling rig"
+    },
+    {
+      "imagenet_index": 541,
+      "wnid": "n03249569",
+      "class_name": "drum"
+    },
+    {
+      "imagenet_index": 542,
+      "wnid": "n03250847",
+      "class_name": "drumstick"
+    },
+    {
+      "imagenet_index": 543,
+      "wnid": "n03255030",
+      "class_name": "dumbbell"
+    },
+    {
+      "imagenet_index": 544,
+      "wnid": "n03259280",
+      "class_name": "Dutch oven"
+    },
+    {
+      "imagenet_index": 545,
+      "wnid": "n03271574",
+      "class_name": "electric fan"
+    },
+    {
+      "imagenet_index": 546,
+      "wnid": "n03272010",
+      "class_name": "electric guitar"
+    },
+    {
+      "imagenet_index": 547,
+      "wnid": "n03272562",
+      "class_name": "electric locomotive"
+    },
+    {
+      "imagenet_index": 548,
+      "wnid": "n03290653",
+      "class_name": "entertainment center"
+    },
+    {
+      "imagenet_index": 549,
+      "wnid": "n03291819",
+      "class_name": "envelope"
+    },
+    {
+      "imagenet_index": 550,
+      "wnid": "n03297495",
+      "class_name": "espresso machine"
+    },
+    {
+      "imagenet_index": 551,
+      "wnid": "n03314780",
+      "class_name": "face powder"
+    },
+    {
+      "imagenet_index": 552,
+      "wnid": "n03325584",
+      "class_name": "feather boa"
+    },
+    {
+      "imagenet_index": 553,
+      "wnid": "n03337140",
+      "class_name": "filing cabinet"
+    },
+    {
+      "imagenet_index": 554,
+      "wnid": "n03344393",
+      "class_name": "fireboat"
+    },
+    {
+      "imagenet_index": 555,
+      "wnid": "n03345487",
+      "class_name": "fire truck"
+    },
+    {
+      "imagenet_index": 556,
+      "wnid": "n03347037",
+      "class_name": "fire screen"
+    },
+    {
+      "imagenet_index": 557,
+      "wnid": "n03355925",
+      "class_name": "flagpole"
+    },
+    {
+      "imagenet_index": 558,
+      "wnid": "n03372029",
+      "class_name": "flute"
+    },
+    {
+      "imagenet_index": 559,
+      "wnid": "n03376595",
+      "class_name": "folding chair"
+    },
+    {
+      "imagenet_index": 560,
+      "wnid": "n03379051",
+      "class_name": "football helmet"
+    },
+    {
+      "imagenet_index": 561,
+      "wnid": "n03384352",
+      "class_name": "forklift"
+    },
+    {
+      "imagenet_index": 562,
+      "wnid": "n03388043",
+      "class_name": "fountain"
+    },
+    {
+      "imagenet_index": 563,
+      "wnid": "n03388183",
+      "class_name": "fountain pen"
+    },
+    {
+      "imagenet_index": 564,
+      "wnid": "n03388549",
+      "class_name": "four-poster bed"
+    },
+    {
+      "imagenet_index": 565,
+      "wnid": "n03393912",
+      "class_name": "freight car"
+    },
+    {
+      "imagenet_index": 566,
+      "wnid": "n03394916",
+      "class_name": "French horn"
+    },
+    {
+      "imagenet_index": 567,
+      "wnid": "n03400231",
+      "class_name": "frying pan"
+    },
+    {
+      "imagenet_index": 568,
+      "wnid": "n03404251",
+      "class_name": "fur coat"
+    },
+    {
+      "imagenet_index": 569,
+      "wnid": "n03417042",
+      "class_name": "garbage truck"
+    },
+    {
+      "imagenet_index": 570,
+      "wnid": "n03424325",
+      "class_name": "gas mask or respirator"
+    },
+    {
+      "imagenet_index": 571,
+      "wnid": "n03425413",
+      "class_name": "gas pump"
+    },
+    {
+      "imagenet_index": 572,
+      "wnid": "n03443371",
+      "class_name": "goblet"
+    },
+    {
+      "imagenet_index": 573,
+      "wnid": "n03444034",
+      "class_name": "go-kart"
+    },
+    {
+      "imagenet_index": 574,
+      "wnid": "n03445777",
+      "class_name": "golf ball"
+    },
+    {
+      "imagenet_index": 575,
+      "wnid": "n03445924",
+      "class_name": "golf cart"
+    },
+    {
+      "imagenet_index": 576,
+      "wnid": "n03447447",
+      "class_name": "gondola"
+    },
+    {
+      "imagenet_index": 577,
+      "wnid": "n03447721",
+      "class_name": "gong"
+    },
+    {
+      "imagenet_index": 578,
+      "wnid": "n03450230",
+      "class_name": "gown"
+    },
+    {
+      "imagenet_index": 579,
+      "wnid": "n03452741",
+      "class_name": "grand piano"
+    },
+    {
+      "imagenet_index": 580,
+      "wnid": "n03457902",
+      "class_name": "greenhouse"
+    },
+    {
+      "imagenet_index": 581,
+      "wnid": "n03459775",
+      "class_name": "radiator grille"
+    },
+    {
+      "imagenet_index": 582,
+      "wnid": "n03461385",
+      "class_name": "grocery store"
+    },
+    {
+      "imagenet_index": 583,
+      "wnid": "n03467068",
+      "class_name": "guillotine"
+    },
+    {
+      "imagenet_index": 584,
+      "wnid": "n03476684",
+      "class_name": "hair clip"
+    },
+    {
+      "imagenet_index": 585,
+      "wnid": "n03476991",
+      "class_name": "hair spray"
+    },
+    {
+      "imagenet_index": 586,
+      "wnid": "n03478589",
+      "class_name": "half-track"
+    },
+    {
+      "imagenet_index": 587,
+      "wnid": "n03481172",
+      "class_name": "hammer"
+    },
+    {
+      "imagenet_index": 588,
+      "wnid": "n03482405",
+      "class_name": "hamper"
+    },
+    {
+      "imagenet_index": 589,
+      "wnid": "n03483316",
+      "class_name": "hair dryer"
+    },
+    {
+      "imagenet_index": 590,
+      "wnid": "n03485407",
+      "class_name": "hand-held computer"
+    },
+    {
+      "imagenet_index": 591,
+      "wnid": "n03485794",
+      "class_name": "handkerchief"
+    },
+    {
+      "imagenet_index": 592,
+      "wnid": "n03492542",
+      "class_name": "hard disk drive"
+    },
+    {
+      "imagenet_index": 593,
+      "wnid": "n03494278",
+      "class_name": "harmonica"
+    },
+    {
+      "imagenet_index": 594,
+      "wnid": "n03495258",
+      "class_name": "harp"
+    },
+    {
+      "imagenet_index": 595,
+      "wnid": "n03496892",
+      "class_name": "combine harvester"
+    },
+    {
+      "imagenet_index": 596,
+      "wnid": "n03498962",
+      "class_name": "hatchet"
+    },
+    {
+      "imagenet_index": 597,
+      "wnid": "n03527444",
+      "class_name": "holster"
+    },
+    {
+      "imagenet_index": 598,
+      "wnid": "n03529860",
+      "class_name": "home theater"
+    },
+    {
+      "imagenet_index": 599,
+      "wnid": "n03530642",
+      "class_name": "honeycomb"
+    },
+    {
+      "imagenet_index": 600,
+      "wnid": "n03532672",
+      "class_name": "hook"
+    },
+    {
+      "imagenet_index": 601,
+      "wnid": "n03534580",
+      "class_name": "hoop skirt"
+    },
+    {
+      "imagenet_index": 602,
+      "wnid": "n03535780",
+      "class_name": "gymnastic horizontal bar"
+    },
+    {
+      "imagenet_index": 603,
+      "wnid": "n03538406",
+      "class_name": "horse-drawn vehicle"
+    },
+    {
+      "imagenet_index": 604,
+      "wnid": "n03544143",
+      "class_name": "hourglass"
+    },
+    {
+      "imagenet_index": 605,
+      "wnid": "n03584254",
+      "class_name": "iPod"
+    },
+    {
+      "imagenet_index": 606,
+      "wnid": "n03584829",
+      "class_name": "clothes iron"
+    },
+    {
+      "imagenet_index": 607,
+      "wnid": "n03590841",
+      "class_name": "carved pumpkin"
+    },
+    {
+      "imagenet_index": 608,
+      "wnid": "n03594734",
+      "class_name": "jeans"
+    },
+    {
+      "imagenet_index": 609,
+      "wnid": "n03594945",
+      "class_name": "jeep"
+    },
+    {
+      "imagenet_index": 610,
+      "wnid": "n03595614",
+      "class_name": "T-shirt"
+    },
+    {
+      "imagenet_index": 611,
+      "wnid": "n03598930",
+      "class_name": "jigsaw puzzle"
+    },
+    {
+      "imagenet_index": 612,
+      "wnid": "n03599486",
+      "class_name": "rickshaw"
+    },
+    {
+      "imagenet_index": 613,
+      "wnid": "n03602883",
+      "class_name": "joystick"
+    },
+    {
+      "imagenet_index": 614,
+      "wnid": "n03617480",
+      "class_name": "kimono"
+    },
+    {
+      "imagenet_index": 615,
+      "wnid": "n03623198",
+      "class_name": "knee pad"
+    },
+    {
+      "imagenet_index": 616,
+      "wnid": "n03627232",
+      "class_name": "knot"
+    },
+    {
+      "imagenet_index": 617,
+      "wnid": "n03630383",
+      "class_name": "lab coat"
+    },
+    {
+      "imagenet_index": 618,
+      "wnid": "n03633091",
+      "class_name": "ladle"
+    },
+    {
+      "imagenet_index": 619,
+      "wnid": "n03637318",
+      "class_name": "lampshade"
+    },
+    {
+      "imagenet_index": 620,
+      "wnid": "n03642806",
+      "class_name": "laptop computer"
+    },
+    {
+      "imagenet_index": 621,
+      "wnid": "n03649909",
+      "class_name": "lawn mower"
+    },
+    {
+      "imagenet_index": 622,
+      "wnid": "n03657121",
+      "class_name": "lens cap"
+    },
+    {
+      "imagenet_index": 623,
+      "wnid": "n03658185",
+      "class_name": "letter opener"
+    },
+    {
+      "imagenet_index": 624,
+      "wnid": "n03661043",
+      "class_name": "library"
+    },
+    {
+      "imagenet_index": 625,
+      "wnid": "n03662601",
+      "class_name": "lifeboat"
+    },
+    {
+      "imagenet_index": 626,
+      "wnid": "n03666591",
+      "class_name": "lighter"
+    },
+    {
+      "imagenet_index": 627,
+      "wnid": "n03670208",
+      "class_name": "limousine"
+    },
+    {
+      "imagenet_index": 628,
+      "wnid": "n03673027",
+      "class_name": "ocean liner"
+    },
+    {
+      "imagenet_index": 629,
+      "wnid": "n03676483",
+      "class_name": "lipstick"
+    },
+    {
+      "imagenet_index": 630,
+      "wnid": "n03680355",
+      "class_name": "slip-on shoe"
+    },
+    {
+      "imagenet_index": 631,
+      "wnid": "n03690938",
+      "class_name": "lotion"
+    },
+    {
+      "imagenet_index": 632,
+      "wnid": "n03691459",
+      "class_name": "music speaker"
+    },
+    {
+      "imagenet_index": 633,
+      "wnid": "n03692522",
+      "class_name": "loupe magnifying glass"
+    },
+    {
+      "imagenet_index": 634,
+      "wnid": "n03697007",
+      "class_name": "sawmill"
+    },
+    {
+      "imagenet_index": 635,
+      "wnid": "n03706229",
+      "class_name": "magnetic compass"
+    },
+    {
+      "imagenet_index": 636,
+      "wnid": "n03709823",
+      "class_name": "messenger bag"
+    },
+    {
+      "imagenet_index": 637,
+      "wnid": "n03710193",
+      "class_name": "mailbox"
+    },
+    {
+      "imagenet_index": 638,
+      "wnid": "n03710637",
+      "class_name": "tights"
+    },
+    {
+      "imagenet_index": 639,
+      "wnid": "n03710721",
+      "class_name": "one-piece bathing suit"
+    },
+    {
+      "imagenet_index": 640,
+      "wnid": "n03717622",
+      "class_name": "manhole cover"
+    },
+    {
+      "imagenet_index": 641,
+      "wnid": "n03720891",
+      "class_name": "maraca"
+    },
+    {
+      "imagenet_index": 642,
+      "wnid": "n03721384",
+      "class_name": "marimba"
+    },
+    {
+      "imagenet_index": 643,
+      "wnid": "n03724870",
+      "class_name": "mask"
+    },
+    {
+      "imagenet_index": 644,
+      "wnid": "n03729826",
+      "class_name": "matchstick"
+    },
+    {
+      "imagenet_index": 645,
+      "wnid": "n03733131",
+      "class_name": "maypole"
+    },
+    {
+      "imagenet_index": 646,
+      "wnid": "n03733281",
+      "class_name": "maze"
+    },
+    {
+      "imagenet_index": 647,
+      "wnid": "n03733805",
+      "class_name": "measuring cup"
+    },
+    {
+      "imagenet_index": 648,
+      "wnid": "n03742115",
+      "class_name": "medicine cabinet"
+    },
+    {
+      "imagenet_index": 649,
+      "wnid": "n03743016",
+      "class_name": "megalith"
+    },
+    {
+      "imagenet_index": 650,
+      "wnid": "n03759954",
+      "class_name": "microphone"
+    },
+    {
+      "imagenet_index": 651,
+      "wnid": "n03761084",
+      "class_name": "microwave oven"
+    },
+    {
+      "imagenet_index": 652,
+      "wnid": "n03763968",
+      "class_name": "military uniform"
+    },
+    {
+      "imagenet_index": 653,
+      "wnid": "n03764736",
+      "class_name": "milk can"
+    },
+    {
+      "imagenet_index": 654,
+      "wnid": "n03769881",
+      "class_name": "minibus"
+    },
+    {
+      "imagenet_index": 655,
+      "wnid": "n03770439",
+      "class_name": "miniskirt"
+    },
+    {
+      "imagenet_index": 656,
+      "wnid": "n03770679",
+      "class_name": "minivan"
+    },
+    {
+      "imagenet_index": 657,
+      "wnid": "n03773504",
+      "class_name": "missile"
+    },
+    {
+      "imagenet_index": 658,
+      "wnid": "n03775071",
+      "class_name": "mitten"
+    },
+    {
+      "imagenet_index": 659,
+      "wnid": "n03775546",
+      "class_name": "mixing bowl"
+    },
+    {
+      "imagenet_index": 660,
+      "wnid": "n03776460",
+      "class_name": "mobile home"
+    },
+    {
+      "imagenet_index": 661,
+      "wnid": "n03777568",
+      "class_name": "ford model t"
+    },
+    {
+      "imagenet_index": 662,
+      "wnid": "n03777754",
+      "class_name": "modem"
+    },
+    {
+      "imagenet_index": 663,
+      "wnid": "n03781244",
+      "class_name": "monastery"
+    },
+    {
+      "imagenet_index": 664,
+      "wnid": "n03782006",
+      "class_name": "monitor"
+    },
+    {
+      "imagenet_index": 665,
+      "wnid": "n03785016",
+      "class_name": "moped"
+    },
+    {
+      "imagenet_index": 666,
+      "wnid": "n03786901",
+      "class_name": "mortar and pestle"
+    },
+    {
+      "imagenet_index": 667,
+      "wnid": "n03787032",
+      "class_name": "graduation cap"
+    },
+    {
+      "imagenet_index": 668,
+      "wnid": "n03788195",
+      "class_name": "mosque"
+    },
+    {
+      "imagenet_index": 669,
+      "wnid": "n03788365",
+      "class_name": "mosquito net"
+    },
+    {
+      "imagenet_index": 670,
+      "wnid": "n03791053",
+      "class_name": "vespa"
+    },
+    {
+      "imagenet_index": 671,
+      "wnid": "n03792782",
+      "class_name": "mountain bike"
+    },
+    {
+      "imagenet_index": 672,
+      "wnid": "n03792972",
+      "class_name": "tent"
+    },
+    {
+      "imagenet_index": 673,
+      "wnid": "n03793489",
+      "class_name": "computer mouse"
+    },
+    {
+      "imagenet_index": 674,
+      "wnid": "n03794056",
+      "class_name": "mousetrap"
+    },
+    {
+      "imagenet_index": 675,
+      "wnid": "n03796401",
+      "class_name": "moving van"
+    },
+    {
+      "imagenet_index": 676,
+      "wnid": "n03803284",
+      "class_name": "muzzle"
+    },
+    {
+      "imagenet_index": 677,
+      "wnid": "n03804744",
+      "class_name": "metal nail"
+    },
+    {
+      "imagenet_index": 678,
+      "wnid": "n03814639",
+      "class_name": "neck brace"
+    },
+    {
+      "imagenet_index": 679,
+      "wnid": "n03814906",
+      "class_name": "necklace"
+    },
+    {
+      "imagenet_index": 680,
+      "wnid": "n03825788",
+      "class_name": "baby pacifier"
+    },
+    {
+      "imagenet_index": 681,
+      "wnid": "n03832673",
+      "class_name": "notebook computer"
+    },
+    {
+      "imagenet_index": 682,
+      "wnid": "n03837869",
+      "class_name": "obelisk"
+    },
+    {
+      "imagenet_index": 683,
+      "wnid": "n03838899",
+      "class_name": "oboe"
+    },
+    {
+      "imagenet_index": 684,
+      "wnid": "n03840681",
+      "class_name": "ocarina"
+    },
+    {
+      "imagenet_index": 685,
+      "wnid": "n03841143",
+      "class_name": "odometer"
+    },
+    {
+      "imagenet_index": 686,
+      "wnid": "n03843555",
+      "class_name": "oil filter"
+    },
+    {
+      "imagenet_index": 687,
+      "wnid": "n03854065",
+      "class_name": "pipe organ"
+    },
+    {
+      "imagenet_index": 688,
+      "wnid": "n03857828",
+      "class_name": "oscilloscope"
+    },
+    {
+      "imagenet_index": 689,
+      "wnid": "n03866082",
+      "class_name": "overskirt"
+    },
+    {
+      "imagenet_index": 690,
+      "wnid": "n03868242",
+      "class_name": "bullock cart"
+    },
+    {
+      "imagenet_index": 691,
+      "wnid": "n03868863",
+      "class_name": "oxygen mask"
+    },
+    {
+      "imagenet_index": 692,
+      "wnid": "n03871628",
+      "class_name": "product packet / packaging"
+    },
+    {
+      "imagenet_index": 693,
+      "wnid": "n03873416",
+      "class_name": "paddle"
+    },
+    {
+      "imagenet_index": 694,
+      "wnid": "n03874293",
+      "class_name": "paddle wheel"
+    },
+    {
+      "imagenet_index": 695,
+      "wnid": "n03874599",
+      "class_name": "padlock"
+    },
+    {
+      "imagenet_index": 696,
+      "wnid": "n03876231",
+      "class_name": "paintbrush"
+    },
+    {
+      "imagenet_index": 697,
+      "wnid": "n03877472",
+      "class_name": "pajamas"
+    },
+    {
+      "imagenet_index": 698,
+      "wnid": "n03877845",
+      "class_name": "palace"
+    },
+    {
+      "imagenet_index": 699,
+      "wnid": "n03884397",
+      "class_name": "pan flute"
+    },
+    {
+      "imagenet_index": 700,
+      "wnid": "n03887697",
+      "class_name": "paper towel"
+    },
+    {
+      "imagenet_index": 701,
+      "wnid": "n03888257",
+      "class_name": "parachute"
+    },
+    {
+      "imagenet_index": 702,
+      "wnid": "n03888605",
+      "class_name": "parallel bars"
+    },
+    {
+      "imagenet_index": 703,
+      "wnid": "n03891251",
+      "class_name": "park bench"
+    },
+    {
+      "imagenet_index": 704,
+      "wnid": "n03891332",
+      "class_name": "parking meter"
+    },
+    {
+      "imagenet_index": 705,
+      "wnid": "n03895866",
+      "class_name": "railroad car"
+    },
+    {
+      "imagenet_index": 706,
+      "wnid": "n03899768",
+      "class_name": "patio"
+    },
+    {
+      "imagenet_index": 707,
+      "wnid": "n03902125",
+      "class_name": "payphone"
+    },
+    {
+      "imagenet_index": 708,
+      "wnid": "n03903868",
+      "class_name": "pedestal"
+    },
+    {
+      "imagenet_index": 709,
+      "wnid": "n03908618",
+      "class_name": "pencil case"
+    },
+    {
+      "imagenet_index": 710,
+      "wnid": "n03908714",
+      "class_name": "pencil sharpener"
+    },
+    {
+      "imagenet_index": 711,
+      "wnid": "n03916031",
+      "class_name": "perfume"
+    },
+    {
+      "imagenet_index": 712,
+      "wnid": "n03920288",
+      "class_name": "Petri dish"
+    },
+    {
+      "imagenet_index": 713,
+      "wnid": "n03924679",
+      "class_name": "photocopier"
+    },
+    {
+      "imagenet_index": 714,
+      "wnid": "n03929660",
+      "class_name": "plectrum"
+    },
+    {
+      "imagenet_index": 715,
+      "wnid": "n03929855",
+      "class_name": "Pickelhaube"
+    },
+    {
+      "imagenet_index": 716,
+      "wnid": "n03930313",
+      "class_name": "picket fence"
+    },
+    {
+      "imagenet_index": 717,
+      "wnid": "n03930630",
+      "class_name": "pickup truck"
+    },
+    {
+      "imagenet_index": 718,
+      "wnid": "n03933933",
+      "class_name": "pier"
+    },
+    {
+      "imagenet_index": 719,
+      "wnid": "n03935335",
+      "class_name": "piggy bank"
+    },
+    {
+      "imagenet_index": 720,
+      "wnid": "n03937543",
+      "class_name": "pill bottle"
+    },
+    {
+      "imagenet_index": 721,
+      "wnid": "n03938244",
+      "class_name": "pillow"
+    },
+    {
+      "imagenet_index": 722,
+      "wnid": "n03942813",
+      "class_name": "ping-pong ball"
+    },
+    {
+      "imagenet_index": 723,
+      "wnid": "n03944341",
+      "class_name": "pinwheel"
+    },
+    {
+      "imagenet_index": 724,
+      "wnid": "n03947888",
+      "class_name": "pirate ship"
+    },
+    {
+      "imagenet_index": 725,
+      "wnid": "n03950228",
+      "class_name": "drink pitcher"
+    },
+    {
+      "imagenet_index": 726,
+      "wnid": "n03954731",
+      "class_name": "block plane"
+    },
+    {
+      "imagenet_index": 727,
+      "wnid": "n03956157",
+      "class_name": "planetarium"
+    },
+    {
+      "imagenet_index": 728,
+      "wnid": "n03958227",
+      "class_name": "plastic bag"
+    },
+    {
+      "imagenet_index": 729,
+      "wnid": "n03961711",
+      "class_name": "plate rack"
+    },
+    {
+      "imagenet_index": 730,
+      "wnid": "n03967562",
+      "class_name": "farm plow"
+    },
+    {
+      "imagenet_index": 731,
+      "wnid": "n03970156",
+      "class_name": "plunger"
+    },
+    {
+      "imagenet_index": 732,
+      "wnid": "n03976467",
+      "class_name": "Polaroid camera"
+    },
+    {
+      "imagenet_index": 733,
+      "wnid": "n03976657",
+      "class_name": "pole"
+    },
+    {
+      "imagenet_index": 734,
+      "wnid": "n03977966",
+      "class_name": "police van"
+    },
+    {
+      "imagenet_index": 735,
+      "wnid": "n03980874",
+      "class_name": "poncho"
+    },
+    {
+      "imagenet_index": 736,
+      "wnid": "n03982430",
+      "class_name": "pool table"
+    },
+    {
+      "imagenet_index": 737,
+      "wnid": "n03983396",
+      "class_name": "soda bottle"
+    },
+    {
+      "imagenet_index": 738,
+      "wnid": "n03991062",
+      "class_name": "plant pot"
+    },
+    {
+      "imagenet_index": 739,
+      "wnid": "n03992509",
+      "class_name": "potter's wheel"
+    },
+    {
+      "imagenet_index": 740,
+      "wnid": "n03995372",
+      "class_name": "power drill"
+    },
+    {
+      "imagenet_index": 741,
+      "wnid": "n03998194",
+      "class_name": "prayer rug"
+    },
+    {
+      "imagenet_index": 742,
+      "wnid": "n04004767",
+      "class_name": "printer"
+    },
+    {
+      "imagenet_index": 743,
+      "wnid": "n04005630",
+      "class_name": "prison"
+    },
+    {
+      "imagenet_index": 744,
+      "wnid": "n04008634",
+      "class_name": "missile"
+    },
+    {
+      "imagenet_index": 745,
+      "wnid": "n04009552",
+      "class_name": "projector"
+    },
+    {
+      "imagenet_index": 746,
+      "wnid": "n04019541",
+      "class_name": "hockey puck"
+    },
+    {
+      "imagenet_index": 747,
+      "wnid": "n04023962",
+      "class_name": "punching bag"
+    },
+    {
+      "imagenet_index": 748,
+      "wnid": "n04026417",
+      "class_name": "purse"
+    },
+    {
+      "imagenet_index": 749,
+      "wnid": "n04033901",
+      "class_name": "quill"
+    },
+    {
+      "imagenet_index": 750,
+      "wnid": "n04033995",
+      "class_name": "quilt"
+    },
+    {
+      "imagenet_index": 751,
+      "wnid": "n04037443",
+      "class_name": "race car"
+    },
+    {
+      "imagenet_index": 752,
+      "wnid": "n04039381",
+      "class_name": "racket"
+    },
+    {
+      "imagenet_index": 753,
+      "wnid": "n04040759",
+      "class_name": "radiator"
+    },
+    {
+      "imagenet_index": 754,
+      "wnid": "n04041544",
+      "class_name": "radio"
+    },
+    {
+      "imagenet_index": 755,
+      "wnid": "n04044716",
+      "class_name": "radio telescope"
+    },
+    {
+      "imagenet_index": 756,
+      "wnid": "n04049303",
+      "class_name": "rain barrel"
+    },
+    {
+      "imagenet_index": 757,
+      "wnid": "n04065272",
+      "class_name": "recreational vehicle"
+    },
+    {
+      "imagenet_index": 758,
+      "wnid": "n04067472",
+      "class_name": "fishing casting reel"
+    },
+    {
+      "imagenet_index": 759,
+      "wnid": "n04069434",
+      "class_name": "reflex camera"
+    },
+    {
+      "imagenet_index": 760,
+      "wnid": "n04070727",
+      "class_name": "refrigerator"
+    },
+    {
+      "imagenet_index": 761,
+      "wnid": "n04074963",
+      "class_name": "remote control"
+    },
+    {
+      "imagenet_index": 762,
+      "wnid": "n04081281",
+      "class_name": "restaurant"
+    },
+    {
+      "imagenet_index": 763,
+      "wnid": "n04086273",
+      "class_name": "revolver"
+    },
+    {
+      "imagenet_index": 764,
+      "wnid": "n04090263",
+      "class_name": "rifle"
+    },
+    {
+      "imagenet_index": 765,
+      "wnid": "n04099969",
+      "class_name": "rocking chair"
+    },
+    {
+      "imagenet_index": 766,
+      "wnid": "n04111531",
+      "class_name": "rotisserie"
+    },
+    {
+      "imagenet_index": 767,
+      "wnid": "n04116512",
+      "class_name": "eraser"
+    },
+    {
+      "imagenet_index": 768,
+      "wnid": "n04118538",
+      "class_name": "rugby ball"
+    },
+    {
+      "imagenet_index": 769,
+      "wnid": "n04118776",
+      "class_name": "ruler measuring stick"
+    },
+    {
+      "imagenet_index": 770,
+      "wnid": "n04120489",
+      "class_name": "sneaker"
+    },
+    {
+      "imagenet_index": 771,
+      "wnid": "n04125021",
+      "class_name": "safe"
+    },
+    {
+      "imagenet_index": 772,
+      "wnid": "n04127249",
+      "class_name": "safety pin"
+    },
+    {
+      "imagenet_index": 773,
+      "wnid": "n04131690",
+      "class_name": "salt shaker"
+    },
+    {
+      "imagenet_index": 774,
+      "wnid": "n04133789",
+      "class_name": "sandal"
+    },
+    {
+      "imagenet_index": 775,
+      "wnid": "n04136333",
+      "class_name": "sarong"
+    },
+    {
+      "imagenet_index": 776,
+      "wnid": "n04141076",
+      "class_name": "saxophone"
+    },
+    {
+      "imagenet_index": 777,
+      "wnid": "n04141327",
+      "class_name": "scabbard"
+    },
+    {
+      "imagenet_index": 778,
+      "wnid": "n04141975",
+      "class_name": "weighing scale"
+    },
+    {
+      "imagenet_index": 779,
+      "wnid": "n04146614",
+      "class_name": "school bus"
+    },
+    {
+      "imagenet_index": 780,
+      "wnid": "n04147183",
+      "class_name": "schooner"
+    },
+    {
+      "imagenet_index": 781,
+      "wnid": "n04149813",
+      "class_name": "scoreboard"
+    },
+    {
+      "imagenet_index": 782,
+      "wnid": "n04152593",
+      "class_name": "CRT monitor"
+    },
+    {
+      "imagenet_index": 783,
+      "wnid": "n04153751",
+      "class_name": "screw"
+    },
+    {
+      "imagenet_index": 784,
+      "wnid": "n04154565",
+      "class_name": "screwdriver"
+    },
+    {
+      "imagenet_index": 785,
+      "wnid": "n04162706",
+      "class_name": "seat belt"
+    },
+    {
+      "imagenet_index": 786,
+      "wnid": "n04179913",
+      "class_name": "sewing machine"
+    },
+    {
+      "imagenet_index": 787,
+      "wnid": "n04192698",
+      "class_name": "shield"
+    },
+    {
+      "imagenet_index": 788,
+      "wnid": "n04200800",
+      "class_name": "shoe store"
+    },
+    {
+      "imagenet_index": 789,
+      "wnid": "n04201297",
+      "class_name": "shoji screen / room divider"
+    },
+    {
+      "imagenet_index": 790,
+      "wnid": "n04204238",
+      "class_name": "shopping basket"
+    },
+    {
+      "imagenet_index": 791,
+      "wnid": "n04204347",
+      "class_name": "shopping cart"
+    },
+    {
+      "imagenet_index": 792,
+      "wnid": "n04208210",
+      "class_name": "shovel"
+    },
+    {
+      "imagenet_index": 793,
+      "wnid": "n04209133",
+      "class_name": "shower cap"
+    },
+    {
+      "imagenet_index": 794,
+      "wnid": "n04209239",
+      "class_name": "shower curtain"
+    },
+    {
+      "imagenet_index": 795,
+      "wnid": "n04228054",
+      "class_name": "ski"
+    },
+    {
+      "imagenet_index": 796,
+      "wnid": "n04229816",
+      "class_name": "balaclava ski mask"
+    },
+    {
+      "imagenet_index": 797,
+      "wnid": "n04235860",
+      "class_name": "sleeping bag"
+    },
+    {
+      "imagenet_index": 798,
+      "wnid": "n04238763",
+      "class_name": "slide rule"
+    },
+    {
+      "imagenet_index": 799,
+      "wnid": "n04239074",
+      "class_name": "sliding door"
+    },
+    {
+      "imagenet_index": 800,
+      "wnid": "n04243546",
+      "class_name": "slot machine"
+    },
+    {
+      "imagenet_index": 801,
+      "wnid": "n04251144",
+      "class_name": "snorkel"
+    },
+    {
+      "imagenet_index": 802,
+      "wnid": "n04252077",
+      "class_name": "snowmobile"
+    },
+    {
+      "imagenet_index": 803,
+      "wnid": "n04252225",
+      "class_name": "snowplow"
+    },
+    {
+      "imagenet_index": 804,
+      "wnid": "n04254120",
+      "class_name": "soap dispenser"
+    },
+    {
+      "imagenet_index": 805,
+      "wnid": "n04254680",
+      "class_name": "soccer ball"
+    },
+    {
+      "imagenet_index": 806,
+      "wnid": "n04254777",
+      "class_name": "sock"
+    },
+    {
+      "imagenet_index": 807,
+      "wnid": "n04258138",
+      "class_name": "solar thermal collector"
+    },
+    {
+      "imagenet_index": 808,
+      "wnid": "n04259630",
+      "class_name": "sombrero"
+    },
+    {
+      "imagenet_index": 809,
+      "wnid": "n04263257",
+      "class_name": "soup bowl"
+    },
+    {
+      "imagenet_index": 810,
+      "wnid": "n04264628",
+      "class_name": "keyboard space bar"
+    },
+    {
+      "imagenet_index": 811,
+      "wnid": "n04265275",
+      "class_name": "space heater"
+    },
+    {
+      "imagenet_index": 812,
+      "wnid": "n04266014",
+      "class_name": "space shuttle"
+    },
+    {
+      "imagenet_index": 813,
+      "wnid": "n04270147",
+      "class_name": "spatula"
+    },
+    {
+      "imagenet_index": 814,
+      "wnid": "n04273569",
+      "class_name": "motorboat"
+    },
+    {
+      "imagenet_index": 815,
+      "wnid": "n04275548",
+      "class_name": "spider web"
+    },
+    {
+      "imagenet_index": 816,
+      "wnid": "n04277352",
+      "class_name": "spindle"
+    },
+    {
+      "imagenet_index": 817,
+      "wnid": "n04285008",
+      "class_name": "sports car"
+    },
+    {
+      "imagenet_index": 818,
+      "wnid": "n04286575",
+      "class_name": "spotlight"
+    },
+    {
+      "imagenet_index": 819,
+      "wnid": "n04296562",
+      "class_name": "stage"
+    },
+    {
+      "imagenet_index": 820,
+      "wnid": "n04310018",
+      "class_name": "steam locomotive"
+    },
+    {
+      "imagenet_index": 821,
+      "wnid": "n04311004",
+      "class_name": "through arch bridge"
+    },
+    {
+      "imagenet_index": 822,
+      "wnid": "n04311174",
+      "class_name": "steel drum"
+    },
+    {
+      "imagenet_index": 823,
+      "wnid": "n04317175",
+      "class_name": "stethoscope"
+    },
+    {
+      "imagenet_index": 824,
+      "wnid": "n04325704",
+      "class_name": "scarf"
+    },
+    {
+      "imagenet_index": 825,
+      "wnid": "n04326547",
+      "class_name": "stone wall"
+    },
+    {
+      "imagenet_index": 826,
+      "wnid": "n04328186",
+      "class_name": "stopwatch"
+    },
+    {
+      "imagenet_index": 827,
+      "wnid": "n04330267",
+      "class_name": "stove"
+    },
+    {
+      "imagenet_index": 828,
+      "wnid": "n04332243",
+      "class_name": "strainer"
+    },
+    {
+      "imagenet_index": 829,
+      "wnid": "n04335435",
+      "class_name": "tram"
+    },
+    {
+      "imagenet_index": 830,
+      "wnid": "n04336792",
+      "class_name": "stretcher"
+    },
+    {
+      "imagenet_index": 831,
+      "wnid": "n04344873",
+      "class_name": "couch"
+    },
+    {
+      "imagenet_index": 832,
+      "wnid": "n04346328",
+      "class_name": "stupa"
+    },
+    {
+      "imagenet_index": 833,
+      "wnid": "n04347754",
+      "class_name": "submarine"
+    },
+    {
+      "imagenet_index": 834,
+      "wnid": "n04350905",
+      "class_name": "suit"
+    },
+    {
+      "imagenet_index": 835,
+      "wnid": "n04355338",
+      "class_name": "sundial"
+    },
+    {
+      "imagenet_index": 836,
+      "wnid": "n04355933",
+      "class_name": "sunglasses"
+    },
+    {
+      "imagenet_index": 837,
+      "wnid": "n04356056",
+      "class_name": "sunglasses"
+    },
+    {
+      "imagenet_index": 838,
+      "wnid": "n04357314",
+      "class_name": "sunscreen"
+    },
+    {
+      "imagenet_index": 839,
+      "wnid": "n04366367",
+      "class_name": "suspension bridge"
+    },
+    {
+      "imagenet_index": 840,
+      "wnid": "n04367480",
+      "class_name": "mop"
+    },
+    {
+      "imagenet_index": 841,
+      "wnid": "n04370456",
+      "class_name": "sweatshirt"
+    },
+    {
+      "imagenet_index": 842,
+      "wnid": "n04371430",
+      "class_name": "swim trunks / shorts"
+    },
+    {
+      "imagenet_index": 843,
+      "wnid": "n04371774",
+      "class_name": "swing"
+    },
+    {
+      "imagenet_index": 844,
+      "wnid": "n04372370",
+      "class_name": "electrical switch"
+    },
+    {
+      "imagenet_index": 845,
+      "wnid": "n04376876",
+      "class_name": "syringe"
+    },
+    {
+      "imagenet_index": 846,
+      "wnid": "n04380533",
+      "class_name": "table lamp"
+    },
+    {
+      "imagenet_index": 847,
+      "wnid": "n04389033",
+      "class_name": "tank"
+    },
+    {
+      "imagenet_index": 848,
+      "wnid": "n04392985",
+      "class_name": "tape player"
+    },
+    {
+      "imagenet_index": 849,
+      "wnid": "n04398044",
+      "class_name": "teapot"
+    },
+    {
+      "imagenet_index": 850,
+      "wnid": "n04399382",
+      "class_name": "teddy bear"
+    },
+    {
+      "imagenet_index": 851,
+      "wnid": "n04404412",
+      "class_name": "television"
+    },
+    {
+      "imagenet_index": 852,
+      "wnid": "n04409515",
+      "class_name": "tennis ball"
+    },
+    {
+      "imagenet_index": 853,
+      "wnid": "n04417672",
+      "class_name": "thatched roof"
+    },
+    {
+      "imagenet_index": 854,
+      "wnid": "n04418357",
+      "class_name": "front curtain"
+    },
+    {
+      "imagenet_index": 855,
+      "wnid": "n04423845",
+      "class_name": "thimble"
+    },
+    {
+      "imagenet_index": 856,
+      "wnid": "n04428191",
+      "class_name": "threshing machine"
+    },
+    {
+      "imagenet_index": 857,
+      "wnid": "n04429376",
+      "class_name": "throne"
+    },
+    {
+      "imagenet_index": 858,
+      "wnid": "n04435653",
+      "class_name": "tile roof"
+    },
+    {
+      "imagenet_index": 859,
+      "wnid": "n04442312",
+      "class_name": "toaster"
+    },
+    {
+      "imagenet_index": 860,
+      "wnid": "n04443257",
+      "class_name": "tobacco shop"
+    },
+    {
+      "imagenet_index": 861,
+      "wnid": "n04447861",
+      "class_name": "toilet seat"
+    },
+    {
+      "imagenet_index": 862,
+      "wnid": "n04456115",
+      "class_name": "torch"
+    },
+    {
+      "imagenet_index": 863,
+      "wnid": "n04458633",
+      "class_name": "totem pole"
+    },
+    {
+      "imagenet_index": 864,
+      "wnid": "n04461696",
+      "class_name": "tow truck"
+    },
+    {
+      "imagenet_index": 865,
+      "wnid": "n04462240",
+      "class_name": "toy store"
+    },
+    {
+      "imagenet_index": 866,
+      "wnid": "n04465501",
+      "class_name": "tractor"
+    },
+    {
+      "imagenet_index": 867,
+      "wnid": "n04467665",
+      "class_name": "semi-trailer truck"
+    },
+    {
+      "imagenet_index": 868,
+      "wnid": "n04476259",
+      "class_name": "tray"
+    },
+    {
+      "imagenet_index": 869,
+      "wnid": "n04479046",
+      "class_name": "trench coat"
+    },
+    {
+      "imagenet_index": 870,
+      "wnid": "n04482393",
+      "class_name": "tricycle"
+    },
+    {
+      "imagenet_index": 871,
+      "wnid": "n04483307",
+      "class_name": "trimaran"
+    },
+    {
+      "imagenet_index": 872,
+      "wnid": "n04485082",
+      "class_name": "tripod"
+    },
+    {
+      "imagenet_index": 873,
+      "wnid": "n04486054",
+      "class_name": "triumphal arch"
+    },
+    {
+      "imagenet_index": 874,
+      "wnid": "n04487081",
+      "class_name": "trolleybus"
+    },
+    {
+      "imagenet_index": 875,
+      "wnid": "n04487394",
+      "class_name": "trombone"
+    },
+    {
+      "imagenet_index": 876,
+      "wnid": "n04493381",
+      "class_name": "hot tub"
+    },
+    {
+      "imagenet_index": 877,
+      "wnid": "n04501370",
+      "class_name": "turnstile"
+    },
+    {
+      "imagenet_index": 878,
+      "wnid": "n04505470",
+      "class_name": "typewriter keyboard"
+    },
+    {
+      "imagenet_index": 879,
+      "wnid": "n04507155",
+      "class_name": "umbrella"
+    },
+    {
+      "imagenet_index": 880,
+      "wnid": "n04509417",
+      "class_name": "unicycle"
+    },
+    {
+      "imagenet_index": 881,
+      "wnid": "n04515003",
+      "class_name": "upright piano"
+    },
+    {
+      "imagenet_index": 882,
+      "wnid": "n04517823",
+      "class_name": "vacuum cleaner"
+    },
+    {
+      "imagenet_index": 883,
+      "wnid": "n04522168",
+      "class_name": "vase"
+    },
+    {
+      "imagenet_index": 884,
+      "wnid": "n04523525",
+      "class_name": "vaulted or arched ceiling"
+    },
+    {
+      "imagenet_index": 885,
+      "wnid": "n04525038",
+      "class_name": "velvet fabric"
+    },
+    {
+      "imagenet_index": 886,
+      "wnid": "n04525305",
+      "class_name": "vending machine"
+    },
+    {
+      "imagenet_index": 887,
+      "wnid": "n04532106",
+      "class_name": "vestment"
+    },
+    {
+      "imagenet_index": 888,
+      "wnid": "n04532670",
+      "class_name": "viaduct"
+    },
+    {
+      "imagenet_index": 889,
+      "wnid": "n04536866",
+      "class_name": "violin"
+    },
+    {
+      "imagenet_index": 890,
+      "wnid": "n04540053",
+      "class_name": "volleyball"
+    },
+    {
+      "imagenet_index": 891,
+      "wnid": "n04542943",
+      "class_name": "waffle iron"
+    },
+    {
+      "imagenet_index": 892,
+      "wnid": "n04548280",
+      "class_name": "wall clock"
+    },
+    {
+      "imagenet_index": 893,
+      "wnid": "n04548362",
+      "class_name": "wallet"
+    },
+    {
+      "imagenet_index": 894,
+      "wnid": "n04550184",
+      "class_name": "wardrobe"
+    },
+    {
+      "imagenet_index": 895,
+      "wnid": "n04552348",
+      "class_name": "military aircraft"
+    },
+    {
+      "imagenet_index": 896,
+      "wnid": "n04553703",
+      "class_name": "sink"
+    },
+    {
+      "imagenet_index": 897,
+      "wnid": "n04554684",
+      "class_name": "washing machine"
+    },
+    {
+      "imagenet_index": 898,
+      "wnid": "n04557648",
+      "class_name": "water bottle"
+    },
+    {
+      "imagenet_index": 899,
+      "wnid": "n04560804",
+      "class_name": "water jug"
+    },
+    {
+      "imagenet_index": 900,
+      "wnid": "n04562935",
+      "class_name": "water tower"
+    },
+    {
+      "imagenet_index": 901,
+      "wnid": "n04579145",
+      "class_name": "whiskey jug"
+    },
+    {
+      "imagenet_index": 902,
+      "wnid": "n04579432",
+      "class_name": "whistle"
+    },
+    {
+      "imagenet_index": 903,
+      "wnid": "n04584207",
+      "class_name": "hair wig"
+    },
+    {
+      "imagenet_index": 904,
+      "wnid": "n04589890",
+      "class_name": "window screen"
+    },
+    {
+      "imagenet_index": 905,
+      "wnid": "n04590129",
+      "class_name": "window shade"
+    },
+    {
+      "imagenet_index": 906,
+      "wnid": "n04591157",
+      "class_name": "Windsor tie"
+    },
+    {
+      "imagenet_index": 907,
+      "wnid": "n04591713",
+      "class_name": "wine bottle"
+    },
+    {
+      "imagenet_index": 908,
+      "wnid": "n04592741",
+      "class_name": "airplane wing"
+    },
+    {
+      "imagenet_index": 909,
+      "wnid": "n04596742",
+      "class_name": "wok"
+    },
+    {
+      "imagenet_index": 910,
+      "wnid": "n04597913",
+      "class_name": "wooden spoon"
+    },
+    {
+      "imagenet_index": 911,
+      "wnid": "n04599235",
+      "class_name": "wool"
+    },
+    {
+      "imagenet_index": 912,
+      "wnid": "n04604644",
+      "class_name": "split-rail fence"
+    },
+    {
+      "imagenet_index": 913,
+      "wnid": "n04606251",
+      "class_name": "shipwreck"
+    },
+    {
+      "imagenet_index": 914,
+      "wnid": "n04612504",
+      "class_name": "sailboat"
+    },
+    {
+      "imagenet_index": 915,
+      "wnid": "n04613696",
+      "class_name": "yurt"
+    },
+    {
+      "imagenet_index": 916,
+      "wnid": "n06359193",
+      "class_name": "website"
+    },
+    {
+      "imagenet_index": 917,
+      "wnid": "n06596364",
+      "class_name": "comic book"
+    },
+    {
+      "imagenet_index": 918,
+      "wnid": "n06785654",
+      "class_name": "crossword"
+    },
+    {
+      "imagenet_index": 919,
+      "wnid": "n06794110",
+      "class_name": "traffic or street sign"
+    },
+    {
+      "imagenet_index": 920,
+      "wnid": "n06874185",
+      "class_name": "traffic light"
+    },
+    {
+      "imagenet_index": 921,
+      "wnid": "n07248320",
+      "class_name": "dust jacket"
+    },
+    {
+      "imagenet_index": 922,
+      "wnid": "n07565083",
+      "class_name": "menu"
+    },
+    {
+      "imagenet_index": 923,
+      "wnid": "n07579787",
+      "class_name": "plate"
+    },
+    {
+      "imagenet_index": 924,
+      "wnid": "n07583066",
+      "class_name": "guacamole"
+    },
+    {
+      "imagenet_index": 925,
+      "wnid": "n07584110",
+      "class_name": "consomme"
+    },
+    {
+      "imagenet_index": 926,
+      "wnid": "n07590611",
+      "class_name": "hot pot"
+    },
+    {
+      "imagenet_index": 927,
+      "wnid": "n07613480",
+      "class_name": "trifle"
+    },
+    {
+      "imagenet_index": 928,
+      "wnid": "n07614500",
+      "class_name": "ice cream"
+    },
+    {
+      "imagenet_index": 929,
+      "wnid": "n07615774",
+      "class_name": "popsicle"
+    },
+    {
+      "imagenet_index": 930,
+      "wnid": "n07684084",
+      "class_name": "baguette"
+    },
+    {
+      "imagenet_index": 931,
+      "wnid": "n07693725",
+      "class_name": "bagel"
+    },
+    {
+      "imagenet_index": 932,
+      "wnid": "n07695742",
+      "class_name": "pretzel"
+    },
+    {
+      "imagenet_index": 933,
+      "wnid": "n07697313",
+      "class_name": "cheeseburger"
+    },
+    {
+      "imagenet_index": 934,
+      "wnid": "n07697537",
+      "class_name": "hot dog"
+    },
+    {
+      "imagenet_index": 935,
+      "wnid": "n07711569",
+      "class_name": "mashed potatoes"
+    },
+    {
+      "imagenet_index": 936,
+      "wnid": "n07714571",
+      "class_name": "cabbage"
+    },
+    {
+      "imagenet_index": 937,
+      "wnid": "n07714990",
+      "class_name": "broccoli"
+    },
+    {
+      "imagenet_index": 938,
+      "wnid": "n07715103",
+      "class_name": "cauliflower"
+    },
+    {
+      "imagenet_index": 939,
+      "wnid": "n07716358",
+      "class_name": "zucchini"
+    },
+    {
+      "imagenet_index": 940,
+      "wnid": "n07716906",
+      "class_name": "spaghetti squash"
+    },
+    {
+      "imagenet_index": 941,
+      "wnid": "n07717410",
+      "class_name": "acorn squash"
+    },
+    {
+      "imagenet_index": 942,
+      "wnid": "n07717556",
+      "class_name": "butternut squash"
+    },
+    {
+      "imagenet_index": 943,
+      "wnid": "n07718472",
+      "class_name": "cucumber"
+    },
+    {
+      "imagenet_index": 944,
+      "wnid": "n07718747",
+      "class_name": "artichoke"
+    },
+    {
+      "imagenet_index": 945,
+      "wnid": "n07720875",
+      "class_name": "bell pepper"
+    },
+    {
+      "imagenet_index": 946,
+      "wnid": "n07730033",
+      "class_name": "cardoon"
+    },
+    {
+      "imagenet_index": 947,
+      "wnid": "n07734744",
+      "class_name": "mushroom"
+    },
+    {
+      "imagenet_index": 948,
+      "wnid": "n07742313",
+      "class_name": "Granny Smith apple"
+    },
+    {
+      "imagenet_index": 949,
+      "wnid": "n07745940",
+      "class_name": "strawberry"
+    },
+    {
+      "imagenet_index": 950,
+      "wnid": "n07747607",
+      "class_name": "orange"
+    },
+    {
+      "imagenet_index": 951,
+      "wnid": "n07749582",
+      "class_name": "lemon"
+    },
+    {
+      "imagenet_index": 952,
+      "wnid": "n07753113",
+      "class_name": "fig"
+    },
+    {
+      "imagenet_index": 953,
+      "wnid": "n07753275",
+      "class_name": "pineapple"
+    },
+    {
+      "imagenet_index": 954,
+      "wnid": "n07753592",
+      "class_name": "banana"
+    },
+    {
+      "imagenet_index": 955,
+      "wnid": "n07754684",
+      "class_name": "jackfruit"
+    },
+    {
+      "imagenet_index": 956,
+      "wnid": "n07760859",
+      "class_name": "cherimoya (custard apple)"
+    },
+    {
+      "imagenet_index": 957,
+      "wnid": "n07768694",
+      "class_name": "pomegranate"
+    },
+    {
+      "imagenet_index": 958,
+      "wnid": "n07802026",
+      "class_name": "hay"
+    },
+    {
+      "imagenet_index": 959,
+      "wnid": "n07831146",
+      "class_name": "carbonara"
+    },
+    {
+      "imagenet_index": 960,
+      "wnid": "n07836838",
+      "class_name": "chocolate syrup"
+    },
+    {
+      "imagenet_index": 961,
+      "wnid": "n07860988",
+      "class_name": "dough"
+    },
+    {
+      "imagenet_index": 962,
+      "wnid": "n07871810",
+      "class_name": "meatloaf"
+    },
+    {
+      "imagenet_index": 963,
+      "wnid": "n07873807",
+      "class_name": "pizza"
+    },
+    {
+      "imagenet_index": 964,
+      "wnid": "n07875152",
+      "class_name": "pot pie"
+    },
+    {
+      "imagenet_index": 965,
+      "wnid": "n07880968",
+      "class_name": "burrito"
+    },
+    {
+      "imagenet_index": 966,
+      "wnid": "n07892512",
+      "class_name": "red wine"
+    },
+    {
+      "imagenet_index": 967,
+      "wnid": "n07920052",
+      "class_name": "espresso"
+    },
+    {
+      "imagenet_index": 968,
+      "wnid": "n07930864",
+      "class_name": "tea cup"
+    },
+    {
+      "imagenet_index": 969,
+      "wnid": "n07932039",
+      "class_name": "eggnog"
+    },
+    {
+      "imagenet_index": 970,
+      "wnid": "n09193705",
+      "class_name": "mountain"
+    },
+    {
+      "imagenet_index": 971,
+      "wnid": "n09229709",
+      "class_name": "bubble"
+    },
+    {
+      "imagenet_index": 972,
+      "wnid": "n09246464",
+      "class_name": "cliff"
+    },
+    {
+      "imagenet_index": 973,
+      "wnid": "n09256479",
+      "class_name": "coral reef"
+    },
+    {
+      "imagenet_index": 974,
+      "wnid": "n09288635",
+      "class_name": "geyser"
+    },
+    {
+      "imagenet_index": 975,
+      "wnid": "n09332890",
+      "class_name": "lakeshore"
+    },
+    {
+      "imagenet_index": 976,
+      "wnid": "n09399592",
+      "class_name": "promontory"
+    },
+    {
+      "imagenet_index": 977,
+      "wnid": "n09421951",
+      "class_name": "sandbar"
+    },
+    {
+      "imagenet_index": 978,
+      "wnid": "n09428293",
+      "class_name": "beach"
+    },
+    {
+      "imagenet_index": 979,
+      "wnid": "n09468604",
+      "class_name": "valley"
+    },
+    {
+      "imagenet_index": 980,
+      "wnid": "n09472597",
+      "class_name": "volcano"
+    },
+    {
+      "imagenet_index": 981,
+      "wnid": "n09835506",
+      "class_name": "baseball player"
+    },
+    {
+      "imagenet_index": 982,
+      "wnid": "n10148035",
+      "class_name": "bridegroom"
+    },
+    {
+      "imagenet_index": 983,
+      "wnid": "n10565667",
+      "class_name": "scuba diver"
+    },
+    {
+      "imagenet_index": 984,
+      "wnid": "n11879895",
+      "class_name": "rapeseed"
+    },
+    {
+      "imagenet_index": 985,
+      "wnid": "n11939491",
+      "class_name": "daisy"
+    },
+    {
+      "imagenet_index": 986,
+      "wnid": "n12057211",
+      "class_name": "yellow lady's slipper"
+    },
+    {
+      "imagenet_index": 987,
+      "wnid": "n12144580",
+      "class_name": "corn"
+    },
+    {
+      "imagenet_index": 988,
+      "wnid": "n12267677",
+      "class_name": "acorn"
+    },
+    {
+      "imagenet_index": 989,
+      "wnid": "n12620546",
+      "class_name": "rose hip"
+    },
+    {
+      "imagenet_index": 990,
+      "wnid": "n12768682",
+      "class_name": "horse chestnut seed"
+    },
+    {
+      "imagenet_index": 991,
+      "wnid": "n12985857",
+      "class_name": "coral fungus"
+    },
+    {
+      "imagenet_index": 992,
+      "wnid": "n12998815",
+      "class_name": "agaric"
+    },
+    {
+      "imagenet_index": 993,
+      "wnid": "n13037406",
+      "class_name": "gyromitra"
+    },
+    {
+      "imagenet_index": 994,
+      "wnid": "n13040303",
+      "class_name": "stinkhorn mushroom"
+    },
+    {
+      "imagenet_index": 995,
+      "wnid": "n13044778",
+      "class_name": "earth star fungus"
+    },
+    {
+      "imagenet_index": 996,
+      "wnid": "n13052670",
+      "class_name": "hen of the woods mushroom"
+    },
+    {
+      "imagenet_index": 997,
+      "wnid": "n13054560",
+      "class_name": "bolete"
+    },
+    {
+      "imagenet_index": 998,
+      "wnid": "n13133613",
+      "class_name": "corn cob"
+    },
+    {
+      "imagenet_index": 999,
+      "wnid": "n15075141",
+      "class_name": "toilet paper"
+    }
+  ],
+  "imagenet_a_indices": [
+    6,
+    11,
+    13,
+    15,
+    17,
+    22,
+    23,
+    27,
+    30,
+    37,
+    39,
+    42,
+    47,
+    50,
+    57,
+    70,
+    71,
+    76,
+    79,
+    89,
+    90,
+    94,
+    96,
+    97,
+    99,
+    105,
+    107,
+    108,
+    110,
+    113,
+    124,
+    125,
+    130,
+    132,
+    143,
+    144,
+    150,
+    151,
+    207,
+    234,
+    235,
+    254,
+    277,
+    283,
+    287,
+    291,
+    295,
+    298,
+    301,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    313,
+    314,
+    315,
+    317,
+    319,
+    323,
+    324,
+    326,
+    327,
+    330,
+    334,
+    335,
+    336,
+    347,
+    361,
+    363,
+    372,
+    378,
+    386,
+    397,
+    400,
+    401,
+    402,
+    404,
+    407,
+    411,
+    416,
+    417,
+    420,
+    425,
+    428,
+    430,
+    437,
+    438,
+    445,
+    456,
+    457,
+    461,
+    462,
+    470,
+    472,
+    483,
+    486,
+    488,
+    492,
+    496,
+    514,
+    516,
+    528,
+    530,
+    539,
+    542,
+    543,
+    549,
+    552,
+    557,
+    561,
+    562,
+    569,
+    572,
+    573,
+    575,
+    579,
+    589,
+    606,
+    607,
+    609,
+    614,
+    626,
+    627,
+    640,
+    641,
+    642,
+    643,
+    658,
+    668,
+    677,
+    682,
+    684,
+    687,
+    701,
+    704,
+    719,
+    736,
+    746,
+    749,
+    752,
+    758,
+    763,
+    765,
+    768,
+    773,
+    774,
+    776,
+    779,
+    780,
+    786,
+    792,
+    797,
+    802,
+    803,
+    804,
+    813,
+    815,
+    820,
+    823,
+    831,
+    833,
+    835,
+    839,
+    845,
+    847,
+    850,
+    859,
+    862,
+    870,
+    879,
+    880,
+    888,
+    890,
+    897,
+    900,
+    907,
+    913,
+    924,
+    932,
+    933,
+    934,
+    937,
+    943,
+    945,
+    947,
+    951,
+    954,
+    956,
+    957,
+    959,
+    971,
+    972,
+    980,
+    981,
+    984,
+    986,
+    987,
+    988
+  ],
+  "imagenet_r_indices": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    9,
+    11,
+    13,
+    22,
+    23,
+    26,
+    29,
+    31,
+    39,
+    47,
+    63,
+    71,
+    76,
+    79,
+    84,
+    90,
+    94,
+    96,
+    97,
+    99,
+    100,
+    105,
+    107,
+    113,
+    122,
+    125,
+    130,
+    132,
+    144,
+    145,
+    147,
+    148,
+    150,
+    151,
+    155,
+    160,
+    161,
+    162,
+    163,
+    171,
+    172,
+    178,
+    187,
+    195,
+    199,
+    203,
+    207,
+    208,
+    219,
+    231,
+    232,
+    234,
+    235,
+    242,
+    245,
+    247,
+    250,
+    251,
+    254,
+    259,
+    260,
+    263,
+    265,
+    267,
+    269,
+    276,
+    277,
+    281,
+    288,
+    289,
+    291,
+    292,
+    293,
+    296,
+    299,
+    301,
+    308,
+    309,
+    310,
+    311,
+    314,
+    315,
+    319,
+    323,
+    327,
+    330,
+    334,
+    335,
+    337,
+    338,
+    340,
+    341,
+    344,
+    347,
+    353,
+    355,
+    361,
+    362,
+    365,
+    366,
+    367,
+    368,
+    372,
+    388,
+    390,
+    393,
+    397,
+    401,
+    407,
+    413,
+    414,
+    425,
+    428,
+    430,
+    435,
+    437,
+    441,
+    447,
+    448,
+    457,
+    462,
+    463,
+    469,
+    470,
+    471,
+    472,
+    476,
+    483,
+    487,
+    515,
+    546,
+    555,
+    558,
+    570,
+    579,
+    583,
+    587,
+    593,
+    594,
+    596,
+    609,
+    613,
+    617,
+    621,
+    629,
+    637,
+    657,
+    658,
+    701,
+    717,
+    724,
+    763,
+    768,
+    774,
+    776,
+    779,
+    780,
+    787,
+    805,
+    812,
+    815,
+    820,
+    824,
+    833,
+    847,
+    852,
+    866,
+    875,
+    883,
+    889,
+    895,
+    907,
+    928,
+    931,
+    932,
+    933,
+    934,
+    936,
+    937,
+    943,
+    945,
+    947,
+    948,
+    949,
+    951,
+    953,
+    954,
+    957,
+    963,
+    965,
+    967,
+    980,
+    981,
+    983,
+    988
+  ],
+  "imagenet_v2_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656,
+    657,
+    658,
+    659,
+    660,
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    691,
+    692,
+    693,
+    694,
+    695,
+    696,
+    697,
+    698,
+    699,
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728,
+    729,
+    730,
+    731,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    752,
+    753,
+    754,
+    755,
+    756,
+    757,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    766,
+    767,
+    768,
+    769,
+    770,
+    771,
+    772,
+    773,
+    774,
+    775,
+    776,
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857,
+    858,
+    859,
+    860,
+    861,
+    862,
+    863,
+    864,
+    865,
+    866,
+    867,
+    868,
+    869,
+    870,
+    871,
+    872,
+    873,
+    874,
+    875,
+    876,
+    877,
+    878,
+    879,
+    880,
+    881,
+    882,
+    883,
+    884,
+    885,
+    886,
+    887,
+    888,
+    889,
+    890,
+    891,
+    892,
+    893,
+    894,
+    895,
+    896,
+    897,
+    898,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916,
+    917,
+    918,
+    919,
+    920,
+    921,
+    922,
+    923,
+    924,
+    925,
+    926,
+    927,
+    928,
+    929,
+    930,
+    931,
+    932,
+    933,
+    934,
+    935,
+    936,
+    937,
+    938,
+    939,
+    940,
+    941,
+    942,
+    943,
+    944,
+    945,
+    946,
+    947,
+    948,
+    949,
+    950,
+    951,
+    952,
+    953,
+    954,
+    955,
+    956,
+    957,
+    958,
+    959,
+    960,
+    961,
+    962,
+    963,
+    964,
+    965,
+    966,
+    967,
+    968,
+    969,
+    970,
+    971,
+    972,
+    973,
+    974,
+    975,
+    976,
+    977,
+    978,
+    979,
+    980,
+    981,
+    982,
+    983,
+    984,
+    985,
+    986,
+    987,
+    988,
+    989,
+    990,
+    991,
+    992,
+    993,
+    994,
+    995,
+    996,
+    997,
+    998,
+    999
+  ],
+  "imagenet_sketch_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484,
+    485,
+    486,
+    487,
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510,
+    511,
+    512,
+    513,
+    514,
+    515,
+    516,
+    517,
+    518,
+    519,
+    520,
+    521,
+    522,
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    535,
+    536,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546,
+    547,
+    548,
+    549,
+    550,
+    551,
+    552,
+    553,
+    554,
+    555,
+    556,
+    557,
+    558,
+    559,
+    560,
+    561,
+    562,
+    563,
+    564,
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581,
+    582,
+    583,
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590,
+    591,
+    592,
+    593,
+    594,
+    595,
+    596,
+    597,
+    598,
+    599,
+    600,
+    601,
+    602,
+    603,
+    604,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614,
+    615,
+    616,
+    617,
+    618,
+    619,
+    620,
+    621,
+    622,
+    623,
+    624,
+    625,
+    626,
+    627,
+    628,
+    629,
+    630,
+    631,
+    632,
+    633,
+    634,
+    635,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    643,
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656,
+    657,
+    658,
+    659,
+    660,
+    661,
+    662,
+    663,
+    664,
+    665,
+    666,
+    667,
+    668,
+    669,
+    670,
+    671,
+    672,
+    673,
+    674,
+    675,
+    676,
+    677,
+    678,
+    679,
+    680,
+    681,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    690,
+    691,
+    692,
+    693,
+    694,
+    695,
+    696,
+    697,
+    698,
+    699,
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723,
+    724,
+    725,
+    726,
+    727,
+    728,
+    729,
+    730,
+    731,
+    732,
+    733,
+    734,
+    735,
+    736,
+    737,
+    738,
+    739,
+    740,
+    741,
+    742,
+    743,
+    744,
+    745,
+    746,
+    747,
+    748,
+    749,
+    750,
+    751,
+    752,
+    753,
+    754,
+    755,
+    756,
+    757,
+    758,
+    759,
+    760,
+    761,
+    762,
+    763,
+    764,
+    765,
+    766,
+    767,
+    768,
+    769,
+    770,
+    771,
+    772,
+    773,
+    774,
+    775,
+    776,
+    777,
+    778,
+    779,
+    780,
+    781,
+    782,
+    783,
+    784,
+    785,
+    786,
+    787,
+    788,
+    789,
+    790,
+    791,
+    792,
+    793,
+    794,
+    795,
+    796,
+    797,
+    798,
+    799,
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831,
+    832,
+    833,
+    834,
+    835,
+    836,
+    837,
+    838,
+    839,
+    840,
+    841,
+    842,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852,
+    853,
+    854,
+    855,
+    856,
+    857,
+    858,
+    859,
+    860,
+    861,
+    862,
+    863,
+    864,
+    865,
+    866,
+    867,
+    868,
+    869,
+    870,
+    871,
+    872,
+    873,
+    874,
+    875,
+    876,
+    877,
+    878,
+    879,
+    880,
+    881,
+    882,
+    883,
+    884,
+    885,
+    886,
+    887,
+    888,
+    889,
+    890,
+    891,
+    892,
+    893,
+    894,
+    895,
+    896,
+    897,
+    898,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910,
+    911,
+    912,
+    913,
+    914,
+    915,
+    916,
+    917,
+    918,
+    919,
+    920,
+    921,
+    922,
+    923,
+    924,
+    925,
+    926,
+    927,
+    928,
+    929,
+    930,
+    931,
+    932,
+    933,
+    934,
+    935,
+    936,
+    937,
+    938,
+    939,
+    940,
+    941,
+    942,
+    943,
+    944,
+    945,
+    946,
+    947,
+    948,
+    949,
+    950,
+    951,
+    952,
+    953,
+    954,
+    955,
+    956,
+    957,
+    958,
+    959,
+    960,
+    961,
+    962,
+    963,
+    964,
+    965,
+    966,
+    967,
+    968,
+    969,
+    970,
+    971,
+    972,
+    973,
+    974,
+    975,
+    976,
+    977,
+    978,
+    979,
+    980,
+    981,
+    982,
+    983,
+    984,
+    985,
+    986,
+    987,
+    988,
+    989,
+    990,
+    991,
+    992,
+    993,
+    994,
+    995,
+    996,
+    997,
+    998,
+    999
+  ],
+  "v2_label_policy": "Parse directory name as its true integer ImageNet index. If using generic ImageFolder, its lexicographic local labels need explicit mapping; do not confuse numeric labels and lexicographic order."
+}

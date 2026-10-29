@@ -20,7 +20,7 @@ def import_clip():
         import clip  # type: ignore
     except ImportError as exc:
         raise ImportError(
-            "OpenAI CLIP is not installed. Install the dependencies from requirements.txt "
+            "OpenAI CLIP is unavailable. Install this project with 'python -m pip install -e .' "
             "after installing a compatible torch/torchvision build."
         ) from exc
     return clip

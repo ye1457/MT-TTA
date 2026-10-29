@@ -1,4 +1,4 @@
-"""Zero-shot CLIP evaluation helpers for OfficeHome."""
+"""CLIP prompt adaptation with shared/private text and visual experts."""
 
 from .constants import DEFAULT_MODEL_NAME, STANDARD_DOMAINS
 

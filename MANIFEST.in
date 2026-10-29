@@ -1,0 +1,15 @@
+include README.md DATA_DEPENDENCIES.md LICENSE THIRD_PARTY_NOTICES.md requirements-runtime.txt .gitignore
+include CLIP/LICENSE
+include licenses/TPT_LICENSE
+recursive-include CLIP/clip *.py *.gz
+recursive-include src/clip_officehome/configs *.json
+recursive-include docs *.md
+recursive-include scripts *.py
+recursive-include tests *.py *.json
+prune models
+prune data
+prune outputs
+prune .venv
+prune experiments
+prune reports
+global-exclude __pycache__ *.py[cod] *.log

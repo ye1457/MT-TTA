@@ -1,0 +1,241 @@
+{
+  "schema": "mt_tta_evaluation_v1",
+  "benchmark": "officehome",
+  "evaluation": {
+    "seed": 0,
+    "batch_size": 1,
+    "stream_order": "class_name_then_full_file_path_sorted",
+    "full_data": true,
+    "shuffle": false,
+    "score_before_update": true,
+    "prediction_source": "student_only",
+    "teacher_output_fusion": false,
+    "teacher_output_calibration": false,
+    "persistent_prompts": true,
+    "reset_optimizer_each_domain": true
+  },
+  "baseline_method": {
+    "student": "ViT-B/16",
+    "teacher": "ViT-L/14",
+    "student_weights": "ViT-B-16.pt",
+    "student_weights_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+    "teacher_weights": "ViT-L-14.pt",
+    "teacher_weights_sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "preprocessing": {
+      "resize": "bicubic_short_side_224",
+      "crop": "center_crop_224x224",
+      "color": "RGB",
+      "normalize_mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "normalize_std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "extra_random_augmentation": false,
+      "multi_view": false
+    },
+    "numeric_policy": "unchanged_local_CLIP_CUDA_dtypes; external_prompt_parameters_fp32; no_added_AMP_or_precision_override",
+    "logit_scale": 100.0,
+    "text_prompt": {
+      "num_context": 4,
+      "initialization": "a photo of a",
+      "shared_experts": 3,
+      "private_experts": 8,
+      "private_topk": 2,
+      "shared_mix_weight": 0.5,
+      "expert_init_std": 0.02,
+      "router_temperature": 1.0,
+      "router_score": "mean_max_class_probability_across_preview_images",
+      "preview_size": 64,
+      "preview_members": "first_min_64_images_of_this_domain_sorted_stream",
+      "preview_image_features": "frozen_student_image_encoder_without_visual_prompts",
+      "preview_parameter_updates": 0,
+      "preview_uses_ground_truth_or_teacher": false,
+      "preview_images_scored_later": true,
+      "post_preview_scoring_start_index": 0,
+      "route_ids_and_weights_fixed_within_domain": true
+    },
+    "visual_prompt": {
+      "num_tokens": 2,
+      "shared_experts": 2,
+      "private_experts": 4,
+      "private_topk": 1,
+      "shared_mix_weight": 0.44,
+      "scale_init": 0.25,
+      "expert_init_std": 0.02,
+      "position_extra_noise_std": 0.0,
+      "router_source": "current_text_moe",
+      "router_temperature": 1.0
+    },
+    "bank_rng_seed_offsets": {
+      "text_shared": 0,
+      "text_private": 10000,
+      "visual_shared": 20000,
+      "visual_private": 30000
+    },
+    "adaptation": {
+      "student_pseudo_topk": 1,
+      "teacher_supervision": "aux_pseudolabel",
+      "teacher_template": "a photo of a {class}",
+      "teacher_temperature": 1.0,
+      "teacher_ce_weight": 0.08,
+      "loss": "student_hard_pseudolabel_CE_plus_0.08_teacher_hard_pseudolabel_CE",
+      "sample_gate": "preupdate_student_max_class_probability_greater_equal_benchmark_threshold",
+      "teacher_confidence_gate": false,
+      "update_rounds_per_selected_image": 3,
+      "targets_gate_routes_fixed_during_image_updates": true,
+      "optimizer": "AdamW",
+      "weight_decay": 0.0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "entropy_weight": 0.0,
+      "shared_anchor_weight": 0.0,
+      "distill_kl_enabled": false,
+      "orthogonalization_enabled": false,
+      "ema_teacher_enabled": false,
+      "replay_enabled": false
+    }
+  },
+  "data": {
+    "display_name": "OfficeHome",
+    "num_classes": 65,
+    "domain_order": [
+      "Art",
+      "Clipart",
+      "Product",
+      "Real_World"
+    ],
+    "domain_counts": {
+      "Art": 2427,
+      "Clipart": 4365,
+      "Product": 4439,
+      "Real_World": 4357
+    },
+    "num_scored_images": 15588,
+    "student_confidence_threshold": 0.815,
+    "learning_rate": 7.5e-06,
+    "domain_learning_rate_overrides": {
+      "Clipart": 2e-06
+    },
+    "shadow_text_domains": [
+      "Real_World"
+    ],
+    "reported_branch": {
+      "Art": "primary",
+      "Clipart": "primary",
+      "Product": "primary",
+      "Real_World": "text_shadow"
+    },
+    "branch_domain_schedule": [
+      [
+        "text_shadow",
+        "Art"
+      ],
+      [
+        "primary",
+        "Art"
+      ],
+      [
+        "text_shadow",
+        "Clipart"
+      ],
+      [
+        "primary",
+        "Clipart"
+      ],
+      [
+        "text_shadow",
+        "Product"
+      ],
+      [
+        "primary",
+        "Product"
+      ],
+      [
+        "text_shadow",
+        "Real_World"
+      ]
+    ],
+    "formal_branch_image_visits_excluding_prerouting": 26819,
+    "preview_image_visits": 448,
+    "class_names": [
+      "Alarm_Clock",
+      "Backpack",
+      "Batteries",
+      "Bed",
+      "Bike",
+      "Bottle",
+      "Bucket",
+      "Calculator",
+      "Calendar",
+      "Candles",
+      "Chair",
+      "Clipboards",
+      "Computer",
+      "Couch",
+      "Curtains",
+      "Desk_Lamp",
+      "Drill",
+      "Eraser",
+      "Exit_Sign",
+      "Fan",
+      "File_Cabinet",
+      "Flipflops",
+      "Flowers",
+      "Folder",
+      "Fork",
+      "Glasses",
+      "Hammer",
+      "Helmet",
+      "Kettle",
+      "Keyboard",
+      "Knives",
+      "Lamp_Shade",
+      "Laptop",
+      "Marker",
+      "Monitor",
+      "Mop",
+      "Mouse",
+      "Mug",
+      "Notebook",
+      "Oven",
+      "Pan",
+      "Paper_Clip",
+      "Pen",
+      "Pencil",
+      "Postit_Notes",
+      "Printer",
+      "Push_Pin",
+      "Radio",
+      "Refrigerator",
+      "Ruler",
+      "Scissors",
+      "Screwdriver",
+      "Shelf",
+      "Sink",
+      "Sneakers",
+      "Soda",
+      "Speaker",
+      "Spoon",
+      "TV",
+      "Table",
+      "Telephone",
+      "ToothBrush",
+      "Toys",
+      "Trash_Can",
+      "Webcam"
+    ]
+  },
+  "historical_reference": {
+    "method": "unified_v1_officehome",
+    "macro_top1_percent": 86.48820200989576,
+    "note": "Historical full seed0 measurement; this portable entry point is a refactor, not a new full benchmark measurement."
+  }
+}

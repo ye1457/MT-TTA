@@ -1,0 +1,8 @@
+# Install torch/torchvision separately from https://download.pytorch.org/whl/cu118.
+# Tested Python 3.11 dependencies. Install the local project for the vendored OpenAI CLIP module.
+ftfy==6.3.1
+numpy==2.4.3
+pillow==12.1.1
+regex==2026.4.4
+tqdm==4.67.3
+wcwidth==0.6.0
