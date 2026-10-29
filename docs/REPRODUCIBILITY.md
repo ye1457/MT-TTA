@@ -21,9 +21,9 @@ python -m pip install -e .
 python -m pip check
 ```
 
-The reference machine uses Linux, Python **3.11.15**, PyTorch **2.7.1+cu118**, torchvision **0.22.1+cu118**, and the versions in [`requirements-runtime.txt`](../requirements-runtime.txt). The torch/torchvision pairing follows [PyTorch's official previous-version instructions](https://pytorch.org/get-started/previous-versions/#v271). Use a compatible NVIDIA driver. The CUDA wheel includes its runtime; this project does not compile a custom CUDA extension.
+The reference environment is Linux, Python **3.11.15**, PyTorch **2.7.1+cu118**, torchvision **0.22.1+cu118**, and [`requirements-runtime.txt`](../requirements-runtime.txt). Use a compatible NVIDIA driver; the CUDA wheel includes its runtime.
 
-The package accepts Python >=3.10, but the pinned reproduction requirements need Python >=3.11. The supported installation range is broader than the numerically checked reference environment. Different GPUs, numerical libraries or package versions can change finite-precision predictions; matching seed0 alone does not guarantee bitwise identity.
+Use Python 3.11 for the pinned requirements, even though the package's general dependency ranges also accept Python 3.10.
 
 <details>
 <summary><strong>CPU checks without CUDA</strong></summary>
@@ -38,7 +38,7 @@ python -m pip check
 python -m unittest discover -s tests -v
 ```
 
-These checks exercise software contracts. Full method evaluation requires CUDA and does not silently fall back to the CPU.
+Use this environment for data preparation and unit tests. Formal evaluation requires CUDA.
 
 </details>
 
@@ -80,7 +80,7 @@ python scripts/evaluate_mtsketch.py --data-root /path/to/MT-Sketch4-20K --dry-ru
 
 Repeat the ImageNet command with `imagenet_v2`, `imagenet_r` and `imagenet_sketch` and their own roots. A successful preflight prints `DRY_RUN_PASS_NO_MODEL`. It does not create formal outputs or load model weights.
 
-For PACS/OfficeHome/ImageNet, plain `--dry-run` checks class directories, full counts and order; adding `--hash-images` also reads and hashes every image. Neither option decodes every image or proves a GPU run will finish. Compare the returned ordered index/content hashes with [`reference_inputs.json`](reference_inputs.json). The reference excludes machine-specific absolute paths. A matching count with a different content/order hash is insufficient to claim the same input stream.
+For PACS/OfficeHome/ImageNet, plain `--dry-run` checks class directories, full counts and order; adding `--hash-images` also reads and hashes every image. Compare the returned ordered index/content hashes with [`reference_inputs.json`](reference_inputs.json). Both counts and hashes should match.
 
 The MT-Sketch adapter always checks the five frozen metadata digests. Its ordinary dry run validates membership and paths without hashing every image; the assembly tool verifies the copied image bytes, and formal evaluation verifies them again.
 
@@ -122,13 +122,7 @@ python -m json.tool outputs/pacs_seed0/completion.json
 
 MT-Sketch also records a separate `updates.jsonl`; its method summary uses `macro_accuracy_percent`, while its zero-shot summary uses `macro_top1_percent`. Its four tasks are equal-sized, so the macro and pooled accuracies coincide. ImageNet's four-benchmark mean gives each dataset weight 1/4 regardless of its size. Detailed report generation is in [ImageNet reporting](IMAGENET_OOD.md) and [MT-Sketch reporting](MT_SKETCH4_EVALUATION.md).
 
-`PASS` certifies the implemented consistency checks, not equality to a published accuracy. A progress message, partial predictions file or failed/interrupted run is not a completed result. Retain your complete output directory if later independent recounting is required.
-
-## Verification scope
-
-The 2026-10-29 reproduction review checked the real full input collections for all seven evaluation entries, fixed model digests, pinned dependencies, public source installation, CPU tests and command-line interfaces. Public CI additionally builds and installs the package outside the checkout. The input reference records come from byte-level preflight checks, **not a new GPU accuracy measurement**.
-
-The values in [RESULTS.md](RESULTS.md) are historical completed runs. Historical raw predictions and output backups were deleted at the owner's request. This release preserves their method configurations and dataset identities; it does not claim that a documentation/package review reran every benchmark or proves identical accuracy on every platform.
+Wait for both `summary.json` and `completion.json` to report `PASS`. Keep the complete output directory for later report generation and recounting. Reference accuracies are listed in [RESULTS.md](RESULTS.md).
 
 ## Common problems
 

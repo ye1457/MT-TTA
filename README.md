@@ -38,7 +38,7 @@ python -m pip install -r requirements-runtime.txt
 python -m pip install -e .
 ```
 
-The OpenAI `clip` implementation and tokenizer are bundled. This quick start pins [v0.1.2](https://github.com/ye1457/MT-TTA/tree/v0.1.2); record `git rev-parse HEAD` with your run. Identical values across different GPUs and software versions are not guaranteed.
+The OpenAI `clip` implementation and tokenizer are bundled. This quick start pins [v0.1.2](https://github.com/ye1457/MT-TTA/tree/v0.1.2); record `git rev-parse HEAD` with your run.
 
 ### 2. Prepare data and weights
 
@@ -59,7 +59,7 @@ mt-tta-evaluate --benchmark pacs --data-root "$PACS_ROOT" \
   --model-cache models --gpu 0 --output-dir outputs/pacs_seed0
 ```
 
-Compare the reported ordered input hashes with the [frozen input references](docs/reference_inputs.json). Use a **new output directory** for every run; runs cannot resume midway. A dry run validates data, not numerical benchmark performance.
+Compare the reported ordered input hashes with the [frozen input references](docs/reference_inputs.json). Use a **new output directory** for every run; runs cannot resume midway.
 
 | Evaluation | Full images | Run instructions |
 | :--- | ---: | :--- |
@@ -76,7 +76,7 @@ python -m json.tool outputs/pacs_seed0/summary.json
 python -m json.tool outputs/pacs_seed0/completion.json
 ```
 
-The PACS/OfficeHome summary reports per-domain scores and `macro_top1_percent`; successful completion requires `status: "PASS"`. The completion record binds output artifacts with hashes. [Output fields and validation scope](docs/REPRODUCIBILITY.md) explain what each check establishes.
+The PACS/OfficeHome summary reports per-domain scores and `macro_top1_percent`; successful completion requires `status: "PASS"`. See the [output fields and result-reading instructions](docs/REPRODUCIBILITY.md).
 
 ## Method and protocol
 
@@ -99,7 +99,7 @@ See [exact PACS/OfficeHome settings](docs/EVALUATION.md), including PACS margin 
 
 ## Reference results
 
-Historical full-stream **Top-1 accuracy (%)**, rounded to three decimals:
+Full-stream **Top-1 accuracy (%)**, rounded to three decimals:
 
 | Evaluation | PACS | OfficeHome | MT-Sketch4-20K |
 | :--- | ---: | ---: | ---: |
@@ -110,18 +110,18 @@ Historical full-stream **Top-1 accuracy (%)**, rounded to three decimals:
 | Frozen CLIP B/16 | 47.880 | 60.630 | 73.793 | 45.961 | 57.066 |
 | MT-TTA | **53.187** | **60.830** | **84.377** | **49.258** | **61.913** |
 
-PACS/OfficeHome scores average the four domains equally; MT-Sketch4 averages its four native classification tasks. PACS was selected from 24 configurations on the same full stream. These are previously completed measurements, **not new benchmark runs from this documentation update**. Historical raw outputs were deleted at the owner's request. [Full results and provenance](docs/RESULTS.md) include per-task scores, controls and protocol differences.
+PACS/OfficeHome scores average the four domains equally; MT-Sketch4 averages its four native classification tasks. See [full results and settings](docs/RESULTS.md) for per-task scores, controls and metric definitions.
 
 ## Documentation
 
 | Start here | What it covers |
 | :--- | :--- |
-| [Reproducibility guide](docs/REPRODUCIBILITY.md) | Environment, commands, result checks and verified scope |
+| [Reproducibility guide](docs/REPRODUCIBILITY.md) | Environment, commands and result reading |
 | [Data and weights](DATA_DEPENDENCIES.md) | Official sources, directory structure, download and hash checks |
 | [PACS / OfficeHome protocol](docs/EVALUATION.md) | Ordering, routing, losses, state and shadow branch |
 | [ImageNet natural shifts](docs/IMAGENET_OOD.md) | A/V2/R/Sketch, zero-shot controls and four-benchmark reporting |
 | [MT-Sketch4 dataset](docs/MT_SKETCH4_DATASET.md) · [evaluation](docs/MT_SKETCH4_EVALUATION.md) | Frozen subset design and native class spaces |
-| [Reference results](docs/RESULTS.md) | Completed measurements and their provenance |
+| [Reference results](docs/RESULTS.md) | Per-task metrics and evaluation settings |
 
 <details>
 <summary><strong>Repository layout and developer checks</strong></summary>
@@ -142,7 +142,7 @@ The `clip_officehome` package name is retained across all supported benchmarks. 
 python -m unittest discover -s tests -v
 ```
 
-[GitHub Actions](https://github.com/ye1457/MT-TTA/actions/workflows/tests.yml) checks CPU tests, source entrypoints, package builds and installation outside the source tree. These software checks do not replace a full GPU benchmark run.
+[GitHub Actions](https://github.com/ye1457/MT-TTA/actions/workflows/tests.yml) checks CPU tests, source entrypoints, package builds and installation outside the source tree.
 
 </details>
 

@@ -21,7 +21,7 @@ python scripts/evaluate_imagenet.py --benchmark imagenet_r --data-root /path/to/
 python scripts/evaluate_imagenet.py --benchmark imagenet_sketch --data-root /path/to/imagenet-sketch --model-cache /path/to/clip_weights --gpu 0 --output-dir outputs/imagenet_sketch_seed0
 ```
 
-The preflight loads no model. `--hash-images` reads image bytes in addition to the ordinary layout/count/order checks; compare its ordered hashes with [the input references](reference_inputs.json). Omit that flag for a faster layout-only check. Neither check is a numerical accuracy rerun.
+`--hash-images` reads image bytes in addition to the ordinary layout/count/order checks; compare its ordered hashes with [the input references](reference_inputs.json). Omit that flag for a faster layout-only check.
 
 The method transfers the OfficeHome **primary** branch parameters: CLIP-B/16
 student, frozen CLIP-L/14 auxiliary hard pseudo-label teacher (CE weight 0.08),

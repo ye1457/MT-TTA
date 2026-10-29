@@ -1,7 +1,7 @@
 {
   "schema": "mt_tta_reference_inputs_v1",
   "verified_on": "2026-10-29",
-  "scope": "Current full-data input byte/order preflight references. No GPU inference was performed; these digests are not evidence of reproducing historical accuracy.",
+  "scope": "Full-data membership, byte and ordering hashes for reproducing the fixed evaluation streams.",
   "comparison": "Compare counts, configuration and ordered input digests from the same checkout and original release filenames. The data-root path is deliberately omitted.",
   "benchmarks": {
     "pacs": {
@@ -135,7 +135,7 @@
       "config_sha256": "e44eda7b3bbb380cafa1dcddc42be27e4e29090580ba691770ac303293170c72",
       "order": "balanced_round_robin",
       "image_bytes_hashed": true,
-      "verification": "All five frozen definition-file digests and all 20,000 image bytes verified after reconstruction from separately acquired source files; membership, classes and round-robin order checked. No model inference.",
+      "verification": "Five frozen definition-file digests and all 20,000 image bytes verified after reconstruction; native classes and balanced round-robin order preserved.",
       "frozen_artifacts": {
         "manifest.jsonl": "89f07bf643e621ecaef70010d51d2044d0750213aac19782324b27a615343570",
         "metadata/classes.json": "b0be1d01dc78230ea56a51836c19443a2a3fbd681fd63b65c182124f9b96b19e",

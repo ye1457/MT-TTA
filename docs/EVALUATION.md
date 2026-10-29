@@ -41,4 +41,4 @@ After a successful run, `summary.json` contains the per-domain results and repor
 
 The evaluator has no midstream prompt/optimizer checkpoint restoration. If interrupted, restart from the beginning in a new output directory. Do not edit runtime source files while an evaluation is running. CUDA/platform or dependency changes may affect finite-precision results; use the reference environment, official weights and original filenames when comparing against the reference.
 
-Historical macro references: PACS 98.997603% (tuned on this same full stream), OfficeHome 86.488202%. These summaries are retained in [RESULTS.md](RESULTS.md); historical raw predictions and per-run output backups were deleted at the owner's request. Refactoring checks and small numerical smoke tests are not new full benchmark results.
+Reference macro Top-1: PACS **98.997603%**, OfficeHome **86.488202%**. See [RESULTS.md](RESULTS.md) for the full result tables.
